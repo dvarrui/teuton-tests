@@ -1,17 +1,13 @@
 
 # Teuton Challenges
 
+![](./docs/logo.png)
+
 This repository contains **challenges** for **TEUTON** application.
 
 ## Organisation
 
-All challenges are grouped as:
-
-| Name | Description |
-| ---- | ----------- |
-| add  | Operating System (Medium Level) |
-| idp  | Operating System (Basic level) |
- 
+All challenges are organized in several directories.
 
 ## How to use it
 
