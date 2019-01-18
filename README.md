@@ -1,7 +1,7 @@
 
 # Teuton Challenges
 
-![](./docs/logo.png)
+![logo](./docs/logo.png)
 
 This repository contains **challenges** for **TEUTON** application.
 
