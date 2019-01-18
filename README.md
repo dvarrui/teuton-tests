@@ -1,7 +1,19 @@
 
 # Teuton Challenges
 
-This repository contains `challenges` for TEUTON tool.
+This repository contains **challenges** for **TEUTON** application.
 
-You can find TEUTON tool in `github/dvarrui/teuton`.
+## Organisation
 
+All challenges are grouped as:
+
+| Name | Description |
+| ---- | ----------- |
+| add  | Operating System (Medium Level) |
+| idp  | Operating System (Basic level) |
+ 
+
+## How to use it
+
+* You must use it with **TEUTON** software.
+* You can find **TEUTON** software in [`github/dvarrui/teuton`](https://github.com/dvarrui/teuton) repository.
