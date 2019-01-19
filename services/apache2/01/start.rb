@@ -1,5 +1,5 @@
 
-task "Configuración de red" do
+group "Configuración de red" do
   target "Configuración DNS"
   goto :host1, :exec => "host www.iespuertodelacruz.es"
   expect result.find!("has").find!("address").count!.ge(1)
@@ -13,7 +13,7 @@ task "Configuración de red" do
   expect result.eq get(:hostname)
 end
 
-task "Servidor Web" do
+group "Servidor Web" do
   target "Servicio activo"
   goto :host1, :exec => "systemctl status apache2"
   expect result.find!("active (running)").count!.equal(1), :weight => 5
@@ -30,7 +30,7 @@ task "Servidor Web" do
   unique "index_content", result.value
 end
 
-start do
+play do
   show
   export :format => :colored_text
   send :copy_to => :host1
