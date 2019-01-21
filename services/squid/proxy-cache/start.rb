@@ -1,11 +1,6 @@
 
-group "GROUP NAME" do
-
-  target "TARGET-1 DESCRIPTION"
-  goto :localhost, :exec => "COMMAND-1"
-  expect result.equal(1)
-
-end
+require_relative 'host-config'
+require_relative 'squid-service'
 
 play do
   show

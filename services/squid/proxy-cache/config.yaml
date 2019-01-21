@@ -2,3 +2,7 @@
 :global:
 :cases:
 - :tt_members: anonymous
+  :number: "20"
+  :host1_ip: 127.0.0.1
+  :host1_username: CHANGE
+  :host1_password: CHANGE
