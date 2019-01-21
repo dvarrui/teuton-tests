@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+use 'debian_users'
+
 group "Target 01" do
 
   target "Create user <" + get(:username) + ">"
