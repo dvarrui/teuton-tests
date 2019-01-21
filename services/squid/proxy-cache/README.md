@@ -38,7 +38,7 @@ Sistema operativo
 # 3. Funcionamiento
 
 Probar el funcionamiento desde la máquina real.
-* Captua del fichero de configuración de Squid, donde se vean los cambios realizados.
+* Captura del fichero de configuración de Squid, donde se vean los cambios realizados.
 * Configurar el proxy en el navegador del cliente y acceder a la página del instituto.
 * Consultar los ficheros de logs de Squid.
 * Consultar el directorio caché para ver si hay algún fichero almacenado.
