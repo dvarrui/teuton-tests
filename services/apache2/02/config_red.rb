@@ -1,5 +1,5 @@
 
-task "Configuración de red" do
+group "Configuración de red" do
   target "Configuración DNS"
   goto :host1, :exec => "host www.iespuertodelacruz.es"
   expect result.find!("has").find!("address").count!.ge(1)

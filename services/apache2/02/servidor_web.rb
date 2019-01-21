@@ -1,5 +1,5 @@
 
-task "Servidor Web" do
+group "Servidor Web" do
   target "Servicio activo"
   goto :host1, :exec => "systemctl status apache2"
   expect result.find!("active (running)").count!.equal(1), :weight => 5
