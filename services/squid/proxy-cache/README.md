@@ -23,8 +23,8 @@ Sistema operativo
 * Consultar los apuntes para configurar la caché de Squid.
 * Configurar el usuario `proxy` y grupo `proxy` como propietarios del proceso.
 * Puerto `3128`
-* Tamaño de la memoria caché: `100MB`.
-* Tamaño del directorio caché: `500MB`.
+* Tamaño de la memoria caché: `100 MB`.
+* Tamaño del directorio caché: `500 MB`.
 * Configurar el fichero de log: `/var/log/squid/access.log`
 * Reiniciar squid3, crear el directorio de caché y comprobar que no hay errores.
 ```
