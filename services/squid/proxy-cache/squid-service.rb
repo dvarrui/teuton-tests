@@ -23,20 +23,16 @@ group "Squid configuration" do
   expect result.find("cache_mem ").find(" 100 MB").count.eq(1)
 
   target "cache dir 500 MB"
-  goto :host1, :exec => "cat /etc/squid/squid.conf"
+  run "cat /etc/squid/squid.conf"
   expect result.find("cache_dir ").find(" 500 ").count.eq(1)
 
   target "access_log"
-  goto :host1, :exec => "cat /etc/squid/squid.conf"
+  run "cat /etc/squid/squid.conf"
   expect result.find("access_log ").find("/var/log/squid/access.log").count.eq(1)
 end
 
 group "Squid: client access" do
   target "URL Web URL access"
-  goto :host1, :exec => "cat /var/log/squid/access.log"
+  run "cat /var/log/squid/access.log"
   expect result.find(get(:web)).count.ge(1)
-
-#  target "Files saved into cache dir"
-#  goto :host1, :exec => "du -sh /var/spool/squid"
-#  expect result.to_fount.ge(1)
 end
