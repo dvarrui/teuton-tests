@@ -2,7 +2,7 @@
 
 require_relative 'linux1-config'
 #require_relative 'win1-config'
-require_relative 'linux1-lvm'
+#require_relative 'linux1-lvm'
 
 play do
   show
