@@ -2,7 +2,7 @@
 
 group "linux1 configuration" do
 
-  target "ping #{get(:linux1_ip)} to #{get(:linux1_osname)}"
+  target "ping #{get(:linux1_ip)}"
   run "ping #{get(:linux1_ip)} -c 1"
   expect result.find("Destination Host Unreachable").count.equal(0)
 
@@ -13,7 +13,7 @@ group "linux1 configuration" do
   set(:linux1_hostname, "#{get(:lastname1)}#{get(:number)}d1")
   target "Checking hostname -a <"+get(:linux1_hostname)+">"
   goto :linux1, :exec => "hostname -a"
-  expect result.equal?(get(:linux_hostname))
+  expect result.equal?(get(:linux1_hostname))
 
   target "Checking hostname -d <"+get(:linux1_domain)+">"
   goto :linux1, :exec => "hostname -d"
