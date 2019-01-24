@@ -1,0 +1,53 @@
+INITIAL CONFIGURATIONS
++------------+----------+
+| tt_members | student1 |
+| tt_skip    | false    |
++------------+----------+
+TARGETS HISTORY
+  - ============================================
+  - GROUP: Create user obiwan using several ways
+  01 (0.0/1.0)
+  		Description : Way 1: Checking user <obiwan> using commands
+  		Command     : id obiwan| wc -l
+  		Duration    : 0.011 (local)
+  		Alterations : 
+  		Expected    : 1 (String)
+  		Result      : 0 (String)
+  02 (0.0/1.0)
+  		Description : Way 2: Checking user <obiwan> using count! method
+  		Command     : id obiwan
+  		Duration    : 0.003 (local)
+  		Alterations : count!
+  		Expected    : 1 (String)
+  		Result      : 0 (Integer)
+  03 (0.0/1.0)
+  		Description : Way 3: Checking user <obiwan> using find! and count! methods with String arg
+  		Command     : cat /etc/passwd
+  		Duration    : 0.002 (local)
+  		Alterations : find!(obiwan) & count!
+  		Expected    : 1 (String)
+  		Result      : 0 (Integer)
+  04 (0.0/1.0)
+  		Description : Way 4: Checking user <obiwan, obi-wan> using find! and count! methods with Regexp arg
+  		Command     : cat /etc/passwd
+  		Duration    : 0.002 (local)
+  		Alterations : find!((?-mix:obiwan|obi-wan)) & count!
+  		Expected    : 1 (String)
+  		Result      : 0 (Integer)
+FINAL VALUES
++--------------+---------------------------+
+| case_id      | 1                         |
+| start_time_  | 2019-01-24 19:28:15 +0000 |
+| finish_time  | 2019-01-24 19:28:15 +0000 |
+| duration     | 0.019319819               |
+| unique_fault | 0                         |
+| max_weight   | 4.0                       |
+| good_weight  | 0.0                       |
+| fail_weight  | 4.0                       |
+| fail_counter | 4                         |
+| grade        | 0                         |
++--------------+---------------------------+
+HALL OF FAME
++---+---+
+| 0 | * |
++---+---+

@@ -1,0 +1,20 @@
+INITIAL CONFIGURATIONS
++---------------+--------------------------------------------------------------------+
+| tt_title      | Executing [teuton] (version 1.13.0)                                |
+| tt_scriptname | /home/david/proy/repos/teuton.d/teuton-challenges/demo/start.rb    |
+| tt_configfile | /home/david/proy/repos/teuton.d/teuton-challenges/demo/config.yaml |
+| tt_testname   | demo                                                               |
+| tt_sequence   | false                                                              |
++---------------+--------------------------------------------------------------------+
+TARGETS HISTORY
+  - Case_01 =>   0 ? anonymous
+FINAL VALUES
++-------------+---------------------------+
+| start_time  | 2019-01-24 19:27:25 +0000 |
+| finish_time | 2019-01-24 19:27:25 +0000 |
+| duration    | 0.010477823               |
++-------------+---------------------------+
+HALL OF FAME
++---+---+
+| 0 | * |
++---+---+

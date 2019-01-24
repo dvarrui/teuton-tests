@@ -1,0 +1,32 @@
+INITIAL CONFIGURATIONS
++------------+-----------+
+| tt_members | anonymous |
+| tt_skip    | false     |
++------------+-----------+
+TARGETS HISTORY
+  - =================
+  - GROUP: GROUP NAME
+  01 (0.0/1.0)
+  		Description : TARGET-1 DESCRIPTION
+  		Command     : COMMAND-1
+  		Duration    : 0.001 (local)
+  		Alterations : 
+  		Expected    : 1 (String)
+  		Result      :  (NilClass)
+FINAL VALUES
++--------------+---------------------------+
+| case_id      | 1                         |
+| start_time_  | 2019-01-24 19:27:25 +0000 |
+| finish_time  | 2019-01-24 19:27:25 +0000 |
+| duration     | 0.001348305               |
+| unique_fault | 0                         |
+| max_weight   | 1.0                       |
+| good_weight  | 0.0                       |
+| fail_weight  | 1.0                       |
+| fail_counter | 1                         |
+| grade        | 0                         |
++--------------+---------------------------+
+HALL OF FAME
++---+---+
+| 0 | * |
++---+---+
