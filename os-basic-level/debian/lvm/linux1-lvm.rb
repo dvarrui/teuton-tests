@@ -40,7 +40,7 @@ group "linux1: lvm (II)" do
 
   set(:lvXXextra,"lv#{get(:number)}extra")
   target get(:lvXXextra)
-  goto :host1, :exec => "lvdisplay #{get(:vgXXextra)}"
+  goto :linux1, :exec => "lvdisplay #{get(:vgXXextra)}"
   expect result.find(get(:lvXXextra)).count.equal? 1
 
 end
