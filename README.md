@@ -6,9 +6,13 @@ This repository contains **challenges** for **TEUTON** application.
 
 ![logo](./docs/logo.png)
 
+---
+
 ## Organisation
 
 All challenges are organized by categories, in diferents directories.
+
+---
 
 ## How to use it
 
@@ -16,3 +20,10 @@ All challenges are organized by categories, in diferents directories.
 * Second choose a challenges and play it: `teuton play PATH/TO/CHALLENGE/DIR`.
 
 Thanks!
+
+---
+
+## Contact
+
+* **Email**: `teuton.software@protonmail.com`
+* **Twitter**: `@SoftwareTeuton`
