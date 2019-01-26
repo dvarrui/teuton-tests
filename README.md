@@ -12,7 +12,7 @@ All challenges are organized by categories, in diferents directories.
 
 ## How to use it
 
-* First install [**TEUTON** software](https://github.com/dvarrui/teuton). You can find it in [`github/dvarrui/teuton`](https://github.com/dvarrui/teuton) repository.
+* First install [**TEUTON** software](https://github.com/dvarrui/teuton). You can find it at [`github/dvarrui/teuton`](https://github.com/dvarrui/teuton) repository.
 * Second choose a challenges and play it: `teuton play PATH/TO/CHALLENGE/DIR`.
 
 Thanks!
