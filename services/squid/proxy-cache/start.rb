@@ -6,5 +6,5 @@ require_relative 'squid-service'
 
 play do
   show
-  export
+  export :format => :colored_text
 end
