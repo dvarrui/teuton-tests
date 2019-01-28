@@ -23,22 +23,6 @@ group "linux1: lvm (vgXXdebian)" do
   expect result.find("LV Name").find(get(:lvXXdatos)).count.equal?(1)
 end
 
-group "linux1: lvm (partitions)" do
-
-  target "Disk sdb"
-  goto :linux1, :exec => "fdisk -l"
-  expect result.find('sdb').count.gt 1
-
-  target "Disk sdc"
-  goto :linux1, :exec => "fdisk -l"
-  expect result.find('sdc').count.gt(3)
-
-  target "/boot partition size and format"
-  goto :linux1, :exec => "df -hT"
-  expect result.find('/boot').find("100M").find("ext2").count.eq(1)
-
-end
-
 group "linux1: lvm (vgXXextra)" do
 
   set(:vgXXextra,"vg#{get(:number)}extra")
