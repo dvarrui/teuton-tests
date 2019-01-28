@@ -18,6 +18,10 @@ group "Squid configuration" do
   run "cat /etc/squid/squid.conf"
   expect result.find("http_port ").find("3128").count.eq(1)
 
+  target "Configure user proxy"
+  run "cat /etc/squid/squid.conf"
+  expect result.not_find('#').find("cache_effective_user ").find("proxy").count.eq(1)
+
   target "cache mem 100 MB"
   run "cat /etc/squid/squid.conf"
   expect result.find("cache_mem ").find(" 100 MB").count.eq(1)
