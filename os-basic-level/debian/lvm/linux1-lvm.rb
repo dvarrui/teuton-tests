@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-group "linux1: lvm (I)" do
+group "linux1: lvm (vgXXdebian)" do
 
   set(:vgXXdebian, "vg#{ get(:number) }debian")
   target "vgdisplay #{ get(:vgXXdebian) }"
@@ -23,7 +23,7 @@ group "linux1: lvm (I)" do
   expect result.find(get(:lvXXdatos)).count.equal?(1)
 end
 
-group "linux1: lvm (II)" do
+group "linux1: lvm (partitions)" do
 
   target "Disk sdb"
   goto :linux1, :exec => "fdisk -l"
@@ -32,6 +32,17 @@ group "linux1: lvm (II)" do
   target "Disk sdc"
   goto :linux1, :exec => "fdisk -l"
   expect result.find('sdc').count.gt(3)
+
+  target "Disk sdd"
+  goto :linux1, :exec => "fdisk -l"
+  expect result.find('sdc').count.eq(2)
+
+  target "Disk sde"
+  goto :linux1, :exec => "fdisk -l"
+  expect result.find('sdc').count.eq(4)
+end
+
+group "linux1: lvm (vgXXextra)" do
 
   set(:vgXXextra,"vg#{get(:number)}extra")
   target get(:vgXXextra)
