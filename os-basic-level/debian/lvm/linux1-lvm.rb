@@ -10,17 +10,17 @@ group "linux1: lvm (vgXXdebian)" do
   set(:lvXXraiz, "lv#{ get(:number) }raiz")
   target get(:lvXXraiz)
   goto :linux1, :exec => "lvdisplay #{ get(:vgXXdebian) }"
-  expect result.find(get(:lvXXraiz)).count.equal?(1)
+  expect result.find("LV Name").find(get(:lvXXraiz)).count.equal?(1)
 
   set(:lvXXswap, "lv#{ get(:number) }swap")
   target get(:lvXXswap)
   goto :linux1, :exec => "lvdisplay #{ get(:vgXXdebian) }"
-  expect result.find(get(:lvXXswap)).count.equal?(1)
+  expect result.find("LV Name").find(get(:lvXXswap)).count.equal?(1)
 
   set(:lvXXdatos, "lv#{ get(:number) }datos")
   target get(:lvXXdatos)
   goto :linux1, :exec => "lvdisplay #{ get(:vgXXdebian) }"
-  expect result.find(get(:lvXXdatos)).count.equal?(1)
+  expect result.find("LV Name").find(get(:lvXXdatos)).count.equal?(1)
 end
 
 group "linux1: lvm (partitions)" do
@@ -33,13 +33,10 @@ group "linux1: lvm (partitions)" do
   goto :linux1, :exec => "fdisk -l"
   expect result.find('sdc').count.gt(3)
 
-  target "Disk sdd"
-  goto :linux1, :exec => "fdisk -l"
-  expect result.find('sdc').count.eq(2)
+  target "/boot partition size and format"
+  goto :linux1, :exec => "df -hT"
+  expect result.find('/boot').find("100M").find("ext2").count.eq(1)
 
-  target "Disk sde"
-  goto :linux1, :exec => "fdisk -l"
-  expect result.find('sdc').count.eq(4)
 end
 
 group "linux1: lvm (vgXXextra)" do
@@ -52,6 +49,6 @@ group "linux1: lvm (vgXXextra)" do
   set(:lvXXextra,"lv#{get(:number)}extra")
   target get(:lvXXextra)
   goto :linux1, :exec => "lvdisplay #{get(:vgXXextra)}"
-  expect result.find(get(:lvXXextra)).count.equal? 1
+  expect result.find("LV Name").find(get(:lvXXextra)).count.equal? 1
 
 end

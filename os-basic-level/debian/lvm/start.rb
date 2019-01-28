@@ -2,11 +2,12 @@
 
 require_relative 'linux1-config'
 #require_relative 'win1-config'
+require_relative 'linux1-partitions'
 require_relative 'linux1-lvm'
 
 play do
   show
-  export
+  export :format => :colored_text
   send :copy_to => :linux1
 end
 
