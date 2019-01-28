@@ -3,7 +3,8 @@
 require_relative 'linux1-config'
 #require_relative 'win1-config'
 require_relative 'linux1-partitions'
-require_relative 'linux1-lvm'
+require_relative 'linux1-vgXXdebian'
+require_relative 'linux1-vgXXextra'
 
 play do
   show

@@ -12,7 +12,7 @@ group "linux1: lvm (partitions)" do
 
 end
 
-group "linux1: /boot"
+group "linux1: /boot" do
 
   target "/boot partition sda1"
   goto :linux1, :exec => "df -hT"
@@ -28,7 +28,7 @@ group "linux1: /boot"
 
 end
 
-group "linux1: volúmenes lógicos"
+group "linux1: volúmenes lógicos" do
 
   target "lv#{get(:number)}datos partition size and format"
   goto :linux1, :exec => "df -hT"
