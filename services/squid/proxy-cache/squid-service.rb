@@ -12,11 +12,11 @@ end
 group "Squid configuration" do
   target "Squid service working on port 3128"
   run "lsof -i"
-  expect result.find("http_port").find(get(:ip)+":3128").count.eq(1)
+  expect result.find("http_port").find("*:3128").count.eq(1)
 
   target "Squid port 3128"
   run "cat /etc/squid/squid.conf"
-  expect result.find("http_port ").find(get(:ip)+":3128").count.eq(1)
+  expect result.find("http_port ").find("3128").count.eq(1)
 
   target "cache mem 100 MB"
   run "cat /etc/squid/squid.conf"
