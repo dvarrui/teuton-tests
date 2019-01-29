@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-group "linux1 configuration" do
+group "linux1: external connectivity" do
 
   target "ping #{get(:linux1_ip)}"
   run "ping #{get(:linux1_ip)} -c 1"
@@ -9,6 +9,10 @@ group "linux1 configuration" do
   target "SSH port 22 on <"+get(:linux1_ip)+"> open"
   run "nmap #{get(:linux1_ip)} -Pn"
   expect result.find("ssh").count.equal?(1)
+
+end
+
+group "linux1: hostnames config" do
 
   set(:linux1_hostname, "#{get(:lastname1)}#{get(:number)}d1")
   target "Checking hostname -a <"+get(:linux1_hostname)+">"
@@ -32,6 +36,7 @@ group "linux1 configuration" do
 end
 
 group "linux1: User" do
+
   username = get(:firstname)
 
   target "User <#{username}> exists"
