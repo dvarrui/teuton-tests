@@ -1,14 +1,13 @@
 # encoding: utf-8
 
+group "win1: external connectivity" do
 
-group "win1 config" do
-=begin
-  target "ping #{get(:host2_ip)} to #{get(:host2_osname)}"
-  goto :localhost, :exec => "ping #{get(:host2_ip)} -c 1| grep 'Destination Host Unreachable'|wc -l"
-  expect result.equal?(0)
+  target "ping #{get(:win1_ip)}"
+  run    "ping #{get(:win1_ip)} -c 1"
+  expect result.find('Destination Host Unreachable').count.equal?(0), :weight => 0.0
 
-  target "netbios-ssn service on #{get(:host2_ip)}"
-  goto :localhost, :exec => "nmap -Pn #{get(:host2_ip)} | grep '139/tcp'| grep 'open'|wc -l"
-  expect result.equal?(1)
-=end
+  target "netbios-ssn service on #{get(:win1_ip)}"
+  goto :localhost, :exec => "nmap -Pn #{get(:win1_ip)} "
+  expect result.find('139/tcp').find('open').count.equal?(1), , :weight => 0.0
+
 end
