@@ -24,6 +24,6 @@ wget -qO- https://raw.githubusercontent.com/dvarrui/teuton/master/bin/linux_t-no
 
 Ahora si se quiere ejecutar un reto hacemos:
 1. Entrar a la carpeta `teuton-challenges`
-2. `teuton test service/squid/proxy-cache` para verificar que el reto es correcto.
-3. `teuton service/squid/proxy-cache` para ejecutar ese reto.
+2. `teuton test services/squid/proxy-cache` para verificar que el reto es correcto.
+3. `teuton services/squid/proxy-cache` para ejecutar ese reto.
 4. `more var/proxy-cache/out/case-01...` para ver el informe con los resultados.
