@@ -1,14 +1,9 @@
 ---
-:global: 
+:global:
 :cases:
-- :tt_members: student1
+- :tt_members: anonymous
   :host1_ip: VALUE
   :host1_username: VALUE
   :host1_password: VALUE
   :hostname: VALUE
   :username: VALUE
-- :tt_members: student2
-  :host1_ip: VALUE
-  :host1_username: VALUE
-  :host1_password: VALUE
-  :hostname: VALUE
