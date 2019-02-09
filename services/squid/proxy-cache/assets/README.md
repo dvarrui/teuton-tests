@@ -1,9 +1,4 @@
 
-```
-Autora: Mari Paz
-Fecha : Enero 2019
-```
-
 # A1: Proxy Caché GNU/Linux
 
 Vamos a aprender a configurar un servidor Proxy Caché usando una MV GNU/Linux.
