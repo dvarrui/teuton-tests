@@ -12,7 +12,7 @@ end
 group "Squid configuration" do
   target "Squid service working on port 3128"
   run "lsof -i"
-  expect result.find("http_port").find("*:3128").count.eq(1)
+  expect result.find("TCP ").find("*:3128").count.eq(1)
 
   target "Squid port <3128>"
   run "cat /etc/squid/squid.conf"
@@ -36,7 +36,7 @@ group "Squid configuration" do
 
   target "access_log"
   run "cat /etc/squid/squid.conf"
-  expect result.find("access_log ").find("/var/log/squid/access.log").count.eq(1)
+  expect result.find("access_log ").find("daemon:/var/log/squid/access.log ").find("squid").count.eq(2)
 end
 
 group "Squid: client access" do
