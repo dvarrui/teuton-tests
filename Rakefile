@@ -12,3 +12,8 @@ task :update do
   puts "[INFO] Pulling <teuton-challenges> repo..."
   system('git pull')
 end
+
+desc 'Delete output files'
+task :clean do
+  system("rm -r var/*")
+end
