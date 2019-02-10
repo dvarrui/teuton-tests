@@ -26,10 +26,10 @@ task "Create user with your name" do
   target "Exist user <"+get(:username)+">"
   goto   :host1, :exec => "id #{get(:username)} |wc -l"
   expect result.equal(1)
-  
+
   goto   :host1, :exec => "blkid /dev/sda2"
   unique "UUID sda2", result.value
-  
+
 end
 
 start do
