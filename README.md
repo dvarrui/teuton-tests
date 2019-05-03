@@ -1,7 +1,6 @@
 
 # Teuton Challenges
 
-
 This repository contains **challenges** for **TEUTON** application.
 
 ![logo](./docs/logo.png)
@@ -10,14 +9,14 @@ This repository contains **challenges** for **TEUTON** application.
 
 ## Organisation
 
-All challenges are organized by categories, in diferents directories.
+All challenges are organized into categories (Using diferents directories).
 
 ---
 
 ## How to use it
 
-* First install [**TEUTON** software](https://github.com/dvarrui/teuton). You can find it at [`github/dvarrui/teuton`](https://github.com/dvarrui/teuton) repository.
-* Second choose a challenges and play it: `teuton play PATH/TO/CHALLENGE/DIR`.
+* First install [**TEUTON** software](https://github.com/dvarrui/teuton). You can find it at [`github/teuton-software/teuton`](https://github.com/teuton-software/teuton) repository.
+* Second choose a challenges and play with it: `teuton play PATH/TO/CHALLENGE/DIR`.
 
 Thanks!
 
