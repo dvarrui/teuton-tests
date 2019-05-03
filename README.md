@@ -15,7 +15,7 @@ All challenges are organized into categories (Using diferents directories).
 
 ## How to use it
 
-* First install [**TEUTON** software](https://github.com/dvarrui/teuton). You can find it at [`github/teuton-software/teuton`](https://github.com/teuton-software/teuton) repository.
+* First install **TEUTON** software. You can find it at [`github/teuton-software/teuton`](https://github.com/teuton-software/teuton) repository.
 * Second choose a challenges and play with it: `teuton play PATH/TO/CHALLENGE/DIR`.
 
 Thanks!
