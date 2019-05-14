@@ -3,7 +3,7 @@
 
 require_relative 'example-07/task'
 
-start do
+play do
   show
   export
 end

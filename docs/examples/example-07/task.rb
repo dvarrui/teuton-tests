@@ -1,5 +1,5 @@
 
-task "Create user obiwan" do
+group "Create user obiwan" do
 
   target "Checking user <obiwan>"
   goto :localhost, :exec => "id obiwan| wc -l"
