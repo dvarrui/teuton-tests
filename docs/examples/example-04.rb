@@ -16,7 +16,7 @@ task "Configure hostname and DNS server" do
 
   target "DNS Server OK"
   goto   :host1, :exec => "host www.google.es"
-  expect result.find!("has address").count!.ge 1
+  expect result.find("has address").count.ge 1
 
 end
 
@@ -24,11 +24,11 @@ task "Create user with your name" do
 
   target "Exist user <"+get(:username)+">"
   goto   :host1, :exec => "id #{get(:username)}"
-  expect result.count!.eq 1
+  expect result.count.eq 1
 
 end
 
-start do
+play do
   show
   export :format => :colored_text
   send :copy_to => :host1

@@ -13,17 +13,17 @@ task "Create user with your name" do
   goto :localhost, :exec => "id #{get(:username)}| wc -l"
   expect result.eq 1
 
-  target "Checking user <"+get(:username)+"> using count! method"
+  target "Checking user <"+get(:username)+"> using count method"
   goto :localhost, :exec => "id #{get(:username)}"
-  expect result.count!.eq 1
+  expect result.count.eq 1
 
-  target "Checking user <"+get(:username)+"> using find! and count! methods with String arg"
+  target "Checking user <"+get(:username)+"> using find and count methods with String arg"
   goto :localhost, :exec => "cat /etc/passwd"
-  expect result.find!(get(:username)).count!.eq 1
+  expect result.find(get(:username)).count.eq 1
 
 end
 
-start do
+play do
   show
   export
   export :format => :colored_text

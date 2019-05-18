@@ -32,7 +32,7 @@ task "Create user with your name" do
 
 end
 
-start do
+play do
   show
   export :format => :txt
   send :copy_to => :host1
