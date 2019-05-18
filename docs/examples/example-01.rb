@@ -20,11 +20,13 @@ group "Test users by several ways" do
 
   target "Way 3: Checking user <root> using find and count methods with String arg"
   goto :localhost, :exec => "cat /etc/passwd"
-  expect result.find("root").count.eq 1
+  expect "root"
+  # It's the same as: expect result.find("root").count.eq 1
 
   target "Way 4: Checking user <obiwan, obi-wan> using find and count methods with Regexp arg"
   goto :localhost, :exec => "cat /etc/passwd"
-  expect result.find(/obiwan|obi-wan/).count.eq 1
+  expect /obiwan|obi-wan/
+  # The same as: expect result.find(/obiwan|obi-wan/).count.eq 1
 end
 
 play do
