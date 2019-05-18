@@ -3,7 +3,7 @@ task "OpenSUSE external configurations" do
 
   target "ping to <"+get(:host1_ip)+">"
   goto :localhost, :exec => "ping #{get(:host1_ip)} -c 1"
-  expect result.find!("100% packet loss").eq(0)
+  expect result.find("100% packet loss").eq(0)
 
   target "SSH port 22 on <"+get(:host1_ip)+"> open"
   goto :localhost, :exec => "nmap #{get(:host1_ip)} -Pn | grep ssh|wc -l"
@@ -54,13 +54,13 @@ task "OpenSUSE network configurations" do
 
   target "Gateway <#{get(:gateway_ip)}>"
   goto   :host1, :exec => "route -n"
-  expect result.find!("UG").find!(get(:gateway_ip)).count!.eq 1
+  expect result.find("UG").find!(get(:gateway_ip)).count.eq 1
 
   target "WWW routing OK"
   goto   :host1, :exec => "ping 88.198.18.148 -c 1"
-  expect result.find!(" 0% packet loss,").count!.eq 1
+  expect result.find(" 0% packet loss,").count.eq 1
 
   target "DNS OK"
   goto   :host1, :exec => "nslookup www.iespuertodelacruz.es"
-  expect result.find!("Address:").find!("88.198.18.148").count!.eq 1
+  expect result.find("Address:").find("88.198.18.148").count.eq 1
 end
