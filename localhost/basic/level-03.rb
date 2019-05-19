@@ -7,17 +7,17 @@ group "Target 03" do
 
   target "Create user <"+ username+">"
   run "id #{username}"
-  expect result.count.equal?(1)
+  expect username
 
   target "Member of group <"+ groupname+">"
   result.restore!
-  expect result.grep(groupname).count.equal?(1)
+  expect groupname
 
   home = "/home/" + username
 
   target "User home is <" + home + ">"
   run "cat /etc/passwd"
-  expect result.grep(home).grep(username).count.equal?(1)
+  expect [ home, username ]
 end
 
 play do

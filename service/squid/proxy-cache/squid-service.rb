@@ -2,21 +2,21 @@
 group "Squid installation" do
   target "Squid Service ON"
   run "systemctl status squid"
-  expect result.find("Active: active (running)").count.eq(1)
+  expect "Active: active (running)"
 
   target "Squid service working on port 3128"
   run "lsof -i"
-  expect result.find("squid").find("*:3128").count.eq(1)
+  expect ["squid", "*:3128"]
 end
 
 group "Squid configuration" do
   target "Squid service working on port 3128"
   run "lsof -i"
-  expect result.find("TCP ").find("*:3128").count.eq(1)
+  expect ["TCP ", "*:3128"]
 
   target "Squid port <3128>"
   run "cat /etc/squid/squid.conf"
-  expect result.find("http_port ").find("3128").count.eq(1)
+  expect ["http_port ", "3128"]
 
   target "Configure user <proxy>"
   run "cat /etc/squid/squid.conf"
@@ -28,11 +28,11 @@ group "Squid configuration" do
 
   target "cache mem <100 MB>"
   run "cat /etc/squid/squid.conf"
-  expect result.find("cache_mem ").find(" 100 MB").count.eq(1)
+  expect ["cache_mem ", " 100 MB"]
 
   target "cache dir 500 MB"
   run "cat /etc/squid/squid.conf"
-  expect result.find("cache_dir ").find(" 500 ").count.eq(1)
+  expect ["cache_dir ", " 500 "]
 
   target "access_log"
   run "cat /etc/squid/squid.conf"
@@ -42,5 +42,5 @@ end
 group "Squid: client access" do
   target "URL Web URL access"
   run "cat /var/log/squid/access.log"
-  expect result.find("www.nba.com").count.ge(1)
+  expect "www.nba.com"
 end

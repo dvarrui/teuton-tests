@@ -3,8 +3,8 @@
 group "Target 01" do
 
   target "Create user <" + get(:username) + ">"
-  run "id " + get(:username)
-  expect result.count.equal?(1)
+  run "id #{get(:username)}"
+  expect get(:username)
 
 end
 

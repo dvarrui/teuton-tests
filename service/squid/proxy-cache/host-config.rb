@@ -7,5 +7,5 @@ group "Host configuration" do
 
   target "DNS OK"
   run "nslookup www.github.com"
-  expect result.find("Name:").find("github.com").count.ge(1)
+  expect ["Name:", "github.com"]
 end

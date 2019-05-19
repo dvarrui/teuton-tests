@@ -3,11 +3,11 @@ group "Target: Usuario" do
 
   target "Create user <"+get(:username)+">"
   run "id #{get(:username)}"
-  expect result.count.equal?(1)
+  expect get(:username)
 
-  home = "/home/" + get(:username)
+  home = "/home/#{get(:username)}"
 
-  target "User home is <" + home + ">"
+  target "User home is <#{home}>"
   run "cat /etc/passwd"
-  expect result.grep(home).grep(get(:username)).count.equal?(1)
+  expect_one [home, get(:username)]
 end
