@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require_relative 'example-07/task'
+require_relative 'task'
 
 play do
   show
