@@ -3,7 +3,7 @@
 
 This repository contains **challenges** for **TEUTON** application.
 
-![logo](./docs/logo.png)
+![logo](./images/logo.png)
 
 ---
 
