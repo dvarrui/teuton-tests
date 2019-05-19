@@ -2,15 +2,15 @@
 group "Servidor Web" do
   target "Servicio activo", :weight => 5
   goto :host1, :exec => "systemctl status apache2"
-  expect result.find("active (running)").count.equal(1)
+  expect "active (running)"
 
   target "Existe fichero index.html", :weight => 5
   goto :host1, :exec => "vdir /srv/www/htdocs"
-  expect result.find("index.html").count.equal(1)
+  expect_one "index.html"
 
   target "Nombre dentro de index.html", :weight => 5
   goto :host1, :exec => "cat /srv/www/htdocs/index.html"
-  expect result.find(get(:username)).count.equal(1)
+  expect get(:username)
 
   goto :host1, :exec => "cat /srv/www/htdocs/index.html"
   unique "index_content", result.value

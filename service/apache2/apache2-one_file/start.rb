@@ -2,29 +2,29 @@
 group "Configuración de red" do
   target "Configuración DNS"
   goto :host1, :exec => "host www.iespuertodelacruz.es"
-  expect result.find("has").find("address").count.ge(1)
+  expect ["has", "address"]
 
   target "Gateway OK"
   goto :host1, :exec => "ping 8.8.4.4 -c 4"
-  expect result.find("64 bytes from").find("8.8.4.4").count.ge(1)
+  expect ["64 bytes from", "8.8.4.4"]
 
   target "Hostname"
   goto :host1, :exec => "hostname"
-  expect result.eq get(:hostname)
+  expect get(:hostname)
 end
 
 group "Servidor Web" do
   target "Servicio activo", :weight => 5
   goto :host1, :exec => "systemctl status apache2"
-  expect result.find("active (running)").count.equal(1)
+  expect "active (running)"
 
   target "Existe fichero index.html", :weight => 5
   goto :host1, :exec => "vdir /srv/www/htdocs"
-  expect result.find("index.html").count.equal(1)
+  expect_one "index.html"
 
   target "Nombre dentro de index.html", :weight => 5
   goto :host1, :exec => "cat /srv/www/htdocs/index.html"
-  expect result.find!(get(:username)).count.equal(1)
+  expect get(:username)
 
   goto :host1, :exec => "cat /srv/www/htdocs/index.html"
   unique "index_content", result.value

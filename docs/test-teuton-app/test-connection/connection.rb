@@ -1,5 +1,5 @@
 
-task "GNU/Linux connections" do
+group "GNU/Linux connections" do
 
   set(:host1_ip, get(:linux_ip))
   set(:host2_ip, get(:linux_ip))
@@ -8,23 +8,23 @@ task "GNU/Linux connections" do
 
   target "host1 SSH with <#{get(:host1_username)}> "
   goto   :host1, :exec => "ip a"
-  expect result.find(get(:host1_ip)).count.eq 1
+  expect get(:host1_ip)
 
   target "host2 SSH with <#{get(:host2_username)}> "
   goto   :host2, :exec => "ip a"
-  expect result.find(get(:host2_ip)).count.eq 1
+  expect get(:host2_ip)
 
   target "host3 Telnet with <#{get(:host3_username)}> "
   goto   :host3, :exec => "ip a"
-  expect result.find(get(:host3_ip)).count.eq 1
+  expect get(:host3_ip)
 
   target "host4 Telnet with <#{get(:host4_username)}> "
   goto   :host4, :exec => "ip a"
-  expect result.find(get(:host4_ip)).count.eq 1
+  expect get(:host4_ip)
 
 end
 
-task "Windows connections" do
+group "Windows connections" do
 
   set(:win1_ip, get(:windows_ip))
   set(:win2_ip, get(:windows_ip))
@@ -38,7 +38,7 @@ task "Windows connections" do
 
   target "win2 SSH with <#{get(:win2_username)}> "
   goto   :win2, :exec => 'whoami'
-  expect result.find(get(:win2_username)).count.eq 1
+  expect get(:win2_username)
 
   target "win3 Telnet with <#{get(:win3_username)}> "
   goto   :win3, :exec => "whoami"
