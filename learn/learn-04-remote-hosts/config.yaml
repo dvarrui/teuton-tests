@@ -8,19 +8,19 @@
   :host1_hostname: sith.starwars
   :host1_username: idp
   :host1_password: idp
-  :username: dmaul
+  :username: Administrador
 - :tt_members: darth-maul
-  :tt_skip: true
+  :tt_skip: false
   :host1_ip: 192.168.1.200
   :host1_hostname: sith.starwars
   :username: dmaul
 - :tt_members: r2d2
-  :tt_skip: true
+  :tt_skip: false
   :host1_ip: 192.168.1.201
   :host1_hostname: robot.starwars
   :username: true
 - :tt_members: obiwan kenobi
-  :tt_emails: obiwan@email.com
+  :tt_skip: true
   :host1_ip: 192.168.1.202
   :host1_hostname: jedi.starwars
   :username: obiwan
