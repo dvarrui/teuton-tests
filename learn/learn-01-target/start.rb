@@ -1,12 +1,9 @@
 
-group "example 01" do
-  target "Exist user <root>"
-  run "id root"
-  expect "root"
+group "learn-01-target" do
+  target "Exist <david> user"
+  run "id david"
+  expect "david"
 
-  target "Check root shell"
-  run "cat /etc/passwd"
-  expect ["root", "/bin/bash"]
 end
 
 play do
