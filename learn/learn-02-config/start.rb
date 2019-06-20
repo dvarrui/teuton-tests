@@ -9,6 +9,5 @@ end
 
 play do
   show
-  # export using other output formats
-  export :format => :colored_text
+  export
 end

@@ -3,15 +3,15 @@
   :host1_username: root
   :host1_password: profesor
 :cases:
-- :tt_members: darth-maul
-  :host1_ip: 192.168.1.200
+- :tt_members: Darth Maul
+  :host1_ip: 192.168.1.201
   :host1_hostname: sith.starwars
   :username: dmaul
-- :tt_members: r2d2
-  :host1_ip: 192.168.1.201
+- :tt_members: R2D2
+  :host1_ip: 192.168.1.202
   :host1_hostname: robot.starwars
   :username: r2d2
-- :tt_members: obiwan kenobi
-  :host1_ip: 192.168.1.202
+- :tt_members: Obiwan Kenobi
+  :host1_ip: 192.168.1.203
   :host1_hostname: jedi.starwars
   :username: obiwan
