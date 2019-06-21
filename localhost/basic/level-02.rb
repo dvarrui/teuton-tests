@@ -1,12 +1,11 @@
-# encoding: utf-8
 
-group "Target 02" do
+group "Level 02" do
 
-  target "Create user <"+get(:username)+">", :weight => 2.0
+  target "Create user <#{get(:username)}>", :weight => 2.0
   run "id #{get(:username)}"
   expect get(:username)
 
-  target "Member of group <"+get(:groupname)+">"
+  target "Member of group <#{get(:groupname)}>"
   run "id #{get(:username)}"
   expect get(:groupname)
 

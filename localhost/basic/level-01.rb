@@ -1,10 +1,9 @@
-# encoding: utf-8
 
-group "Target 01" do
+group "Level 01" do
 
-  target "Create user <" + get(:username) + ">"
-  run "id #{get(:username)}"
-  expect get(:username)
+  target "Create user <root>"
+  run "id root"
+  expect "root"
 
 end
 

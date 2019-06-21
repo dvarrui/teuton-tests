@@ -1,7 +1,7 @@
 
-group "Target: Usuario" do
+group "User configuration" do
 
-  target "Create user <"+get(:username)+">"
+  target "Create user <#{get(:username)}>"
   run "id #{get(:username)}"
   expect get(:username)
 

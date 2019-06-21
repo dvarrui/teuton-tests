@@ -1,21 +1,20 @@
-# encoding: utf-8
 
-group "Target 03" do
+group "Level 03" do
 
   username = "david"
   groupname = "users"
 
-  target "Create user <"+ username+">"
+  target "Create user <#{username}>"
   run "id #{username}"
   expect username
 
-  target "Member of group <"+ groupname+">"
+  target "Member of group <#{groupname}>"
   result.restore!
   expect groupname
 
   home = "/home/" + username
 
-  target "User home is <" + home + ">"
+  target "User home is <#{home}>"
   run "cat /etc/passwd"
   expect [ home, username ]
 end
