@@ -27,4 +27,4 @@ Ahora si se quiere ejecutar un reto hacemos:
 2. Entrar a la carpeta `teuton-challenges`
 3. `teuton test services/squid/proxy-cache` para verificar que el reto es correcto.
 4. `teuton services/squid/proxy-cache` para ejecutar ese reto.
-5. `more var/proxy-cache/out/case-01...` para ver el informe con los resultados.
+5. `more var/proxy-cache/case-01...` para ver el informe con los resultados.
