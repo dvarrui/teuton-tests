@@ -1,5 +1,5 @@
 ---
-:global: 
+:global:
 :cases:
 - :tt_members: student1
   :host1_ip: VALUE
@@ -12,3 +12,4 @@
   :host1_username: VALUE
   :host1_password: VALUE
   :hostname: VALUE
+  :username: VALUE

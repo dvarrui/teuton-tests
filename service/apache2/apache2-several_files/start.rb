@@ -1,6 +1,6 @@
 
-require_relative 'config_red'
-require_relative 'servidor_web'
+require_relative 'network'
+require_relative 'web_service'
 
 play do
   show
