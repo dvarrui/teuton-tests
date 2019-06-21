@@ -1,5 +1,5 @@
 
-task "ACL Discos" do
+group "ACL Discos" do
 
   target "Disco sda"
   goto :debian1, :exec => "lsblk"

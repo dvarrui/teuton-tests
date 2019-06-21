@@ -1,5 +1,5 @@
 
-task "ACL usuarios y grupos" do
+group "ACL usuarios y grupos" do
 
   rebels = [ 'han', 'luke']
   troopers = [ 'trooper1', 'trooper2']

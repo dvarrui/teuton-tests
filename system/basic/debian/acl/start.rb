@@ -11,7 +11,7 @@ require_relative '../../lib/debian_settings'
 require_relative '../../lib/debian_general'
 require_relative '../../lib/debian_hostname'
 
-task "ACL Settings" do
+group "ACL Settings" do
 	set(:linux1_ip, get(:debian1_ip))
 	set(:linux1_username, get(:debian1_username))
 	set(:linux1_password, get(:debian1_password))
@@ -25,7 +25,7 @@ require_relative 'discos'
 require_relative 'usuariosygrupos'
 require_relative 'acl'
 
-start do
+play do
 	show
 	export :format => :colored_text
 	send :copy_to => :debian1

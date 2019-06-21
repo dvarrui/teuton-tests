@@ -1,5 +1,5 @@
 
-task "ACL permisos <endor>" do
+group "ACL permisos <endor>" do
 
   dir = '/mnt/starwars/endor'
   permisos = [ 'user::rwx', 'user:luke:r-x',
@@ -19,7 +19,7 @@ task "ACL permisos <endor>" do
 
 end
 
-task "ACL permisos <xwing>" do
+group "ACL permisos <xwing>" do
 
   dir = '/mnt/starwars/xwing'
   permisos = [ 'user::rwx', 'user:han:rwx', 'user:luke:r-x',
