@@ -1,13 +1,13 @@
 
 # Problema A: Creando usuarios para clase
 
-# Sistema
+```
+Sysadmin-Me Piloto Valencia 2018-2019 - CEEDCV (Valencia)
+```
 
-Ubuntu 18.04
+**Sistema:** Ubuntu 18.04
 
----
-
-# Enunciado
+**Enunciado**
 
 Vamos a configurar un equipo local para gestionar el acceso de alumnos y profesores. Para ello crearemos una serie de usuarios y profesores y los incluiremos en un grupo.
 
