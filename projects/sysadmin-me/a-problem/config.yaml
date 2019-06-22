@@ -1,0 +1,7 @@
+---
+:global:
+:cases:
+- :tt_members: anonymous
+  :host1_ip: 10.0.0.1
+  :host1_username: root
+  :host1_password: toor

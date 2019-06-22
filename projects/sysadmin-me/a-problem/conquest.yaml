@@ -1,0 +1,7 @@
+---
+:global:
+:cases:
+- :tt_members: anonymous
+  :host1_ip: IP.SSH.remote.server
+  :host1_username: usename
+  :host1_password: password

@@ -1,18 +1,5 @@
 
-```
-Ejecutar este reto en modo:
-* standalone
-* challenge
-```
-
----
 # Problema A: Creando usuarios para clase
-
-```
-Sysadmin-Me Piloto Valencia 2018-2019 - CEEDCV (Valencia)
-```
-
----
 
 # Sistema
 
