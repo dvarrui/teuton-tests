@@ -1,0 +1,13 @@
+---
+:global:
+:cases:
+- :tt_members: anonymous
+  :host1_ip: IP.SSH.remote.server
+  :host1_username: username
+  :host1_password: password
+  :maquinaA_ip: 192.168.1.1
+  :maquinaA_username: root
+  :maquinaA_password: toor
+  :maquinaB_ip: 192.168.1.3
+  :maquinaB_username: root
+  :maquinaB_password: toor
