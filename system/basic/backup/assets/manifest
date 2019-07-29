@@ -1,0 +1,7 @@
+name         = backup-basic-system
+author       = David Vargas Ruiz
+description  = Práctica de backup
+tags         = backup, windows, server, gnu/linux
+date         = 20190114
+requirements = Windows7, Windows Server, GNU/Linux
+state        = developing

@@ -1,0 +1,7 @@
+name         = squid-proxy-cache
+author       = Mª Paz Martínez
+description  = Squid server. Proxy cache.
+tags         = squid, proxy, caché
+date         = 20190209
+requirements = SO GNU/Linux, Ubuntu, Squid
+state        = active

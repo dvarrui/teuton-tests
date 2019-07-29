@@ -1,0 +1,7 @@
+name         = users_and_groups-basic-system
+author       = David Vargas Ruiz
+description  = Práctica de usuarios y grupos
+tags         = gnu/linux
+date         = 20190114
+requirements = GNU/Linux
+state        = developing
