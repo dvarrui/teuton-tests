@@ -1,7 +1,0 @@
-name         = apache2-one-file
-author       = David Vargas Ruiz
-description  = Demo Servidor Web Apache2. Test one host.
-tags         = demo, apache2, one, file
-date         = 20190209
-requirements = SO GNU/Linux, Apache2
-state        = demo
