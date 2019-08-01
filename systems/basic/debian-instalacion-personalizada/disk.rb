@@ -27,15 +27,20 @@ group "Partitions size and type" do
 
     target "Partition #{key} size <#{value[1]}>"
     goto  :host1, :exec => "lsblk |grep part| grep #{key}| tr -s ' ' ':'| cut -d ':' -f 5"
-    expect(result.to_s.equal?(value[1]) || result.to_s.equal?(value[2]))
+    expect result.near?(value[1])
+#    expect(result.to_s.equal?(value[1]) || result.to_s.equal?(value[2]))
   end
 
-  partitions=[ ['/dev/disk', '/', 'ext4'], ['/dev/disk', '/', 'ext4']  ]
+  target "Mount <sda6> type <ext4>"
+  goto  :host1, :exec => "df -hT"
+  expect_one ['/dev/sda6', 'ext4', '/']
 
-  partitions.each do |p|
-    target "Partition #{p[1]} type <#{p[2]}>"
-    goto  :host1, :exec => "df -hT | grep #{p[0]} | grep #{p[1]}| grep #{p[2]}"
-    expect result.count.eq(1)
-  end
+  target "Mount <sda7> type <ext3>"
+  goto  :host1, :exec => "df -hT"
+  expect_one ['/dev/sda7', 'ext3', '/']
+
+  target "Mount <sda8>"
+  goto  :host1, :exec => "df -hT"
+  expect_none '/dev/sda8'
 
 end
