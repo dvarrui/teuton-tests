@@ -5,7 +5,7 @@ group 'HOST configurations' do
   run "nmap -Pn #{get(:host1_ip)}"
   expect_one [ 'ssh', 'open' ]
 
-  hostname = "#{get(:lastname)}#{get(:number)}.#{get(:domain)}"
+  hostname = "#{get(:lastname)}#{get(:number)}d1.#{get(:domain)}"
   set(:host1_hostname, hostname)
 
   target "Checking hostname <#{get(:host1_hostname)}>"
