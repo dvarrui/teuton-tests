@@ -1,7 +1,7 @@
 
 group "Network configuracion" do
 
-  target "Hostname is <#{get(:host1_hostname)}>"
+  target "Hostname is #{gett(:host1_hostname)}"
   goto   :host1, :exec => "hostname"
   expect_one get(:host1_hostname)
 

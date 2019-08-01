@@ -2,11 +2,11 @@
 
 group "Windows: external configuration" do
 
-  target "Localhost: Conection with <#{get(:windows1_ip)}>"
+  target "Localhost: Conection with #{gett(:windows1_ip)}"
   run "ping #{get(:windows1_ip)}"
   expect_none "Destination Host Unreachable"
 
-  target "Localhost: netbios-ssn service on #{get(:windows1_ip)}"
+  target "Localhost: netbios-ssn service on #{gett(:windows1_ip)}"
   run "nmap -Pn #{get(:windows1_ip)}"
   expect "139/tcp", "open"
 
@@ -22,7 +22,7 @@ group "Windows: internal configurations" do
   goto   :windows1, :exec => "set"
   expect "COMPUTERNAME", get(:windows1_hostname)
 
-  target "Windows router Config<#{get(:gateway)}>"
+  target "Windows router #{gett(:gateway)}"
   goto   :windows1, :exec => "ipconfig"
   expect "enlace", get(:gateway)
 

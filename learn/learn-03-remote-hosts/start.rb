@@ -1,7 +1,7 @@
 
 group "learn 03 remote hosts" do
 
-  target "Hostname is <#{get(:host1_hostname)}>"
+  target "Hostname is #{gett(:host1_hostname)}"
   goto   :host1, :exec => "hostname"
   expect_one get(:host1_hostname)
 
@@ -9,7 +9,7 @@ group "learn 03 remote hosts" do
   goto   :host1, :exec => "nslookup www.google.es"
   expect "Nombre:"
 
-  target "Exist user <#{get(:username)}>"
+  target "Exist user #{gett(:username)}"
   goto   :host1, :exec => "net user"
   expect get(:username)
 
