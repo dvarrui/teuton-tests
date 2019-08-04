@@ -1,18 +1,18 @@
 
 group 'GNULinux user configuration' do
 
-  username = get(:firstname)
+  set(:username, get(:firstname))
 
-  target "User <#{username}> exists"
+  target "Create user #{gett(:username)}"
   goto  :host1, :exec => "cat /etc/passwd"
-  expect_one username
+  expect_one get(:username)
 
-  target "Users <#{username}> with not empty password "
-  goto  :host1, :exec => "cat /etc/shadow | grep '#{username}:' | cut -d : -f 2"
+  target "User #{gett(:username)} need a no empty password"
+  goto  :host1, :exec => "cat /etc/shadow | grep '#{get(:username)}:' | cut -d : -f 2"
   expect result.count.eq(1)
 
-  target "User <#{username}> logged"
+  target "Log into using #{gett(:username)} user"
   goto  :host1, :exec => "last"
-  expect result.find(username[0,8]).count.neq(0)
+  expect result.find(get(:username)[0,8]).count.neq(0)
 
 end
