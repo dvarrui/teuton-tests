@@ -1,7 +1,7 @@
 
 group "learn 02 config" do
 
-  target "Checking user #{gett(:username)}"
+  target "Create user #{gett(:username)}"
   run "id #{get(:username)}"
   expect get(:username)
 
