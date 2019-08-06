@@ -1,6 +1,6 @@
 
-require_relative 'users'
-require_relative 'network'
+use 'users'
+use 'network'
 
 play do
   show
