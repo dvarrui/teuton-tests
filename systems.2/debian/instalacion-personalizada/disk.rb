@@ -25,21 +25,21 @@ group "Partitions size and type" do
     goto  :host1, :exec => "lsblk"
     expect_one [ "part", key, value[0] ]
 
-    target "Partition #{key} size <#{value[1]}>"
+    target "Partition #{key} size near at <#{value[1]}>"
     goto  :host1, :exec => "lsblk |grep part| grep #{key}| tr -s ' ' ':'| cut -d ':' -f 5"
     expect result.near?(value[1])
 #    expect(result.to_s.equal?(value[1]) || result.to_s.equal?(value[2]))
   end
 
-  target "Mount <sda6> type <ext4>"
+  target "Partition <sda6> with type <ext4>"
   goto  :host1, :exec => "df -hT"
   expect_one ['/dev/sda6', 'ext4', '/']
 
-  target "Mount <sda7> type <ext3>"
+  target "Partition <sda7> with type <ext3>"
   goto  :host1, :exec => "df -hT"
   expect_one ['/dev/sda7', 'ext3', '/']
 
-  target "Mount <sda8>"
+  target "Partition <sda8> unmounted"
   goto  :host1, :exec => "df -hT"
   expect_none '/dev/sda8'
 

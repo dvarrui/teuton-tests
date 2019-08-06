@@ -1,14 +1,12 @@
-# encoding: utf-8
-
 =begin
  Course name : IDP
  Activity    : Instalación personalizada de Debian
  MV OS       : GNU/Linux Debian
 =end
 
-require_relative 'host'
-require_relative 'user'
-require_relative 'disk'
+use 'host'
+use 'user'
+use 'disk'
 
 play do
 	show
@@ -17,10 +15,12 @@ end
 
 =begin
 ---
+---
 :global:
   :host1_username: root
+  :domain: curso1819
 :cases:
-- :tt_members: david
+- :tt_members: users
   :number: '01'
   :host1_ip: 1.1.1.1
   :host1_password: password
