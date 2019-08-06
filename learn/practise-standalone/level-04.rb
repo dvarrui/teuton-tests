@@ -1,6 +1,6 @@
 
-require_relative 'linux/usuario'
-require_relative 'linux/grupo'
+use 'linux/usuario'
+use 'linux/grupo'
 
 play do
   show
