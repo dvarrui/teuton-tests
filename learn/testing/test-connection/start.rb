@@ -3,7 +3,7 @@
 This test just evaluate access to several diferent hosts, using SSH an telnet connections.
 =end
 
-require_relative 'connection'
+use 'connection'
 
 start do
   show

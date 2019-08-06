@@ -1,5 +1,5 @@
 
-require_relative 'opensuse'
+use 'opensuse'
 
 play do
   show

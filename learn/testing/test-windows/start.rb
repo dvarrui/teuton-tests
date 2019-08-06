@@ -3,7 +3,7 @@
 This are only tests
 =end
 
-require_relative 'windows'
+use 'windows'
 
 start do
   show
