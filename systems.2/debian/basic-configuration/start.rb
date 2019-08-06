@@ -1,9 +1,7 @@
-# encoding: utf-8
 
-require_relative '../lib/debian_general'
-require_relative '../lib/gnulinux_user'
-require_relative '../lib/debian_hostname'
-require_relative '../lib/debian_network'
+require_relative 'ssh'
+require_relative 'user'
+require_relative 'host'
 
 start do
 	show :resume
