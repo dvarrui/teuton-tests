@@ -1,11 +1,11 @@
 ```
 Test name : basic-configuration
-Date      : 2019-08-06 10:12:05 +0100
+Date      : 2019-08-06 19:00:48 +0100
 ```
 ---
 # README.md
 
-Params configured for every pupil:
+Params configured for every case:
 * domain
 * firstname
 * host1_hostname
@@ -14,7 +14,7 @@ Params configured for every pupil:
 * host1_username
 * lastname1
 
-## Debian: access to SSH service
+## Access to Debian SSH service
 
 Go to host LOCALHOST, and do next:
 * Ensure SSH access to VALUE (host1_ip) IP

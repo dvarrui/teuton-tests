@@ -1,14 +1,13 @@
 
-require_relative 'ssh'
-require_relative 'user'
-require_relative 'host'
+use 'ssh'
+use 'user'
+use 'host'
 
 start do
 	show :resume
 	export :format => :colored_text
 	send :copy_to => :host1
 end
-
 
 =begin
 ---
