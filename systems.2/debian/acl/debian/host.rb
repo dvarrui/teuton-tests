@@ -19,6 +19,6 @@ group 'Network configuration' do
   expect "64 bytes from 8.8.4.4"
 
   target "Ensure DNS network configuration is working"
-  goto  :linux1, :exec => "host www.nba.com"
+  goto  :host1, :exec => "host www.nba.com"
   expect "has address"
 end

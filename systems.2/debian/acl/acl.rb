@@ -1,40 +1,44 @@
 
-group "ACL permisos <endor>" do
+group "Cheking ACL assigned to /mnt/starwars/endor" do
 
   dir = '/mnt/starwars/endor'
-  permisos = [ 'user::rwx', 'user:luke:r-x',
-    'group:troopers:rwx', 'mask::rwx', 'other::---']
+  acls = [ 'user::rwx',
+           'user:luke:r-x',
+           'group:troopers:rwx',
+           'mask::rwx',
+           'other::---' ]
 
-  target "Comprobar propietario de #{dir}"
-  goto :debian1, :exec => "stat #{dir}"
-  expect result.grep("Uid").grep("root").count.eq 1
+  target "root user is owner of #{dir} directory"
+  goto :host1, :exec => "stat #{dir}"
+  expect_one [ "Uid", "root" ]
 
-  goto :debian1, :exec => "getfacl #{dir}"
+  goto :host1, :exec => "getfacl #{dir}"
 
-  permisos.each do |line|
-    target "Comprobar que getfacl #{dir} incluye <#{line}>"
-    expect result.grep(line).count.eq 1
+  acls.each do |line|
+    target "Ensure directory #{dir} ACL includes <#{line}>"
+    expect_one line
     result.restore!
   end
-
 end
 
-group "ACL permisos <xwing>" do
-
+group "Checking ACL assigned to </mnt/starwars/xwing>" do
   dir = '/mnt/starwars/xwing'
-  permisos = [ 'user::rwx', 'user:han:rwx', 'user:luke:r-x',
-    'group::---', 'mask::rwx', 'other::---']
+  acls = [ 'user::rwx',
+           'user:han:rwx',
+           'user:luke:r-x',
+           'group::---',
+           'mask::rwx',
+           'other::---' ]
 
-  target "Comprobar propietario de #{dir}"
-  goto :debian1, :exec => "stat #{dir}"
-  expect result.grep("Uid").grep("root").count.eq 1
+  target "root user is owner of #{dir} directory"
+  goto :host1, :exec => "stat #{dir}"
+  expect_one [ "Uid", "root" ]
 
-  goto :debian1, :exec => "getfacl #{dir}"
+  goto :host1, :exec => "getfacl #{dir}"
 
-  permisos.each do |line|
-    target "Comprobar que getfacl #{dir} incluye <#{line}"
-    expect result.grep(line).count.eq 1
+  acls.each do |line|
+    target "Ensure directory #{dir} ACL includes <#{line}>"
+    expect_one line
     result.restore!
   end
-
 end
