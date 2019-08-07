@@ -1,5 +1,5 @@
 
-require_relative 'users'
+use 'users'
 
 play do
   show
