@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require_relative 'linux1-config'
+use 'linux/host'
 #require_relative 'win1-config'
 require_relative 'linux1-partitions'
 require_relative 'linux1-vgXXdebian'

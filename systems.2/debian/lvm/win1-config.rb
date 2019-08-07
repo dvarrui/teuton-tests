@@ -1,4 +1,3 @@
-# encoding: utf-8
 
 group "win1: external connectivity" do
 
