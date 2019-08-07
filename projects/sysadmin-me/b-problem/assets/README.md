@@ -1,25 +1,21 @@
-
-# Problema B: Configurando nuestra red en clase
-
 ```
-Sysadmin-Me Piloto Valencia 2018-2019 - CEEDCV (Valencia)
+Test name : b-problem
+Date      : 2019-08-07 13:24:36 +0100
 ```
+---
+# README.md
 
-**Sistema:** Ubuntu 18.04
+Params configured for every case:
+* hostA_ip
+* hostA_password
+* hostA_username
+* hostB_ip
+* hostB_password
+* hostB_username
 
-**Enunciado:**
+## Network configuration
 
-Vamos a configurar nuestra red en clase. Resulta que la empresa de mensajería ha perdido los equipos que necesitamos y solo nos han llegado dos equipos. Pero al mal tiempo, buena cara :) Configuraremos esas dos máquinas como se indica.
-
-Configura una “máquina A” con IP: 192.168.1.1 y Máscara 255.255.255.0
-Configura otra “máquina B” con IP: 192.168.1.3 y Máscara 255.255.255.0
-Ambas deben estar en la misma red.
-
-Instala en la máquina B el servidor FTP “vsftp”.
-Configúralo para que:
-* Permita acceso a invitados.
-* Tenga un usuario con nombre “lolo” y contraseña “manolo”.
-
-**Evaluación:**
-
-Una vez hecho lanza el script que te proporcionamos en la “máquina A”, indicando el usuario y password de tu grupo.
+Go to host HOSTA, and do next:
+* Host A with IP/mask <HOSTA_IP/24>
+Go to host HOSTA, and do next:
+* Host B with IP/mask <HOSTB_IP/24>
