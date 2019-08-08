@@ -1,14 +1,14 @@
 
-group "Servidor Web" do
-  target "Servicio activo", :weight => 5
+group "Configuración del Servidor Web" do
+  target "El servicio web apache2 debe estar en ejecución.", :weight => 5
   goto :host1, :exec => "systemctl status apache2"
   expect "active (running)"
 
-  target "Existe fichero index.html", :weight => 5
+  target "Crear el fichero index.html", :weight => 5
   goto :host1, :exec => "vdir /srv/www/htdocs"
   expect_one "index.html"
 
-  target "Nombre dentro de index.html", :weight => 5
+  target "Incluir el nombre de usuario #{gett(:username)} dentro de index.html", :weight => 5
   goto :host1, :exec => "cat /srv/www/htdocs/index.html"
   expect get(:username)
 

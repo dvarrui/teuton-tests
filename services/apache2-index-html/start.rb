@@ -1,6 +1,6 @@
 
-require_relative 'network'
-require_relative 'web_service'
+use 'network'
+use 'web_service'
 
 play do
   show

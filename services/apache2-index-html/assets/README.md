@@ -1,12 +1,27 @@
+```
+Test name : apache2-index-html
+Date      : 2019-08-08 13:07:01 +0100
+```
+---
+# README.md
 
-# Apache2: practicando un poco (versión 2)
+Params configured for every case:
+* host1_ip
+* host1_password
+* host1_username
+* hostname
+* username
 
-Asegurarse de tener correctamente configurado lo siguiente:
-* DNS
-* Puerta de enlace
-* Hostname = (_Especificado en config.yaml_)
+## Configuración de red
 
-El servidor Web Apache2:
-* Servidor Web: Servicio activo
-* Existe fichero /srv/www/htdocs/index.html
-* Dentro de index.html poner nombre de usuario (_Especificado en config.yaml_).
+Go to host HOST1, and do next:
+* Configuración del servidor DNS funcionando correctamente.
+* Gateway funcionando correctamente.
+* Modificar hostname con VALUE (hostname)
+
+## Configuración del Servidor Web
+
+Go to host HOST1, and do next:
+* El servicio web apache2 debe estar en ejecución.
+* Crear el fichero index.html
+* Incluir el nombre de usuario VALUE (username) dentro de index.html
