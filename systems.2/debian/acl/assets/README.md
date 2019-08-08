@@ -1,6 +1,6 @@
 ```
 Test name : acl
-Date      : 2019-08-06 21:27:13 +0100
+Date      : 2019-08-08 13:18:24 +0100
 ```
 ---
 # README.md
@@ -42,7 +42,6 @@ Go to host HOST1, and do next:
 
 Go to host HOST1, and do next:
 * Chech sda disk with 5 partitions
-Go to host HOST1, and do next:
 * Check sdb disk with 1 partition
 * sdb1 part is mounted and has type ext3
 * On every boot, mount sdb1 on /mnt/starwars directory
@@ -59,30 +58,19 @@ Go to host HOST1, and do next:
 
 Go to host HOST1, and do next:
 * root user is owner of /mnt/starwars/endor directory
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/endor ACL includes <user::rwx>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/endor ACL includes <user:luke:r-x>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/endor ACL includes <group:troopers:rwx>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/endor ACL includes <mask::rwx>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/endor ACL includes <other::--->
 
 ## Checking ACL assigned to </mnt/starwars/xwing>
 
 Go to host HOST1, and do next:
 * root user is owner of /mnt/starwars/xwing directory
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/xwing ACL includes <user::rwx>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/xwing ACL includes <user:han:rwx>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/xwing ACL includes <user:luke:r-x>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/xwing ACL includes <group::--->
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/xwing ACL includes <mask::rwx>
-Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/xwing ACL includes <other::--->
