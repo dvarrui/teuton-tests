@@ -21,7 +21,7 @@ group "Cheking ACL assigned to /mnt/starwars/endor" do
   end
 end
 
-group "Checking ACL assigned to </mnt/starwars/xwing>" do
+group "Checking ACL assigned to /mnt/starwars/xwing" do
   dir = '/mnt/starwars/xwing'
   acls = [ 'user::rwx',
            'user:han:rwx',

@@ -1,6 +1,6 @@
 ```
 Test name : acl
-Date      : 2019-08-08 13:18:24 +0100
+Date      : 2019-08-08 13:20:25 +0100
 ```
 ---
 # README.md
@@ -64,7 +64,7 @@ Go to host HOST1, and do next:
 * Ensure directory /mnt/starwars/endor ACL includes <mask::rwx>
 * Ensure directory /mnt/starwars/endor ACL includes <other::--->
 
-## Checking ACL assigned to </mnt/starwars/xwing>
+## Checking ACL assigned to /mnt/starwars/xwing
 
 Go to host HOST1, and do next:
 * root user is owner of /mnt/starwars/xwing directory
