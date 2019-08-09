@@ -1,4 +1,3 @@
-# encoding: utf-8
 
 group "linux1: vgXXdebian" do
 

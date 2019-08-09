@@ -1,6 +1,6 @@
 ```
-Test name : instalacion-personalizada
-Date      : 2019-08-06 19:05:25 +0100
+Test name : debian-custom-installation
+Date      : 2019-08-09 09:44:31 +0100
 ```
 ---
 # README.md
@@ -20,7 +20,7 @@ Params configured for every case:
 
 Go to host LOCALHOST, and do next:
 * Ensure SSH port is open on VALUE (host1_ip)
-Go to host LOCALHOST, and do next:
+Go to host HOST1, and do next:
 * Update hostname with VALUE (host1_hostname)
 
 ## Network configuration

@@ -1,6 +1,6 @@
 ```
 Test name : apache2-index-html
-Date      : 2019-08-08 13:07:01 +0100
+Date      : 2019-08-09 09:43:02 +0100
 ```
 ---
 # README.md
@@ -22,6 +22,6 @@ Go to host HOST1, and do next:
 ## Configuración del Servidor Web
 
 Go to host HOST1, and do next:
-* El servicio web apache2 debe estar en ejecución.
-* Crear el fichero index.html
-* Incluir el nombre de usuario VALUE (username) dentro de index.html
+* (x5.0) El servicio web apache2 debe estar en ejecución.
+* (x5.0) Crear el fichero index.html
+* (x5.0) Incluir el nombre de usuario VALUE (username) dentro de index.html

@@ -2,7 +2,7 @@
 
 use 'linux/host'
 #require_relative 'win1-config'
-require_relative 'linux1-partitions'
+use 'linux/partitions'
 require_relative 'linux1-vgXXdebian'
 require_relative 'linux1-vgXXextra'
 

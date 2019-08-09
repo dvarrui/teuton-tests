@@ -14,6 +14,8 @@ end
 group "Host configuration" do
 
   set(:linux1_hostname, "#{get(:lastname1)}#{get(:number)}d1")
+  log "Setting linux1_hostname = #{get(:linux1_hostname)}"
+
   target "Checking hostname -a #{gett(:linux1_hostname)}"
   goto :linux1, :exec => "hostname -a"
   expect get(:linux1_hostname)
@@ -23,22 +25,22 @@ group "Host configuration" do
   expect get(:linux1_domain)
 
   set(:linux1_fqdn, (get(:linux1_hostname)+"."+get(:linux1_domain)))
+  log "Setting linux1_fqdn = #{get(:linux1_fqdn)}"
+
   target "Checking hostname -f #{gett(:linux1_fqdn)}"
   goto :linux1, :exec => "hostname -f"
-  expect result.equal?(get(:linux1_fqdn))
+  expect get(:linux1_fqdn)
 
   goto :linux1, :exec => "blkid |grep sda1"
   unique "UUID_sda1", result.value
   goto :linux1, :exec => "blkid |grep sda2"
   unique "UUID_sda2", result.value
-
 end
 
 group "User configuration" do
 
-  username = get(:firstname)
+  target "Create user #{gett(:firstname)}"
+  goto :linux1, :exec => "id #{get(:firstname)}"
+  expect_one get(:firstname)
 
-  target "User <#{username}> exists"
-  goto :linux1, :exec => "id '#{username}'"
-  expect_one username
 end
