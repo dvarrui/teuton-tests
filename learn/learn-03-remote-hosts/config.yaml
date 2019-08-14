@@ -4,6 +4,7 @@
   :host1_password: profesor
 :cases:
 - :tt_members: Darth Maul
+  :tt_skip: true
   :host1_ip: 192.168.1.201
   :host1_hostname: siths
   :username: maul
