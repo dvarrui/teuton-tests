@@ -1,6 +1,6 @@
 ```
-Test name : debian-basic-configuration
-Date      : 2019-08-09 09:44:13 +0100
+Challenge name : 01-debian-basic-configuration
+Date           : 2019-08-16 21:08:35 +0100
 ```
 ---
 # README.md
