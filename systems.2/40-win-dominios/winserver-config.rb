@@ -1,18 +1,17 @@
 
-task "Set internal params..." do
+group "Set internal params..." do
 
   log "Setting internal params"
 
   if get(:winserver_ip).nil?
     set(:winserver_ip,"99.99.99.99")
   end
-  student_number=get(:winserver_ip).split(".")[2]||"99"
-  student_number="0"+student_number if student_number.size==1
-
+  student_number = get(:winserver_ip).split(".")[2]||"99"
+  student_number = "0"+student_number if student_number.size==1
   set(:student_number, student_number)
 
-  short_hostname=[]
-  long_hostname=[]
+  short_hostname = []
+  long_hostname = []
 
   short_hostname[0]="#{get(:lastname1)}#{get(:student_number)}s"
   long_hostname[0]="#{short_hostname[0]}.#{get(:domain)}"
@@ -52,7 +51,7 @@ task "<winserver> external configuration" do
   ports.each do |port|
     target "windserver #{get(:winserver_ip)} port #{port[0]}"
     result.restore! # Use the same original output to evaluate differents values
-    expect result.grep!(port[0]).grep!("open").grep!(port[1]).count!.eq(1)
+    expect_one [ port[0], "open", port[1] ]
   end
 
 end
@@ -78,11 +77,11 @@ task "winserver internal configurations" do
 
   target "winserver router OK"
   goto   :winserver, :exec => "ping 8.8.4.4"
-  expect result.find!("Respuesta").count!.gt 1
+  expect "Respuesta"
 
   target "winserver DNS OK"
   goto   :winserver, :exec => "nslookup www.iespuertodelacruz.es"
-  expect result.find!("Address:").find!("88.198.18.148").count!.eq 1
+  expect_one [ "Address:", "88.198.18.148" ]
 
 #  target "Windows1 WORKGROUP_NAME"
 #  goto :windows1, :exec => "net config workstation"
