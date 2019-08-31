@@ -30,21 +30,17 @@ group "Set internal params..." do
 
   set(:wincli2_sname, short_hostname[2])
   set(:wincli2_lname, long_hostname[2])
-
 end
 
-task "<winserver> external configuration" do
-
+group "External configuration: WinServer" do
   target "Conection with <#{get(:winserver_ip)}>"
   goto :localhost, :exec => "ping #{get(:winserver_ip)} -c 1"
-  expect result.find!("Destination Host Unreachable").count!.eq 0
+  expect_none "Destination Host Unreachable"
 
-  ports=[
-          [ '23/tcp' , 'telnet'],
+  ports=[ [ '23/tcp' , 'telnet'],
           [ '53/tcp' , 'domain'],
           [ '139/tcp', 'netbios-ssn'],
-          [ '389/tcp', 'ldap' ]
-         ]
+          [ '389/tcp', 'ldap' ] ]
 
   # Only one conection to get the command output
   goto :localhost, :exec => "nmap -Pn #{get(:winserver_ip)}"
@@ -53,10 +49,9 @@ task "<winserver> external configuration" do
     result.restore! # Use the same original output to evaluate differents values
     expect_one [ port[0], "open", port[1] ]
   end
-
 end
 
-task "winserver internal configurations" do
+group "Internal configurations: WinServer" do
 
   goto   :winserver, :exec => "ipconfig /all"
   mac=result.find!("Direcci").content[0]
@@ -65,15 +60,15 @@ task "winserver internal configurations" do
 
   target "winserver version"
   goto   :winserver, :exec => "ver"
-  expect result.find!("Windows").find!("6.0.6002").count!.eq 1
+  expect_one [ "Windows", "6.0.6002" ]
 
   target "winserver COMPUTERNAME"
   goto   :winserver, :exec => "set"
-  expect result.find!("COMPUTERNAME").find!(get(:winserver_sname).upcase).count!.eq 1
+  expect_one [ "COMPUTERNAME", get(:winserver_sname).upcase ]
 
   target "winserver gateway <#{get(:gateway)}>"
   goto   :winserver, :exec => "ipconfig"
-  expect result.find!("enlace").find!(get(:gateway)).count!.eq 1
+  expect_one [ "enlace", get(:gateway) ]
 
   target "winserver router OK"
   goto   :winserver, :exec => "ping 8.8.4.4"
@@ -89,25 +84,23 @@ task "winserver internal configurations" do
 
   target "winserver ProductName"
   goto   :winserver, :exec => "reg query \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\" /t REG_SZ"
-  expect result.find!("ProductName").find!("Windows Server").find!("2008").count!.eq 1
-
+  expect_one [ "ProductName", "Windows Server", "2008" ]
 end
 
-task "Ping from winserver to *" do
-  target "ping winserver to #{get(:wincli1_ip)}"
-  goto   :winserver, :exec => "ping #{get(:wincli1_ip)}"
-  expect result.find!("Respuesta").count!.gt 1
+group "Ping from winserver to *" do
+  target "ping winserver to #{gett(:wincli1_ip)}"
+  goto   :winserver, :exec => "ping #{gett(:wincli1_ip)}"
+  expect "Respuesta"
 
   target "ping winserver to windows1_name"
-  goto   :winserver, :exec => "ping #{get(:wincli1_sname)}"
-  expect result.find!("Respuesta").count!.gt 1
+  goto   :winserver, :exec => "ping #{gett(:wincli1_sname)}"
+  expect "Respuesta"
 
-  target "ping winserver to #{get(:wincli2_ip)}"
+  target "ping winserver to #{gett(:wincli2_ip)}"
   goto   :winserver, :exec => "ping #{get(:wincli2_ip)}"
-  expect result.find!("Respuesta").count!.gt 1
+  expect "Respuesta"
 
   target "ping winserver to windows2_name"
   goto   :winserver, :exec => "ping #{get(:wincli2_sname)}"
-  expect result.find!("Respuesta").count!.gt 1
-
+  expect "Respuesta"
 end

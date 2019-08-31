@@ -1,12 +1,12 @@
 
-task "winserver domain groups" do
+groups "WinServer Domain Groups" do
 
   groups= [ 'jedi1617', 'sith1617']
   if get(:domain).nil? then
     set(:domain,"falta.dominio")
   end
-  domains=get(:domain).split('.')
-  names= []
+  domains = get(:domain).split('.')
+  names = []
 
   groups.each do |group|
     names << "CN=#{group},CN=Users,DC=#{domains[0]},DC=#{domains[1]}"
@@ -16,15 +16,15 @@ task "winserver domain groups" do
   names.each do |name|
     target "Domain group <#{name}>"
     result.restore!
-    expect result.find!(name).count!.eq 1
+    expect_one name
   end
 end
 
-task "winserver domain users" do
+group "winserver domain users" do
 
-  users= [ 'obiwan', 'maul']
-  domains=get(:domain).split(".")
-  names= []
+  users = [ 'obiwan', 'maul']
+  domains = get(:domain).split(".")
+  names = []
 
   users.each do |user|
     names << "CN=#{user},CN=Users,DC=#{domains[0]},DC=#{domains[1]}"
@@ -34,15 +34,15 @@ task "winserver domain users" do
   names.each do |name|
     target "Domain user <#{name}>"
     result.restore!
-    expect result.find!(name).count!.eq 1
+    expect_one name
   end
 end
 
-task "winserver domain computers" do
+group "WinServer Domain Computers" do
 
-  computers= [ get(:wincli1_sname).upcase, get(:wincli2_sname).upcase]
-  domains=get(:domain).split(".")
-  names= []
+  computers = [ get(:wincli1_sname).upcase, get(:wincli2_sname).upcase]
+  domains = get(:domain).split(".")
+  names = []
 
   computers.each do |user|
     names << "CN=#{user},CN=Computers,DC=#{domains[0]},DC=#{domains[1]}"
@@ -52,24 +52,22 @@ task "winserver domain computers" do
   names.each do |name|
     target "Domain computer <#{name}>"
     result.restore!
-    expect result.find!(name).count!.eq 1
+    expect_one name
   end
 end
 
-task "winserver profiles" do
-
-  target "Profile Directory <#{get(:profiles_dir)}>"
+group "WinServer profiles" do
+  target "Profile Directory #{gett(:profiles_dir)}"
   goto   :winserver, :exec => "dir e:"
-  expect result.find!(get(:profiles_dir)).find!("DIR").count!.eq 1
+  expect_one  [get(:profiles_dir), "DIR"]
 
   users= [ 'obiwan', 'maul' ]
   goto   :winserver, :exec => "dir e:\\#{get(:profiles_dir)}"
   users.each do |user|
     target "Profile Directory for user <#{user}>"
     result.restore!
-    expect result.find!(user).find!(".V2").count!.eq 1
+    expect_one [user, ".V2"]
   end
-
 end
 
 =begin
@@ -98,5 +96,4 @@ end
   target "Content of <#{file}> with yoda"
   result.restore!
   expect result.find!("yoda").count!.eq 1
-
 =end
