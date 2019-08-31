@@ -1,10 +1,12 @@
 # encoding: utf-8
 
 use 'linux/host'
-#require_relative 'win1-config'
+#use 'win/configuration'
 use 'linux/partitions'
-require_relative 'linux1-vgXXdebian'
-require_relative 'linux1-vgXXextra'
+use 'volumes/settings'
+use 'volumes/group-vgXXdebian'
+use 'volumes/logical'
+use 'volumes/group-vgXXextra'
 
 play do
   show

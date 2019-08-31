@@ -1,46 +1,41 @@
 
 group "External connectivity" do
-
-  target "Host #{gett(:linux1_ip)} responds to ping command"
-  run "ping #{get(:linux1_ip)} -c 1"
+  target "Host #{gett(:linux_ip)} responds to ping command"
+  run "ping #{get(:linux_ip)} -c 1"
   expect_none "Destination Host Unreachable"
 
-  target "Access SSH (port 22) opened on #{gett(:linux1_ip)}"
-  run "nmap #{get(:linux1_ip)} -Pn"
+  target "Access SSH (port 22) opened on #{gett(:linux_ip)}"
+  run "nmap #{get(:linux_ip)} -Pn"
   expect_one [ "ssh","open" ]
-
 end
 
 group "Host configuration" do
+  set(:linux_hostname, "#{get(:lastname1)}#{get(:number)}d1")
+  log "Setting linux_hostname = #{get(:linux_hostname)}"
 
-  set(:linux1_hostname, "#{get(:lastname1)}#{get(:number)}d1")
-  log "Setting linux1_hostname = #{get(:linux1_hostname)}"
+  target "Checking hostname -a #{gett(:linux_hostname)}"
+  goto :linux, :exec => "hostname -a"
+  expect get(:linux_hostname)
 
-  target "Checking hostname -a #{gett(:linux1_hostname)}"
-  goto :linux1, :exec => "hostname -a"
-  expect get(:linux1_hostname)
+  target "Checking hostname -d #{gett(:linux_domain)}"
+  goto :linux, :exec => "hostname -d"
+  expect get(:linux_domain)
 
-  target "Checking hostname -d #{gett(:linux1_domain)}"
-  goto :linux1, :exec => "hostname -d"
-  expect get(:linux1_domain)
+  set(:linux_fqdn, (get(:linux_hostname)+"."+get(:linux_domain)))
+  log "Setting linux1_fqdn = #{get(:linux_fqdn)}"
 
-  set(:linux1_fqdn, (get(:linux1_hostname)+"."+get(:linux1_domain)))
-  log "Setting linux1_fqdn = #{get(:linux1_fqdn)}"
+  target "Checking hostname -f #{gett(:linux_fqdn)}"
+  goto :linux, :exec => "hostname -f"
+  expect get(:linux_fqdn)
 
-  target "Checking hostname -f #{gett(:linux1_fqdn)}"
-  goto :linux1, :exec => "hostname -f"
-  expect get(:linux1_fqdn)
-
-  goto :linux1, :exec => "blkid |grep sda1"
+  goto :linux, :exec => "blkid |grep sda1"
   unique "UUID_sda1", result.value
-  goto :linux1, :exec => "blkid |grep sda2"
+  goto :linux, :exec => "blkid |grep sda2"
   unique "UUID_sda2", result.value
 end
 
 group "User configuration" do
-
   target "Create user #{gett(:firstname)}"
-  goto :linux1, :exec => "id #{get(:firstname)}"
+  goto :linux, :exec => "id #{get(:firstname)}"
   expect_one get(:firstname)
-
 end

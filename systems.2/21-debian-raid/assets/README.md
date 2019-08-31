@@ -1,6 +1,6 @@
 ```
 Challenge name : 21-debian-raid
-Date           : 2019-08-31 16:09:32 +0100
+Date           : 2019-08-31 16:13:44 +0100
 ```
 ---
 # README.md
@@ -38,8 +38,8 @@ Go to host LOCALHOST, and do next:
 * ping WIN_IP OK
 * Netbios-ssn service on VALUE (win_ip)
 
-## GNU/Linux Raid 0
+## GNU/Linux Raid 0 : TO-DO
 
 
-## GNU/Linux Raid 1
+## GNU/Linux Raid 1 : TO-DO
 
