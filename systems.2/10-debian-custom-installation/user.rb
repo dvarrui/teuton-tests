@@ -1,6 +1,5 @@
 
 group 'GNULinux user configuration' do
-
   set(:username, get(:firstname))
 
   target "Create user #{gett(:username)}"
@@ -14,5 +13,4 @@ group 'GNULinux user configuration' do
   target "Log into using #{gett(:username)} user"
   goto  :host1, :exec => "last"
   expect result.find(get(:username)[0,8]).count.neq(0)
-
 end

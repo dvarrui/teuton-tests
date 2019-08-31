@@ -1,6 +1,5 @@
 
 group "Disk size" do
-
   size='10G'
   target "Disk sda size <#{size}>"
   goto  :host1, :exec => "lsblk"
@@ -8,7 +7,6 @@ group "Disk size" do
 
   goto  :host1, :exec => "blkid | grep sda1"
   unique "UUID_sda1", result.value
-
 end
 
 group "Partitions size and type" do
@@ -42,5 +40,4 @@ group "Partitions size and type" do
   target "Partition <sda8> unmounted"
   goto  :host1, :exec => "df -hT"
   expect_none '/dev/sda8'
-
 end

@@ -1,6 +1,5 @@
 
 group 'HOST configurations' do
-
   target "Ensure SSH port is open on #{gett(:host1_ip)}"
   run "nmap -Pn #{get(:host1_ip)}"
   expect_one [ 'ssh', 'open' ]
@@ -16,7 +15,6 @@ group 'HOST configurations' do
 end
 
 group 'Network configuration' do
-
   target "Network gateway configuration working"
   goto  :host1, :exec => "ping 8.8.4.4 -c 1"
   expect result.find("64 bytes from 8.8.4.4").count.eq(1)
