@@ -4,9 +4,9 @@
  MV OS       : GNU/Linux Debian
 =end
 
+use 'disk'
 use 'host'
 use 'user'
-use 'disk'
 
 play do
 	show

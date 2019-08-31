@@ -1,6 +1,6 @@
 ```
-Test name : debian-custom-installation
-Date      : 2019-08-09 09:44:31 +0100
+Challenge name : 10-debian-custom-installation
+Date           : 2019-08-31 10:27:12 +0100
 ```
 ---
 # README.md
@@ -15,26 +15,6 @@ Params configured for every case:
 * lastname
 * number
 * username
-
-## HOST configurations
-
-Go to host LOCALHOST, and do next:
-* Ensure SSH port is open on VALUE (host1_ip)
-Go to host HOST1, and do next:
-* Update hostname with VALUE (host1_hostname)
-
-## Network configuration
-
-Go to host HOST1, and do next:
-* Network gateway configuration working
-* Network DNS configuration working
-
-## GNULinux user configuration
-
-Go to host HOST1, and do next:
-* Create user VALUE (username)
-* User VALUE (username) need a no empty password
-* Log into using VALUE (username) user
 
 ## Disk size
 
@@ -55,3 +35,23 @@ Go to host HOST1, and do next:
 * Partition <sda6> with type <ext4>
 * Partition <sda7> with type <ext3>
 * Partition <sda8> unmounted
+
+## HOST configurations
+
+Go to host LOCALHOST, and do next:
+* Ensure SSH port is open on VALUE (host1_ip)
+Go to host HOST1, and do next:
+* Update hostname with VALUE (host1_hostname)
+
+## Network configuration
+
+Go to host HOST1, and do next:
+* Network gateway configuration working
+* Network DNS configuration working
+
+## GNULinux user configuration
+
+Go to host HOST1, and do next:
+* Create user VALUE (username)
+* User VALUE (username) need a no empty password
+* Log into using VALUE (username) user
