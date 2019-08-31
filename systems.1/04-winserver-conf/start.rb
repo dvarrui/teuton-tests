@@ -1,5 +1,5 @@
 
-use 'windows'
+use 'windows-server'
 
 play do
   show

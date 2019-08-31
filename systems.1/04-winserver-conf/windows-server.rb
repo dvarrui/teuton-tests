@@ -1,66 +1,66 @@
 
-task "Windows Server external configuration" do
+group "Windows Server external configuration" do
+  set :winserver_ip, "#{get(:ip_prefix)}#{get(:number).to_i}#{get(:ip_sufix)}"
 
-cd  set :host2_ip, "172.19.#{get(:number).to_i.to_s}.21"
+  target "Must be conectivity with #{gett(:winserver_ip)}>"
+  goto   :localhost, :exec => "ping #{get(:winserver_ip)} -c 1"
+  expect_one ', 0% packet loss'
 
-  target "Conection with <#{get(:host2_ip)}>"
-  goto   :localhost, :exec => "ping #{get(:host2_ip)} -c 1"
-  expect result.find!(", 0% packet loss").count!.eq 1
-
-  goto   :localhost, :exec => "nmap -Pn #{get(:host2_ip)}" #Execute command once
-
+  # Execute command once
+  goto   :localhost, :exec => "nmap -Pn #{get(:winserver_ip)}"
   ports=[ [ '22/tcp' , 'ssh'],
           [ '139/tcp', 'netbios-ssn'] ]
 
   ports.each do |port|
-    target "windows #{get(:host2_ip)} port #{port[0]}"
-    result.restore! # Eval result several times over the same original result
-    expect result.grep!(port[0]).grep!("open").grep!(port[1]).count!.eq(1)
+    target "Host #{get(:winserver_ip)} need port #{port[0]} open"
+    # Eval result several times over the same original result
+    result.restore!
+    expect_one [ port[0], 'open', port[1] ]
   end
 end
 
-task "Windows Server Student configurations" do
-  target "User #{get(:username)} home dir"
-  goto   :host1, :exec => "dir c:\\Users"
-  expect result.find!(get(:username)).count!.eq 1
+group "Windows Server Student personal configurations" do
+  target "Exist #{get(:firstname)} home dir"
+  goto   :winserver, :exec => "dir c:\\Users"
+  expect_one get(:firstname)
 
-  shortname = get(:apellido1).to_s+get(:number).to_s+'s'
+  pcname = "#{get(:lastname1)}#{get(:number)}s1"
   target "Windows COMPUTERNAME"
-  goto   :host2, :exec => "set"
-  expect result.find!("COMPUTERNAME").find!(shortname.upcase).count!.eq 1
+  goto   :winserver, :exec => 'set'
+  expect_one [ 'COMPUTERNAME', pcname.upcase ]
 
-  #WARINING: error de acceso denegado!
+  #WARNING: error de acceso denegado!
   #target "Windows1 WORKGROUP_NAME"
   #goto   :host1, :exec => "net config workstation"
   #expect result.find!("Dominio de estaci").find!("de trabajo").find!(get(:host1_domain).to_s.upcase).count!.eq 1
 end
 
-task "Windows Server version" do
-  target "Windows version"
-  goto   :host2, :exec => "ver"
-  expect result.find!("Windows").find!("6.1").count!.eq 1
+group "Windows Server version" do
+  target "Windows version is #{gett(:winserver_version)}"
+  goto   :winserver, :exec => 'ver'
+  expect_one [ 'Windows', get(:winserver_version) ]
 
-  target "Windows ProductName"
-  goto   :host2, :exec => "reg query \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\" /t REG_SZ"
-  expect result.find!("ProductName").find!(get(:host1_productname)).count!.eq 1
+  target "Windows ProductName is #{gett(:winserver_productname)}"
+  goto   :winserver, :exec => "reg query \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\" /t REG_SZ"
+  expect_one [ 'ProductName', get(:winserver_productname) ]
 end
 
-task "Windows Server network configurations" do
-  goto :host2, :exec => "ipconfig /all"
-  mac=result.find!("Direcci").content[0]
-  log    ("host2_MAC = #{mac}")
+group "Windows Server network configurations" do
+  goto :winserver, :exec => "ipconfig /all"
+  mac = result.find!("Direcci").content[0]
+  log    ("winserver_MAC = #{mac}")
   unique "MAC", mac
-  #getmac command => MAC number
+  # getmac command => MAC number
 
-  target "Gateway <#{get(:gateway_ip)}>"
-  goto   :host2, :exec => "ipconfig"
-  expect result.find!("enlace").find!(get(:gateway_ip)).count!.eq 1
+  target "Gateway IP is #{gett(:gateway_ip)}."
+  goto   :winserver, :exec => 'ipconfig'
+  expect_one [ 'enlace', get(:gateway_ip) ]
 
-  target "WWW routing OK"
-  goto   :host2, :exec => "ping 88.198.18.148"
-  expect result.find!("Respuesta").count!.gt 1
+  target "WWW routing working"
+  goto   :winserver, :exec => 'ping 8.8.4.4'
+  expect "Respuesta"
 
-  target "DNS OK"
-  goto   :host2, :exec => "nslookup www.iespuertodelacruz.es"
-  expect result.find!("Address:").find!("88.198.18.148").count!.eq 1
+  target "DNS working"
+  goto   :winserver, :exec => "nslookup www.iespuertodelacruz.es"
+  expect_one [ "Address:", "88.198.18.148" ]
 end
