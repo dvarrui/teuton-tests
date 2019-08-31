@@ -1,12 +1,7 @@
 
-require_relative '../lib/opensuse_settings'
-require_relative 'preparativos'
-
-require_relative '../lib/gnulinux_network'
-require_relative '../lib/gnulinux_user'
-require_relative '../lib/opensuse_hostname'
-require_relative 'disk_and_partitions'
-
+use 'opensuse'
+use 'linux'
+use 'disk_and_partitions'
 
 start do
 	show
@@ -17,13 +12,14 @@ end
 =begin
 ---
 :global:
-  :host1_username: root
+  :opensuse1_username: root
+  :dominio: curso1819
 :cases:
-- :tt_members: david
-  :host1_ip: 172.19.2.30
-  :host1_password: 45454545a
-  :firstname: david
-  :lastname1: vargas
-  :lastname2: ruiz
-
+- :tt_members: VALUE
+  :number: '99'
+  :opensuse1_ip: 172.18.7.31
+  :opensuse1_password: 'secret'
+  :firstname: VALUE
+  :lastname1: VALUE
+  :lastname2: VALUE
 =end
