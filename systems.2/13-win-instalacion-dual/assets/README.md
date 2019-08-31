@@ -1,6 +1,6 @@
 ```
-Challenge name : 12-win-instalacion-dual
-Date           : 2019-08-31 13:05:29 +0100
+Challenge name : 13-win-instalacion-dual
+Date           : 2019-08-31 16:10:56 +0100
 ```
 ---
 # README.md
