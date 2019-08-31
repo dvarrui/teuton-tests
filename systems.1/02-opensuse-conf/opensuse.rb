@@ -52,15 +52,15 @@ group "OpenSUSE network configurations" do
   log    ("opensuse_MAC = #{mac}")
   unique "MAC", mac
 
-  target "Gateway <#{get(:gateway_ip)}>"
+  target "Gateway configured with #{gett(:gateway_ip)}."
   goto   :opensuse, :exec => "route -n"
-  expect result.find!("UG").find!(get(:gateway_ip)).count!.eq 1
+  expect_one [ 'UG', get(:gateway_ip) ]
 
-  target "WWW routing OK"
-  goto   :opensuse, :exec => "ping 88.198.18.148 -c 1"
-  expect result.find!(" 0% packet loss,").count!.eq 1
+  target "WWW routing working."
+  goto   :opensuse, :exec => "ping 8.8.4.4 -c 1"
+  expect_one ' 0% packet loss,'
 
-  target "DNS OK"
+  target "DNS configuration working."
   goto   :opensuse, :exec => "nslookup www.iespuertodelacruz.es"
-  expect result.find!("Address:").find!("88.198.18.148").count!.eq 1
+  expect_one [ 'Address:', '88.198.18.148' ]
 end

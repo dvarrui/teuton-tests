@@ -1,5 +1,5 @@
 
-use 'windows'
+use 'debian'
 
 play do
   show

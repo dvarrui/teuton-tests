@@ -1,6 +1,6 @@
 ```
 Challenge name : 02-opensuse-conf
-Date           : 2019-08-31 18:11:03 +0100
+Date           : 2019-08-31 20:40:47 +0100
 ```
 ---
 # README.md
@@ -36,6 +36,6 @@ Go to host OPENSUSE, and do next:
 ## OpenSUSE network configurations
 
 Go to host OPENSUSE, and do next:
-* Gateway <GATEWAY_IP>
-* WWW routing OK
-* DNS OK
+* Gateway configured with VALUE (gateway_ip).
+* WWW routing working.
+* DNS configuration working.
