@@ -12,7 +12,7 @@ group "Windows external configuration" do
   ports=[ [ '22/tcp' , 'ssh'],
           [ '139/tcp', 'netbios-ssn'] ]
   ports.each do |port|
-    target "Windows #{get(:host1_ip)} port #{port[0]} must be opened"
+    target "Windows #{gett(:host1_ip)} port #{port[0]} must be opened"
     result.restore!
     # Eval result several times over the same original result
     expect_one [port[0], 'open', port[1]]
@@ -20,7 +20,7 @@ group "Windows external configuration" do
 end
 
 group "Windows Student personal configurations" do
-  target "User #{get(:firstname)} home dir"
+  target "User #{gett(:firstname)} home dir"
   goto   :host1, :exec => "dir c:\\Users"
   expect_one get(:firstname)
   #expect result.find!(get(:username)[1,99]).count!.eq 1
