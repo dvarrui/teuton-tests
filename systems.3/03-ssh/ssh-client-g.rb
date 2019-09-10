@@ -1,36 +1,21 @@
 
-=begin
- State       : In progress...
- Activity    : SSH conections
- MV OS       : GNU/Linux Debian 7
- Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/add/ssh/README.md
-=end
+group "SSH Client A: Configuration" do
 
-task "Configuration SSH Client A" do
+  target "Create public key for #{gett(:username)}"
+  goto   :linux2, :exec => "vdir /home/#{get(:username)}/.ssh/"
+  expect result.grep('id_rsa').count.equal(2)
 
-  target "Public key into <#{get(:username)}>"
-  goto   :host3, :exec => "vdir /home/#{get(:usernaame)}/.ssh/id_rsa*| wc -l"
-  expect result.equal(2)
+  goto   :linux2, :exec => "cat /home/#{get(:username)}/.ssh/id_rsa.pub"
+  @idrsapub = result.value
 
-  goto   :host3, :exec => "cat /home/#{get(:username)}/.ssh/id_rsa.pub", :tempfile => "mv3_idrsapub.tmp"
-  @filename1 = tempfile
-
-  set(:server_hostname, 'ssh-server'+get(:number).to_s)
-	set(:server_ip,       '172.18.'+get(:number).to_i.to_s+".31")
-  set(:client1_hostname, 'ssh-client'+get(:number).to_s+"a")
-	set(:client1_ip,       '172.18.'+get(:number).to_i.to_s+".32")
-	set(:client2_hostname, 'ssh-client'+get(:number).to_s+"b")
-	set(:client2_ip,        '172.18.'+get(:number).to_i.to_s+".11")
-
-  goto   :host3, :exec => "cat /etc/hosts"
-	target "#{get(:server_hostname)} hostname defined on this MV"
+  goto   :linux2, :exec => "cat /etc/hosts"
+	target "Define host #{gett(:server_hostname)} into this system"
   result.restore!
-  expect result.find!(get(:server_hostname)).find!(get(:server_ip)).count!.equal(1)
+  expect_one [ get(:server_hostname), get(:server_ip) ]
 
-  target "#{get(:client2_hostname)} hostname defined on SSH Server"
+  target "Define host #{gett(:client2_hostname)} into this system"
   result.restore!
-  expect result.find!(get(:client2_hostname)).find!(get(:client2_ip)).count!.equal(1)
-
+  expect_one [ get(:client2_hostname), get(:client2_ip) ]
 end
 
 

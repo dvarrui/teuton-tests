@@ -1,11 +1,4 @@
 
-=begin
- State       : In progress...
- Activity    : SSH conections
- MV OS       : GNU/Linux Debian 7
- Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/add/ssh/README.md
-=end
-
 task "Configure SSH Server" do
 
   target "authorized_keys en usuario4 <#{get(:lastname)}4>"
