@@ -3,8 +3,8 @@
 
 require 'fileutils'
 
-desc 'Default => update'
-task default: :update do
+desc 'Default => help'
+task default: :help do
 end
 
 desc 'Update project'
