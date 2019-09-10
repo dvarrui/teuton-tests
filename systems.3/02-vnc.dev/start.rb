@@ -13,8 +13,8 @@ TODO:
 =end
 
 use 'debian-configuration'
-use 'opensuse-configuration'
-use 'debian-vnc-server'
+#use 'opensuse-configuration'
+#use 'debian-vnc-server'
 
 play do
 	show

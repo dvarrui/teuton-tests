@@ -4,7 +4,6 @@ group "Debian: VNC server" do
   goto :debian, :exec => "dpkg -l"
   expect_one [ 'tightvncserver', 'ii' ]
 
-
   #command "ps -ef| grep tightvnc| grep geometry| wc -l", :tempfile => 'tightvnc.tmp'
   #vncserver :1
 
