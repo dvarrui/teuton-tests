@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-13 23:34:06 +0100
+Date           : 2019-09-13 23:36:52 +0100
 ```
 ---
 # README.md
@@ -19,9 +19,6 @@ Params configured for every case:
  - server1_hostname               - server1_ip                    
  - username                       -                               
 ```
-
-## Settings
-
 
 ## OpenSUSE: external configurations
 
