@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 00:36:50 +0100
+Date           : 2019-09-14 00:44:35 +0100
 ```
 ---
 # README.md
@@ -10,33 +10,27 @@ Required hosts:
 2. server1
 
 Params configured for every case:
-* client1_hostname
-* client1_ip
-* client2_hostname
-* client2_ip
 * lastname1
 * number
-* server1_hostname
-* server1_ip
 * username
 
 ## OpenSUSE: external configurations
 
 Go to LOCALHOST host, and do next:
-* Ping to SERVER1_IP working
+* Ping to VALUE (server1_ip) working
 * Open SSH port 22 on VALUE (server1_ip)
-* Ping to CLIENT1_IP working
+* Ping to VALUE (client1_ip) working
 * Open SSH port 22 on VALUE (client1_ip)
 
 ## OpenSUSE: student configurations
 
 Go to SERVER1 host, and do next:
-* Set hostname to SERVER1_HOSTNAME
+* Set hostname to VALUE (server1_hostname)
 * Set domain to curso1819
 * Set host FQDN equal to SERVER1_HOSTNAME.curso1819
 * Create user USERNAME
 Go to CLIENT1 host, and do next:
-* Set hostname to CLIENT1_HOSTNAME
+* Set hostname to VALUE (client1_hostname)
 * Set domain to curso1819
 * Set host FQDN equal to CLIENT1_HOSTNAME.curso1819
 * Create user VALUE (username)
@@ -56,7 +50,7 @@ Go to CLIENT1 host, and do next:
 
 Go to SERVER1 host, and do next:
 * Define host/IP association for VALUE (client1_hostname)
-* Define host/IP association for CLIENT2_HOSTNAME
+* Define host/IP association for VALUE (client2_hostname)
 
 ## Defining more users
 
