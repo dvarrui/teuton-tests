@@ -5,7 +5,7 @@ group "SSH Client A: Configuration" do
   expect result.grep('id_rsa').count.equal(2)
 
   goto   :client1, :exec => "cat /etc/hosts"
-	target "Define host/IP association for  #{gett(:server1_hostname)}"
+	target "Define host/IP association for #{gett(:server1_hostname)}"
   result.restore!
   expect_one [ get(:server1_hostname), get(:server1_ip) ]
 

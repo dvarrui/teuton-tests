@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-13 23:36:52 +0100
+Date           : 2019-09-14 00:35:29 +0100
 ```
 ---
 # README.md
@@ -9,53 +9,59 @@ Required hosts:
 1. client1
 2. server1
 
+Params configured for all cases:
+* ip_prefix  = 172.19.
+* domain     = curso1819
+* gateway_ip = 172.19.0.1
+* groupname  = remoteapp
+
 Params configured for every case:
-```
- - client1_hostname               - client1_ip                    
- - client2_hostname               - client2_ip                    
- - domain                         - gateway_ip                    
- - groupname                      - ip_prefix                     
- - lastname1                      - number                        
- - server1_hostname               - server1_ip                    
- - username                       -                               
-```
+* client1_hostname
+* client1_ip
+* client2_hostname
+* client2_ip
+* lastname1
+* number
+* server1_hostname
+* server1_ip
+* username
 
 ## OpenSUSE: external configurations
 
 Go to LOCALHOST host, and do next:
-* Ping to VALUE (server1_ip) working
+* Ping to SERVER1_IP working
 * Open SSH port 22 on VALUE (server1_ip)
-* Ping to VALUE (client1_ip) working
+* Ping to CLIENT1_IP working
 * Open SSH port 22 on VALUE (client1_ip)
 
 ## OpenSUSE: student configurations
 
 Go to SERVER1 host, and do next:
-* Set hostname to VALUE (server1_hostname)
-* Set domain to VALUE (domain)
-* Set host FQDN equal to SERVER1_HOSTNAME.DOMAIN
-* Create user VALUE (username)
+* Set hostname to SERVER1_HOSTNAME
+* Set domain to curso1819
+* Set host FQDN equal to SERVER1_HOSTNAME.curso1819
+* Create user USERNAME
 Go to CLIENT1 host, and do next:
-* Set hostname to VALUE (client1_hostname)
-* Set domain to VALUE (domain)
-* Set host FQDN equal to CLIENT1_HOSTNAME.DOMAIN
+* Set hostname to CLIENT1_HOSTNAME
+* Set domain to curso1819
+* Set host FQDN equal to CLIENT1_HOSTNAME.curso1819
 * Create user VALUE (username)
 
 ## OpenSUSE: network configurations
 
 Go to SERVER1 host, and do next:
-* Set Gateway to VALUE (gateway_ip)
+* Set Gateway to 172.19.0.1
 * Ensure WWW routing is working
 Go to CLIENT1 host, and do next:
 * Ensure DNS is working
-* Set Gateway to VALUE (gateway_ip)
+* Set Gateway to 172.19.0.1
 * Ensure WWW routing is working
 * Ensure DNS is working
 
 ## Host/IP associations
 
 Go to SERVER1 host, and do next:
-* Define host/IP association for CLIENT1_HOSTNAME
+* Define host/IP association for VALUE (client1_hostname)
 * Define host/IP association for CLIENT2_HOSTNAME
 
 ## Defining more users
@@ -74,11 +80,11 @@ Go to SERVER1 host, and do next:
 ## Configuring remoteapp
 
 Go to SERVER1 host, and do next:
-* Create group VALUE (groupname)
+* Create group remoteapp
 
 ## SSH Client A: Configuration
 
 Go to CLIENT1 host, and do next:
 * Create public key for VALUE (username)
-* Define host/IP association for  VALUE (server1_hostname)
+* Define host/IP association for VALUE (server1_hostname)
 * Define host/IP association for VALUE (client2_hostname)
