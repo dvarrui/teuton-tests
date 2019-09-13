@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 00:35:29 +0100
+Date           : 2019-09-14 00:36:50 +0100
 ```
 ---
 # README.md
@@ -8,12 +8,6 @@ Date           : 2019-09-14 00:35:29 +0100
 Required hosts:
 1. client1
 2. server1
-
-Params configured for all cases:
-* ip_prefix  = 172.19.
-* domain     = curso1819
-* gateway_ip = 172.19.0.1
-* groupname  = remoteapp
 
 Params configured for every case:
 * client1_hostname
