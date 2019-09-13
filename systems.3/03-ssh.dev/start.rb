@@ -9,13 +9,13 @@
 
 use 'settings'
 use 'opensuse-conf'
-use 'ssh-server-g'
-use 'ssh-client-g'
+use 'ssh-server1'
+use 'ssh-client1'
 
 start do
 	show
 	export :format => :colored_text
-  send   :copy_to => :host2
+  send   :copy_to => :server1
 end
 
 =begin
