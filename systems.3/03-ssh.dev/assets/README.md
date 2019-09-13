@@ -1,15 +1,17 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-13 19:38:00 +0100
+Date           : 2019-09-13 23:09:45 +0100
 ```
 ---
 # README.md
 
+Required hosts:
+[1] client1
+[2] server1
+
 Params configured for every case:
 * client1_hostname
 * client1_ip
-* client1_password
-* client1_username
 * client2_hostname
 * client2_ip
 * domain
@@ -20,8 +22,6 @@ Params configured for every case:
 * number
 * server1_hostname
 * server1_ip
-* server1_password
-* server1_username
 * username
 
 ## Settings
@@ -46,7 +46,6 @@ Go to host CLIENT1, and do next:
 * Set hostname to VALUE (client1_hostname)
 * Set domain to VALUE (domain)
 * Set host FQDN equal to CLIENT1_HOSTNAME.DOMAIN
-Go to host SERVER1, and do next:
 * Create user VALUE (username)
 
 ## OpenSUSE: network configurations
@@ -72,7 +71,6 @@ Go to host SERVER1, and do next:
 * Create user LASTNAME11 into SSH Server
 * Create user LASTNAME12 into SSH Server
 * Create user LASTNAME13 into SSH Server
-Go to host CLIENT1, and do next:
 * Create user LASTNAME14 into SSH Server
 
 ## SSH access without passwords
