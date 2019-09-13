@@ -1,31 +1,27 @@
 ```
 Challenge name : 01-thin-clients
-Date           : 2019-08-31 21:32:50 +0100
+Date           : 2019-09-14 00:45:26 +0100
 ```
 ---
 # README.md
 
+Required hosts:
+1. host1
+
 Params configured for every case:
-* domain
-* host1_hostname
-* host1_ip
-* host1_password
-* host1_username
-* ip_prefix
-* ip_sufix
 * lastname1
 * number
 
 ## Configure hostname
 
-Go to host LOCALHOST, and do next:
+Go to LOCALHOST host, and do next:
 * Ensure SSH port open on VALUE (host1_ip)
-Go to host HOST1, and do next:
+Go to HOST1 host, and do next:
 * Set hostname to HOST1_HOSTNAME.
 
 ## Create users
 
-Go to host HOST1, and do next:
+Go to HOST1 host, and do next:
 * Create user LASTNAME11
 * Set password to user <LASTNAME11
 * Open session with user LASTNAME11
@@ -38,13 +34,13 @@ Go to host HOST1, and do next:
 
 ## Install sofware
 
-Go to host HOST1, and do next:
+Go to HOST1 host, and do next:
 * Install package tlsp
 * Build image
 
 ## Run the services
 
-Go to host HOST1, and do next:
+Go to HOST1 host, and do next:
 * Run service dhcpd.
 * Run service tftpd.
 * Define INTERFACES=eth1 into /etc/default/isc-dhcp-server.
@@ -52,7 +48,7 @@ Go to host HOST1, and do next:
 
 ## Running thin clients
 
-Go to host HOST1, and do next:
+Go to HOST1 host, and do next:
 * Boot thin client 192.168.0.20
 * Thin client 192.168.0.20 boots from LSTP server
 * Thin client 192.168.0.20 get IP from DHCP server

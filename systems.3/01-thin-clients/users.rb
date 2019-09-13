@@ -9,7 +9,7 @@ group "Create users" do
 	  goto :host1, :exec => "cat /etc/passwd"
     expect_one username
 
-	  target "Set password to user <#{username}"
+	  target "Set password to user #{username}"
 	  goto :host1, :exec => "cat /etc/shadow | grep #{username}| cut -d : -f 2| wc -l"
 	  expect result.equal(1)
 
