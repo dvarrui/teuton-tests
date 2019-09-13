@@ -1,7 +1,7 @@
 
 group "Host/IP associations" do
-  goto   :server1, :exec => "cat /etc/hosts"
 	target "Define host/IP association for #{get(:client1_hostname)}"
+  goto   :server1, :exec => "cat /etc/hosts"
   expect_one [ get(:client1_hostname), get(:client1_ip) ]
 
   target "Define host/IP association for #{get(:client2_hostname)}"

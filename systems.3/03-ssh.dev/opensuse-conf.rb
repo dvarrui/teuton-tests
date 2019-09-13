@@ -60,11 +60,11 @@ group "OpenSUSE: network configurations" do
     goto   i[:name], :exec => "route -n"
     expect_one [ "UG", get(:gateway_ip) ]
 
-    target "WWW routing working"
+    target "Ensure WWW routing is working"
     goto   i[:name], :exec => "ping 88.198.18.148 -c 1"
     expect_one " 0% packet loss,"
 
-    target "DNS OK working"
+    target "Ensure DNS is working"
     goto   i[:name], :exec => "nslookup www.iespuertodelacruz.es"
     expect_one [ "Address:", "88.198.18.148" ]
   end
