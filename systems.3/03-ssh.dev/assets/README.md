@@ -1,28 +1,24 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-13 23:11:23 +0100
+Date           : 2019-09-13 23:34:06 +0100
 ```
 ---
 # README.md
 
 Required hosts:
-[1] client1
-[2] server1
+1. client1
+2. server1
 
 Params configured for every case:
-* client1_hostname
-* client1_ip
-* client2_hostname
-* client2_ip
-* domain
-* gateway_ip
-* groupname
-* ip_prefix
-* lastname1
-* number
-* server1_hostname
-* server1_ip
-* username
+```
+ - client1_hostname               - client1_ip                    
+ - client2_hostname               - client2_ip                    
+ - domain                         - gateway_ip                    
+ - groupname                      - ip_prefix                     
+ - lastname1                      - number                        
+ - server1_hostname               - server1_ip                    
+ - username                       -                               
+```
 
 ## Settings
 
