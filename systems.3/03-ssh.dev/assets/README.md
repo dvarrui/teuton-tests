@@ -1,12 +1,13 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:06:17 +0100
+Date           : 2019-09-14 20:06:46 +0100
 Teuton version : 2.1.0
 ```
 ---
 # README.md
 
 Required hosts:
+
 | ID | Host | Configuration |
 | -- | ---- | ------------- |
 |1|SERVER1|ip=172.19.0.31 username=root |
