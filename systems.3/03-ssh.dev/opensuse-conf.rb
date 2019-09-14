@@ -5,11 +5,11 @@ group "OpenSUSE: external configurations" do
   list = [ :server1_ip, :client1_ip]
 
   list.each do |i|
-    target "Ping to #{gett(i)} working"
+    target "Ping to #{gett(i)} working."
     goto :localhost, :exec => "ping #{get(i)} -c 1"
     expect_none '100% packet loss'
 
-    target "Open SSH port 22 on #{gett(i)}"
+    target "Open SSH port 22 on #{gett(i)}."
     goto :localhost, :exec => "nmap #{get(i)} -Pn"
     expect_one [ 'ssh', 'open' ]
   end
@@ -28,16 +28,16 @@ group "OpenSUSE: student configurations" do
     goto i[:name], :exec => "hostname -a"
     expect result.equal?(get(i[:hostname]))
 
-    target "Set domain to #{gett(:domain)}"
+    target "Set domain to #{gett(:domain)}."
     goto i[:name], :exec => "hostname -d"
     expect result.equal?(get(:domain))
 
     fqdn = get(i[:hostname]) + "." + get(:domain)
-    target "Set host FQDN equal to #{fqdn}"
+    target "Set host FQDN equal to #{fqdn}."
     goto i[:name], :exec => "hostname -f"
     expect result.equal?(fqdn)
 
-    target "Create user #{gett(:username)}"
+    target "Create user #{gett(:username)}."
     goto i[:name], :exec => "cat /etc/passwd"
     expect_one "#{get(:username)}:"
 
@@ -66,11 +66,11 @@ group "OpenSUSE: network configurations" do
     goto   i[:name], :exec => "route -n"
     expect_one [ "UG", get(:gateway_ip) ]
 
-    target "Ensure WWW routing is working"
+    target "Ensure WWW routing is working."
     goto   i[:name], :exec => "ping 88.198.18.148 -c 1"
     expect_one " 0% packet loss,"
 
-    target "Ensure DNS is working"
+    target "Ensure DNS is working."
     goto   i[:name], :exec => "nslookup www.iespuertodelacruz.es"
     expect_one [ "Address:", "88.198.18.148" ]
   end
