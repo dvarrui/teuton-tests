@@ -1,15 +1,18 @@
 ```
 Challenge name : 01-thin-clients
-Date           : 2019-09-14 10:40:06 +0100
+Date           : 2019-09-14 11:25:52 +0100
 Teuton version : 2.1.0
 ```
 ---
 # README.md
 
 Required hosts:
-1. host1
+1. HOST1 <- ip=172.19.0.41 username=root 
+
+> NOTE: SSH Service installation is required on every host.
 
 Required configuration params:
+* host1_password
 * lastname1
 * number
 
@@ -56,3 +59,11 @@ Go to HOST1 host, and do next:
 * Boot thin client 192.168.0.21
 * Thin client 192.168.0.21 boots from LSTP server
 * Thin client 192.168.0.21 get IP from DHCP server
+
+---
+# ANEXO
+
+Global parameters that can be modified:
+* ip_prefix       = 172.19.
+* ip_sufix        = .41
+* domain          = curso1718

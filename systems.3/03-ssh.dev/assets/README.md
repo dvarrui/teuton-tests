@@ -1,18 +1,22 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 10:25:57 +0100
+Date           : 2019-09-14 11:26:44 +0100
 Teuton version : 2.1.0
 ```
 ---
 # README.md
 
 Required hosts:
-1. client1
-2. server1
+1. SERVER1 <- ip=172.19.0.31 username=root 
+2. CLIENT1 <- ip=172.19.0.32 username=root 
+
+> NOTE: SSH Service installation is required on every host.
 
 Required configuration params:
+* client1_password
 * lastname1
 * number
+* server1_password
 * username
 
 ## OpenSUSE: external configurations
@@ -77,3 +81,12 @@ Go to CLIENT1 host, and do next:
 * Create public key for VALUE (username)
 * Define host/IP association for VALUE (server1_hostname)
 * Define host/IP association for VALUE (client2_hostname)
+
+---
+# ANEXO
+
+Global parameters that can be modified:
+* ip_prefix       = 172.19.
+* domain          = curso1819
+* gateway_ip      = 172.19.0.1
+* groupname       = remoteapp
