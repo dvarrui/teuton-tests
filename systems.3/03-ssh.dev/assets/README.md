@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:32:46 +0100
+Date           : 2019-09-14 20:34:53 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -122,3 +122,14 @@ Global parameters that can be modified:
 |domain|curso1819|
 |gateway_ip|172.19.0.1|
 |groupname|remoteapp|
+
+| Auto-created params | Value |
+| ------------------- | ----- |
+|server1_hostname|ssh-serverNUMBERg|
+|server1_ip|172.19.0.31|
+|client1_hostname|ssh-clientNUMBERg|
+|client1_ip|172.19.0.32|
+|server2_hostname|ssh-serverNUMBERw|
+|server2_ip|172.19.0.11|
+|client2_hostname|ssh-clientNUMBERw|
+|client2_ip|172.19.0.12|
