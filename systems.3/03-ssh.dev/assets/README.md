@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:13:14 +0100
+Date           : 2019-09-14 20:15:15 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -94,14 +94,14 @@ Go to SERVER1 host, and do next:
 
 Go to SERVER1 host, and do next:
 * Authorize user USERNAME@ssh-client1 to access user LASTNAME14@ssh-server
-  Generate id_rsa.pub for USERNAME, and authorized remote access to him.
+    * Generate id_rsa.pub for USERNAME, and authorized remote access to him.
 
 ## Configuring remoteapp
 
 
 Go to SERVER1 host, and do next:
 * Create group [remoteapp](#ANEXO)
-  Remember command groupadd...
+    * Remember command groupadd...
 
 ## SSH Client A: Configuration
 
