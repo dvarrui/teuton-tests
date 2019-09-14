@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:11:15 +0100
+Date           : 2019-09-14 20:13:14 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -115,7 +115,10 @@ Go to CLIENT1 host, and do next:
 # ANEXO
 
 Global parameters that can be modified:
-* ip_prefix       = 172.19.
-* domain          = curso1819
-* gateway_ip      = 172.19.0.1
-* groupname       = remoteapp
+
+| Global param | Value |
+| ------------ | ----- |
+|ip_prefix|172.19.|
+|domain|curso1819|
+|gateway_ip|172.19.0.1|
+|groupname|remoteapp|
