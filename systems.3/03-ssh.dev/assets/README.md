@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:20:52 +0100
+Date           : 2019-09-14 20:23:18 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -32,10 +32,10 @@ Ensure that the machine is accessible from the outside.
 
 
 Go to LOCALHOST host, and do next:
-* Ping to server1_ip working.
-* Open SSH port 22 on server1_ip.
-* Ping to client1_ip working.
-* Open SSH port 22 on client1_ip.
+* Ping to **server1_ip** working.
+* Open SSH port 22 on **server1_ip**.
+* Ping to **client1_ip** working.
+* Open SSH port 22 on **client1_ip**.
 
 ## OpenSUSE: student configurations
 
@@ -43,16 +43,16 @@ Each student must customize their machines according to the teacher's specificat
 
 
 Go to SERVER1 host, and do next:
-* Set hostname to server1_hostname
+* Set hostname to **server1_hostname**
 * Set domain to [curso1819](#ANEXO).
 * Set host FQDN equal to SERVER1_HOSTNAME.curso1819.
-* Create user username.
+* Create user **username**.
 
 Go to CLIENT1 host, and do next:
-* Set hostname to client1_hostname
+* Set hostname to **client1_hostname**
 * Set domain to [curso1819](#ANEXO).
 * Set host FQDN equal to CLIENT1_HOSTNAME.curso1819.
-* Create user username.
+* Create user **username**.
 
 ## OpenSUSE: network configurations
 
@@ -75,8 +75,8 @@ Modifing /etc/host file.
 
 
 Go to SERVER1 host, and do next:
-* Define host/IP association for client1_hostname.
-* Define host/IP association for client2_hostname.
+* Define host/IP association for **client1_hostname**.
+* Define host/IP association for **client2_hostname**.
 
 ## Defining more users
 
@@ -107,9 +107,9 @@ Go to SERVER1 host, and do next:
 
 
 Go to CLIENT1 host, and do next:
-* Create public key for username.
-* Define host/IP association for server1_hostname.
-* Define host/IP association for client2_hostname.
+* Create public key for **username**.
+* Define host/IP association for **server1_hostname**.
+* Define host/IP association for **client2_hostname**.
 
 ---
 # ANEXO
