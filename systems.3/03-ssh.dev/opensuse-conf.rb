@@ -1,5 +1,7 @@
 
 group "OpenSUSE: external configurations" do
+  readme 'Ensure that the machine is accessible from the outside.'
+
   list = [ :server1_ip, :client1_ip]
 
   list.each do |i|
@@ -14,6 +16,8 @@ group "OpenSUSE: external configurations" do
 end
 
 group "OpenSUSE: student configurations" do
+  readme "Each student must customize their machines according to the teacher's specifications."
+
   list = [
             {:name => :server1, :hostname => :server1_hostname },
             {:name => :client1, :hostname => :client1_hostname },
@@ -45,6 +49,8 @@ group "OpenSUSE: student configurations" do
 end
 
 group "OpenSUSE: network configurations" do
+  readme "Make sure the network settings are correct."
+
   list = [
             {:name => :server1, :hostname => :server1_hostname },
             {:name => :client1, :hostname => :client1_hostname },

@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 11:26:44 +0100
+Date           : 2019-09-14 14:43:33 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -21,6 +21,8 @@ Required configuration params:
 
 ## OpenSUSE: external configurations
 
+Ensure that the machine is accessible from the outside.
+
 Go to LOCALHOST host, and do next:
 * Ping to VALUE (server1_ip) working
 * Open SSH port 22 on VALUE (server1_ip)
@@ -28,6 +30,8 @@ Go to LOCALHOST host, and do next:
 * Open SSH port 22 on VALUE (client1_ip)
 
 ## OpenSUSE: student configurations
+
+Each student must customize their machines according to the teacher's specifications.
 
 Go to SERVER1 host, and do next:
 * Set hostname to VALUE (server1_hostname)
@@ -42,6 +46,8 @@ Go to CLIENT1 host, and do next:
 
 ## OpenSUSE: network configurations
 
+Make sure the network settings are correct.
+
 Go to SERVER1 host, and do next:
 * Set Gateway to 172.19.0.1 (gateway_ip)
 * Ensure WWW routing is working
@@ -53,11 +59,15 @@ Go to CLIENT1 host, and do next:
 
 ## Host/IP associations
 
+Modifing /etc/host file.
+
 Go to SERVER1 host, and do next:
 * Define host/IP association for VALUE (client1_hostname)
 * Define host/IP association for VALUE (client2_hostname)
 
 ## Defining more users
+
+We will create some user on SSH Sever.
 
 Go to SERVER1 host, and do next:
 * Create user LASTNAME11 into SSH Server
@@ -69,11 +79,13 @@ Go to SERVER1 host, and do next:
 
 Go to SERVER1 host, and do next:
 * Authorize user USERNAME@ssh-client1 to access user LASTNAME14@ssh-server
+  Generate id_rsa.pub for USERNAME, and authorized remote access to him.
 
 ## Configuring remoteapp
 
 Go to SERVER1 host, and do next:
 * Create group remoteapp (groupname)
+  Remember command groupadd...
 
 ## SSH Client A: Configuration
 
