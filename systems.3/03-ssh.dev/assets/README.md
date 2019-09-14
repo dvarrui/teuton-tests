@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:31:24 +0100
+Date           : 2019-09-14 20:32:46 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -15,7 +15,7 @@ Teuton version : 2.1.0
 
 > NOTE: SSH Service installation is required on every host.
 
-### Required params:
+### Required params
 * client1_password
 * lastname1
 * number
@@ -46,13 +46,13 @@ Go to [SERVER1](#required-hosts) host, and do next:
 * Set hostname to **server1_hostname**
 * Set domain to [curso1819](#ANEXO).
 * Set host FQDN equal to SERVER1_HOSTNAME.curso1819.
-* Create user **username**.
+* Create user [username](#required-params).
 
 Go to [CLIENT1](#required-hosts) host, and do next:
 * Set hostname to **client1_hostname**
 * Set domain to [curso1819](#ANEXO).
 * Set host FQDN equal to CLIENT1_HOSTNAME.curso1819.
-* Create user **username**.
+* Create user [username](#required-params).
 
 ## OpenSUSE: network configurations
 
@@ -107,7 +107,7 @@ Go to [SERVER1](#required-hosts) host, and do next:
 
 
 Go to [CLIENT1](#required-hosts) host, and do next:
-* Create public key for **username**.
+* Create public key for [username](#required-params).
 * Define host/IP association for **server1_hostname**.
 * Define host/IP association for **client2_hostname**.
 
