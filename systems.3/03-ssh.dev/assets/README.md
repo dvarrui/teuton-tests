@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:29:24 +0100
+Date           : 2019-09-14 20:30:41 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -15,7 +15,7 @@ Teuton version : 2.1.0
 
 > NOTE: SSH Service installation is required on every host.
 
-**Required configuration params:**
+### Required configuration params:
 * client1_password
 * lastname1
 * number
