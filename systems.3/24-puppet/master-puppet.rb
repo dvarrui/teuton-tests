@@ -1,40 +1,37 @@
 
-task "Master check hostnames" do
-  set :client1_ip, "172.18." + get(:number).to_i.to_s + ".101"
-  set :client2_ip, "172.18." + get(:number).to_i.to_s + ".102"
+group "Master check hostnames" do
+  list = [
+    { :ip => :master_ip, :hostname => :master_hostname},
+    { :ip => :client1_ip, :hostname => :client1_hostname},
+    { :ip => :client2_ip, :hostname => :client2_hostname}
+  ]
 
   goto :master, :exec => "cat /etc/hosts"
-
-  target "master info into /etc/hosts file"
-  result.restore!
-  expect result.find!(get(:master_ip)).find!('master'+get(:number)).find!(get(:master_domain)).count!.eq(1)
-
-  target "client1 info into /etc/hosts file"
-  result.restore!
-  expect result.find!(get(:client1_ip)).find!('cli1alu'+get(:number)).find!(get(:client1_domain)).count!.eq(1)
-
-  target "client2 into /etc/hosts file"
-  result.restore!
-  expect result.find!(get(:client2_ip)).find!('cli2alu'+get(:number)).find!(get(:client2_domain)).count!.eq(1)
+  list.each do |i|
+    target "Create host/IP association for #{get(i[:ip])}."
+    readme "Revise /etc/hosts file."
+    result.restore!
+    expect_one [ get(i[:ip]), get(i[:hostname]) ]
+  end
 end
 
 task "Master software" do
   packages = ['rubygem-puppet-master', 'rubygem-puppet']
 
   packages.each do |packagename|
-    target "<" + packagename + "> installed"
+    target "Install package #{packagename}."
     goto :master, :exec => "zypper se #{packagename}"
-    expect result.find!('i ').find!(packagename).count!.ge(1)
+    expect [ 'i ', packagename ]
   end
 
   goto :master, :exec => "systemctl status puppetmaster"
-  target "Service <puppetmaster> active"
+  target "Ensure puppetmaster service is active."
   result.restore!
-  expect result.find!('Active: ').find!('running').count!.eq(1)
+  expect_one [ 'Active: ', 'running' ]
 
-  target "Service <puppetmaster> enable"
+  target "Ensure puppetmaster service is enable"
   result.restore!
-  expect result.find!('Loaded: ').find!(' enable').count!.eq(1)
+  expect_one [ 'Loaded: ', ' enable' ]
 end
 
 task "Master: puppet files" do

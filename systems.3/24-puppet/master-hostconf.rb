@@ -1,50 +1,44 @@
 
-task "Master OpenSUSE external configurations" do
-  set :master_ip, "172.18." + get(:number).to_i.to_s + ".100"
-
-  target "ping to <"+get(:master_ip)+">"
+group "Master OpenSUSE external configurations" do
+  target "Ping to #{gett(:master_ip)} is ok."
   goto :localhost, :exec => "ping #{get(:master_ip)} -c 2"
-  expect result.find!('64 bytes from').ge(1)
+  expect '64 bytes from'
 
-  target "SSH port 22 on <"+get(:master_ip)+"> open"
-  goto :localhost, :exec => "nmap #{get(:master_ip)} -Pn"
-  expect result.find!("ssh").count!.eq(1)
+  target "SSH port open on #{gett(:master_ip)}"
+  goto :localhost, :exec => "nmap -Pn #{get(:master_ip)}"
+  expect_one [ "ssh", "open" ]
 end
 
-task "Master OpenSUSE student configurations" do
-  shortname = "master" + get(:number).to_s
-  target "Checking hostname -a <"+shortname+">"
+group "Master OpenSUSE student configurations" do
+  target "Set hostname to #{get(:master_hostname)}."
   goto :master, :exec => "hostname -a"
-  expect result.equal?(shortname)
+  expect_one get(:master_hostname)
 
-  domainname = get(:master_domain).to_s
-  target "Checking hostname -d <"+domainname+">"
+  target "Set domain to #{gett(:domain)}."
   goto :master, :exec => "hostname -d"
-  expect result.equal?(domainname)
+  expect_one get(:domain)
 
-  fullname= shortname+"."+domainname
-  target "Checking hostname -f <"+fullname+">"
+  fqdn = get(:master_hostname) + "." + get(:domain)
+  target "Ensure FQDN is #{fqdn}."
   goto :master, :exec => "hostname -f"
-  expect result.equal?(fullname)
+  expect_one fqdn
 
-  username=get(:username)
-
-  target "User <#{username}> exists"
+  target "Create user #{get(:username)}."
   goto :master, :exec => "cat /etc/passwd"
-  expect result.find!(username).count!.eq(1)
+  expect_one get(:username)
 
-  target "Users <#{username}> with not empty password "
-  goto :master, :exec => "cat /etc/shadow | grep '#{username}:' | cut -d : -f 2| wc -l"
+  target "Set password to #{get(:username)} user."
+  goto :master, :exec => "cat /etc/shadow | grep '#{get(:username)}:' | cut -d : -f 2| wc -l"
   expect result.eq(1)
 
-  target "User <#{username}> logged"
-  goto :master, :exec => "last | grep #{username[0,8]} | wc -l"
-  expect result.neq(0)
+  target "Open session with user #{get(:username)}."
+  goto :master, :exec => "last"
+  expect get(:username)[0,8]
 
   goto :master, :exec => "blkid |grep sda1"
-  unique "master_UUID_sda1", result.value
+  unique "master_sda1_UUID", result.value
   goto :master, :exec => "blkid |grep sda2"
-  unique "master_sda2", result.value
+  unique "master_sda2_UUID", result.value
 end
 
 task "Master OpenSUSE network configurations" do

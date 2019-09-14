@@ -1,18 +1,18 @@
 
 task "Client1 check hostnames" do
+  list = [
+    { :ip => :master_ip, :hostname => :master_hostname},
+    { :ip => :client1_ip, :hostname => :client1_hostname},
+    { :ip => :client2_ip, :hostname => :client2_hostname}
+  ]
+
   goto :client1, :exec => "cat /etc/hosts"
-
-  target "master info into /etc/hosts file"
-  result.restore!
-  expect result.find!(get(:master_ip)).find!('master'+get(:number)).find!(get(:master_domain)).count!.eq(1)
-
-  target "client1 info into /etc/hosts file"
-  result.restore!
-  expect result.find!(get(:client1_ip)).find!('cli1alu'+get(:number)).find!(get(:client1_domain)).count!.eq(1)
-
-  target "client2 into /etc/hosts file"
-  result.restore!
-  expect result.find!(get(:client2_ip)).find!('cli2alu'+get(:number)).find!(get(:client2_domain)).count!.eq(1)
+  list.each do |i|
+    target "Create host/IP association for #{get(i[:ip])}."
+    readme "Revise /etc/hosts file."
+    result.restore!
+    expect_one [ get(i[:ip]), get(i[:hostname]) ]
+  end
 end
 
 task "Client1 software" do
