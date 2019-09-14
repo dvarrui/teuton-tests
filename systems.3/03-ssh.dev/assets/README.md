@@ -1,6 +1,7 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 00:44:35 +0100
+Date           : 2019-09-14 10:25:57 +0100
+Teuton version : 2.1.0
 ```
 ---
 # README.md
@@ -9,7 +10,7 @@ Required hosts:
 1. client1
 2. server1
 
-Params configured for every case:
+Required configuration params:
 * lastname1
 * number
 * username
@@ -26,23 +27,23 @@ Go to LOCALHOST host, and do next:
 
 Go to SERVER1 host, and do next:
 * Set hostname to VALUE (server1_hostname)
-* Set domain to curso1819
+* Set domain to curso1819 (domain)
 * Set host FQDN equal to SERVER1_HOSTNAME.curso1819
-* Create user USERNAME
+* Create user VALUE (username)
 Go to CLIENT1 host, and do next:
 * Set hostname to VALUE (client1_hostname)
-* Set domain to curso1819
+* Set domain to curso1819 (domain)
 * Set host FQDN equal to CLIENT1_HOSTNAME.curso1819
 * Create user VALUE (username)
 
 ## OpenSUSE: network configurations
 
 Go to SERVER1 host, and do next:
-* Set Gateway to 172.19.0.1
+* Set Gateway to 172.19.0.1 (gateway_ip)
 * Ensure WWW routing is working
 Go to CLIENT1 host, and do next:
 * Ensure DNS is working
-* Set Gateway to 172.19.0.1
+* Set Gateway to 172.19.0.1 (gateway_ip)
 * Ensure WWW routing is working
 * Ensure DNS is working
 
@@ -68,7 +69,7 @@ Go to SERVER1 host, and do next:
 ## Configuring remoteapp
 
 Go to SERVER1 host, and do next:
-* Create group remoteapp
+* Create group remoteapp (groupname)
 
 ## SSH Client A: Configuration
 

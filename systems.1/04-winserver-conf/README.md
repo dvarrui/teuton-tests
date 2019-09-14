@@ -1,45 +1,41 @@
 ```
 Challenge name : 04-winserver-conf
-Date           : 2019-08-31 21:09:41 +0100
+Date           : 2019-09-14 10:42:23 +0100
+Teuton version : 2.1.0
 ```
 ---
 # README.md
 
-Params configured for every case:
+Required hosts:
+1. winserver
+
+Required configuration params:
 * firstname
-* gateway_ip
-* ip_prefix
-* ip_sufix
 * lastname1
 * number
-* winserver_ip
-* winserver_password
-* winserver_productname
-* winserver_username
-* winserver_version
 
 ## Windows Server external configuration
 
-Go to host LOCALHOST, and do next:
+Go to LOCALHOST host, and do next:
 * Must be conectivity with VALUE (winserver_ip)>
 * Host WINSERVER_IP need port 22/tcp open
 * Host WINSERVER_IP need port 139/tcp open
 
 ## Windows Server Student personal configurations
 
-Go to host WINSERVER, and do next:
+Go to WINSERVER host, and do next:
 * Exist FIRSTNAME home dir
 * Windows COMPUTERNAME
 
 ## Windows Server version
 
-Go to host WINSERVER, and do next:
-* Windows version is VALUE (winserver_version)
-* Windows ProductName is VALUE (winserver_productname)
+Go to WINSERVER host, and do next:
+* Windows version is 6.1 (winserver_version)
+* Windows ProductName is Windows 2008 Server (winserver_productname)
 
 ## Windows Server network configurations
 
-Go to host WINSERVER, and do next:
-* Gateway IP is VALUE (gateway_ip).
+Go to WINSERVER host, and do next:
+* Gateway IP is 172.19.0.1 (gateway_ip).
 * WWW routing working
 * DNS working

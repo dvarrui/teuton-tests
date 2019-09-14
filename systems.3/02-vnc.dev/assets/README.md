@@ -1,6 +1,7 @@
 ```
 Challenge name : 02-vnc.dev
-Date           : 2019-09-14 00:45:11 +0100
+Date           : 2019-09-14 10:39:22 +0100
+Teuton version : 2.1.0
 ```
 ---
 # README.md
@@ -8,7 +9,7 @@ Date           : 2019-09-14 00:45:11 +0100
 Required hosts:
 1. debian
 
-Params configured for every case:
+Required configuration params:
 * firstname
 * lastname1
 * number

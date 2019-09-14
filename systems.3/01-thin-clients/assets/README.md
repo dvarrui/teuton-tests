@@ -1,6 +1,7 @@
 ```
 Challenge name : 01-thin-clients
-Date           : 2019-09-14 00:45:26 +0100
+Date           : 2019-09-14 10:40:06 +0100
+Teuton version : 2.1.0
 ```
 ---
 # README.md
@@ -8,7 +9,7 @@ Date           : 2019-09-14 00:45:26 +0100
 Required hosts:
 1. host1
 
-Params configured for every case:
+Required configuration params:
 * lastname1
 * number
 
@@ -23,13 +24,13 @@ Go to HOST1 host, and do next:
 
 Go to HOST1 host, and do next:
 * Create user LASTNAME11
-* Set password to user <LASTNAME11
+* Set password to user LASTNAME11
 * Open session with user LASTNAME11
 * Create user LASTNAME12
-* Set password to user <LASTNAME12
+* Set password to user LASTNAME12
 * Open session with user LASTNAME12
 * Create user LASTNAME13
-* Set password to user <LASTNAME13
+* Set password to user LASTNAME13
 * Open session with user LASTNAME13
 
 ## Install sofware
