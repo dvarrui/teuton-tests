@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 19:59:00 +0100
+Date           : 2019-09-14 20:00:35 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -90,9 +90,9 @@ Go to SERVER1 host, and do next:
 ## SSH Client A: Configuration
 
 Go to CLIENT1 host, and do next:
-* Create public key for username
-* Define host/IP association for server1_hostname
-* Define host/IP association for client2_hostname
+* Create public key for username.
+* Define host/IP association for server1_hostname.
+* Define host/IP association for client2_hostname.
 
 ---
 # ANEXO
