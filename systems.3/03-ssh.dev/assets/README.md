@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 14:43:33 +0100
+Date           : 2019-09-14 19:59:00 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -24,36 +24,36 @@ Required configuration params:
 Ensure that the machine is accessible from the outside.
 
 Go to LOCALHOST host, and do next:
-* Ping to VALUE (server1_ip) working
-* Open SSH port 22 on VALUE (server1_ip)
-* Ping to VALUE (client1_ip) working
-* Open SSH port 22 on VALUE (client1_ip)
+* Ping to server1_ip working
+* Open SSH port 22 on server1_ip
+* Ping to client1_ip working
+* Open SSH port 22 on client1_ip
 
 ## OpenSUSE: student configurations
 
 Each student must customize their machines according to the teacher's specifications.
 
 Go to SERVER1 host, and do next:
-* Set hostname to VALUE (server1_hostname)
-* Set domain to curso1819 (domain)
+* Set hostname to server1_hostname
+* Set domain to [curso1819](#ANEXO)
 * Set host FQDN equal to SERVER1_HOSTNAME.curso1819
-* Create user VALUE (username)
+* Create user username
 Go to CLIENT1 host, and do next:
-* Set hostname to VALUE (client1_hostname)
-* Set domain to curso1819 (domain)
+* Set hostname to client1_hostname
+* Set domain to [curso1819](#ANEXO)
 * Set host FQDN equal to CLIENT1_HOSTNAME.curso1819
-* Create user VALUE (username)
+* Create user username
 
 ## OpenSUSE: network configurations
 
 Make sure the network settings are correct.
 
 Go to SERVER1 host, and do next:
-* Set Gateway to 172.19.0.1 (gateway_ip)
+* Set Gateway to [172.19.0.1](#ANEXO)
 * Ensure WWW routing is working
 Go to CLIENT1 host, and do next:
 * Ensure DNS is working
-* Set Gateway to 172.19.0.1 (gateway_ip)
+* Set Gateway to [172.19.0.1](#ANEXO)
 * Ensure WWW routing is working
 * Ensure DNS is working
 
@@ -62,8 +62,8 @@ Go to CLIENT1 host, and do next:
 Modifing /etc/host file.
 
 Go to SERVER1 host, and do next:
-* Define host/IP association for VALUE (client1_hostname)
-* Define host/IP association for VALUE (client2_hostname)
+* Define host/IP association for client1_hostname
+* Define host/IP association for client2_hostname
 
 ## Defining more users
 
@@ -84,15 +84,15 @@ Go to SERVER1 host, and do next:
 ## Configuring remoteapp
 
 Go to SERVER1 host, and do next:
-* Create group remoteapp (groupname)
+* Create group [remoteapp](#ANEXO)
   Remember command groupadd...
 
 ## SSH Client A: Configuration
 
 Go to CLIENT1 host, and do next:
-* Create public key for VALUE (username)
-* Define host/IP association for VALUE (server1_hostname)
-* Define host/IP association for VALUE (client2_hostname)
+* Create public key for username
+* Define host/IP association for server1_hostname
+* Define host/IP association for client2_hostname
 
 ---
 # ANEXO
