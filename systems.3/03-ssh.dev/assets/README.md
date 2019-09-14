@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:39:46 +0100
+Date           : 2019-09-14 20:40:30 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -117,6 +117,7 @@ Go to [CLIENT1](#required-hosts) host, and do next:
 ## Global params
 
 Global parameters that can be modified:
+
 | Global param | Value |
 | ------------ | ----- |
 |ip_prefix|172.19.|
@@ -127,6 +128,7 @@ Global parameters that can be modified:
 ## Created params
 
 Params created during challenge execution:
+
 | Created params | Value |
 | -------------- | ----- |
 |server1_hostname|ssh-serverNUMBERg|
