@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:00:35 +0100
+Date           : 2019-09-14 20:01:58 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -23,6 +23,7 @@ Required configuration params:
 
 Ensure that the machine is accessible from the outside.
 
+
 Go to LOCALHOST host, and do next:
 * Ping to server1_ip working
 * Open SSH port 22 on server1_ip
@@ -33,11 +34,13 @@ Go to LOCALHOST host, and do next:
 
 Each student must customize their machines according to the teacher's specifications.
 
+
 Go to SERVER1 host, and do next:
 * Set hostname to server1_hostname
 * Set domain to [curso1819](#ANEXO)
 * Set host FQDN equal to SERVER1_HOSTNAME.curso1819
 * Create user username
+
 Go to CLIENT1 host, and do next:
 * Set hostname to client1_hostname
 * Set domain to [curso1819](#ANEXO)
@@ -48,9 +51,11 @@ Go to CLIENT1 host, and do next:
 
 Make sure the network settings are correct.
 
+
 Go to SERVER1 host, and do next:
 * Set Gateway to [172.19.0.1](#ANEXO)
 * Ensure WWW routing is working
+
 Go to CLIENT1 host, and do next:
 * Ensure DNS is working
 * Set Gateway to [172.19.0.1](#ANEXO)
@@ -61,6 +66,7 @@ Go to CLIENT1 host, and do next:
 
 Modifing /etc/host file.
 
+
 Go to SERVER1 host, and do next:
 * Define host/IP association for client1_hostname
 * Define host/IP association for client2_hostname
@@ -68,6 +74,7 @@ Go to SERVER1 host, and do next:
 ## Defining more users
 
 We will create some user on SSH Sever.
+
 
 Go to SERVER1 host, and do next:
 * Create user LASTNAME11 into SSH Server
@@ -77,17 +84,20 @@ Go to SERVER1 host, and do next:
 
 ## SSH access without passwords
 
+
 Go to SERVER1 host, and do next:
 * Authorize user USERNAME@ssh-client1 to access user LASTNAME14@ssh-server
   Generate id_rsa.pub for USERNAME, and authorized remote access to him.
 
 ## Configuring remoteapp
 
+
 Go to SERVER1 host, and do next:
 * Create group [remoteapp](#ANEXO)
   Remember command groupadd...
 
 ## SSH Client A: Configuration
+
 
 Go to CLIENT1 host, and do next:
 * Create public key for username.
