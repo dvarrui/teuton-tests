@@ -1,6 +1,6 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:01:58 +0100
+Date           : 2019-09-14 20:04:30 +0100
 Teuton version : 2.1.0
 ```
 ---
@@ -18,6 +18,10 @@ Required configuration params:
 * number
 * server1_password
 * username
+
+> NOTE:
+> * Teuton software must known this information.
+> * Save them into challenge config file.
 
 ## OpenSUSE: external configurations
 
