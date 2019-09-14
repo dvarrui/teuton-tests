@@ -1,14 +1,16 @@
 ```
 Challenge name : 03-ssh.dev
-Date           : 2019-09-14 20:04:30 +0100
+Date           : 2019-09-14 20:06:17 +0100
 Teuton version : 2.1.0
 ```
 ---
 # README.md
 
 Required hosts:
-1. SERVER1 <- ip=172.19.0.31 username=root 
-2. CLIENT1 <- ip=172.19.0.32 username=root 
+| ID | Host | Configuration |
+| -- | ---- | ------------- |
+|1|SERVER1|ip=172.19.0.31 username=root |
+|2|CLIENT1|ip=172.19.0.32 username=root |
 
 > NOTE: SSH Service installation is required on every host.
 
