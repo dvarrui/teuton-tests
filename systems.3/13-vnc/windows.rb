@@ -1,5 +1,7 @@
 
 group "Windows: external configuration" do
+  readme 'Run this commands from GNU/Linux OS system.'
+
   target "Ensure ping to #{gett(:win_ip)} is working.", :weight => 0.1
   goto :localhost, :exec => "ping #{get(:win_ip)} -c 1"
   expect_one "0% packet loss,"
@@ -10,14 +12,14 @@ group "Windows: external configuration" do
 end
 
 group "Windows: Slave VNC" do
-  readme 'Keep Open VNC connections to Slave VNC'
+  readme 'Keep Open VNC connections to Slave VNC.'
 
-  target "Open VNC session from #{gett(:masterwin_ip)}"
+  target "Open VNC session from #{gett(:masterwin_ip)}."
   # goto :host, :exec => 'command', :encoding => 'ISO-8859-1'"
   goto :win, :exec => "netstat -n"
   expect [ "#{get(:win_ip)}:5900", get(:masterwin_ip), "ESTABLISHED" ]
 
-  target "Open VNC session from #{gett(:mastersuse_ip)}"
+  target "Open VNC session from #{gett(:mastersuse_ip)}."
   goto :win, :exec => "netstat -n"
   expect [ "#{get(:win_ip)}:5900", get(:mastersuse_ip), "ESTABLISHED" ]
 end
