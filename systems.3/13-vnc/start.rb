@@ -1,6 +1,6 @@
 
 use 'settings'
-# use 'windows'
+use 'windows'
 use 'opensuse'
 
 play do
