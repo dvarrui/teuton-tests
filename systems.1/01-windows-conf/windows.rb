@@ -1,7 +1,9 @@
 
-group "Windows external configuration" do
+group "Settings" do
   set :win_ip, "#{get(:ip_prefix)}#{get(:number).to_i.to_s}#{get(:ip_sufix)}"
+end
 
+group "Windows external configuration" do
   target "Conection with #{gett(:win_ip)} working"
   goto   :localhost, :exec => "ping #{get(:win_ip)} -c 1"
   expect_one ", 0% packet loss"
