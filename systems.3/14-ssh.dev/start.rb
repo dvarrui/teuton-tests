@@ -1,10 +1,10 @@
 
 =begin
  State       : In progress...
- Course name : ADD1516
+ Course name : ADD1920
  Activity    : SSH conections
- MV OS       : GNU/Linux Debian 7
- Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/add/ssh/README.md
+ MV OS       : Windows7, Windows 2008 Server, GNU/Linux OpenSUSE Leap 15.0
+ Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/sistemas.3/ssh/README.md
 =end
 
 use 'settings'
@@ -20,21 +20,22 @@ end
 
 =begin
 ---
+---
 :global:
-  :groupname: udremote
   :ip_prefix: '172.19.'
   :gateway_ip: 172.19.0.1
+  :groupname: remoteapp
   :domain: curso1819
-  :win1_username: sysadmingame
-  :win1_protocol: ssh
-  :linux1_username: root
-  :linux2_username: root
+  :server1_username: root
+  :client1_username: root
+  :client2_username: sysadmingame
+  :client2_protocol: ssh
 :cases:
 - :tt_members: MEMBERS
   :number: '99'
   :username: VALUE
   :lastname1: VALUE
-  :win1_password: secret
-  :linux1_password: secret
-  :linux2_password: secret
+  :server1_password: secret
+  :client1_password: secret
+  :client2_password: secret
 =end
