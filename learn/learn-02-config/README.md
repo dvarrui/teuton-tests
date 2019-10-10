@@ -1,10 +1,20 @@
+```
+Challenge name : learn-02-config
+Date           : 2019-10-10 23:53:00 +0100
+Teuton version : 2.1.0
+```
+# README.md
 
-Learn how to use config file into your tests.
+### Required params
+* username
 
-Test if exist username for every case into localhost:
-* target : Describe the target
-* goto   : Move to localhost and execute the command
-* expect : Check if the result is equal to the expected value
-* get    : Get the value for every case from the configuration YAML file.
+> NOTE:
+> * Teuton software must known this information!
+> * Save every ':param: value' into config file.
 
-Checking localhost with GNU/Linux OS.
+## learn 02 config
+
+
+Go to [LOCALHOST](#required-hosts) host, and do next:
+
+* Create user [username](#required-params)
