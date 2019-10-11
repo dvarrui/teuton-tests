@@ -7,6 +7,5 @@ end
 
 play do
   show
-  export
-  preserve_files
+  export :preserve => true
 end
