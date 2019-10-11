@@ -7,5 +7,5 @@ end
 
 play do
   show
-  export :preserve => true
+  export preserve: true
 end
