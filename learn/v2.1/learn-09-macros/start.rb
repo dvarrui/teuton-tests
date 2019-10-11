@@ -1,4 +1,4 @@
-use 'user'
+use 'macro/user'
 
 group "learn-09-macros" do
   call 'exist_user', name: 'root'
