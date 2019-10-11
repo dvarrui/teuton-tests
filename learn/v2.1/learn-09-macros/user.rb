@@ -1,4 +1,4 @@
-macro 'exist_user', :name => 'david' do
+macro 'exist_user', name: 'david' do
   target "Create user #{get(:name)}"
   run "id #{get(:name)}"
   expect_one get(:name)
