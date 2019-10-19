@@ -1,6 +1,12 @@
+
+******************** [DEBUG] count=0 ********************
+*********************************************************
+
+******************** [DEBUG] count=0 ********************
+*********************************************************
 ```
-Challenge name : learn-05-windows
-Date           : 2019-10-10 23:55:00 +0100
+Challenge name : learn-05-debug
+Date           : 2019-10-19 12:15:04 +0100
 Teuton version : 2.1.0
 ```
 # README.md
@@ -27,19 +33,19 @@ Teuton version : 2.1.0
 
 Go to [LOCALHOST](#required-hosts) host, and do next:
 
-* Localhost: Conection with [windows1_ip](#required-params)
-* Localhost: netbios-ssn service on [windows1_ip](#required-params)
+* Localhost: Verify connectivity with [windows1_ip](#required-params)
+* Localhost: netbios-ssn service working on [windows1_ip](#required-params)
 
 ## Windows: internal configurations
 
 
 Go to [WINDOWS1](#required-hosts) host, and do next:
 
-* Windows version
-* Windows COMPUTERNAME
-* Windows router [192.168.1.1](#global-params)
-* Windows router OK
-* Windows DNS OK
+* Ensure Windows version is 6.1
+* Ensure Windows COMPUTERNAME is [windows1_hostname](#required-params)
+* Configure gateway with [192.168.1.1](#global-params)
+* Ensure gateway is working
+* Ensure DNS is working
 
 ---
 # ANEXO
