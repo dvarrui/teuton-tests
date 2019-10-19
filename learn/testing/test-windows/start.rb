@@ -3,7 +3,8 @@
 This are only tests
 =end
 
-use 'windows'
+#use 'windows'
+use 'cmd'
 
 start do
   show
