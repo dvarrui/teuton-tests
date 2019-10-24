@@ -2,7 +2,7 @@ use 'check/gnulinux'
 
 group "learn-09-checks" do
   check 'exist_user', name: 'root'
-  check 'exist_user', name: 'fran'
+  exist_user(name: 'fran')
 
   check_exist_user(name: 'david')
 end
