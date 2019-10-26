@@ -10,23 +10,18 @@ fuenteBase64="I2luY2x1ZGUgPGlvc3RyZWFtPgp1c2luZyBuYW1lc3BhY2Ugc3RkOwoKaW50IG1haW
 
 #------------------------------------AUXILIARES--------------------------------
 
-
 #Caso de test fallido
 def testFail(error):
 	global nTestActual
-
 	print("--------TEST "+str(nTestActual)+"----------------------")
 	print("[ERROR]")
 	print(error)
 	print("------------------------------------")
 	sys.exit(-1)
 
-
 #Caso de test correcto
 def testPartialSuccess(texto):
-
 	global nTestActual
-
 	print("--------TEST "+str(nTestActual)+"----------------------")
 	print("[OK]")
 	print(texto)
@@ -34,15 +29,12 @@ def testPartialSuccess(texto):
 	print("")
 	nTestActual=nTestActual+1
 
-
 #Caso de test correcto
 def testSuccess():
-
 	global nTestActual
 	#cadena="OK"+host+numEjer+"OK"+str(nTestActual);
 	#m = hashlib.sha256()
 	#m.update(cadena.encode('utf-8'))
-
 	print("------------------------------------")
 	print("-------------TODOS LOS TEST PASADOS--------------------")
 	print("[OK]")
@@ -77,14 +69,9 @@ for miHost in hostsATestear:
 			testFail("No puede resolverse el host "+miHost)
 	except ValueError:
 		testFail("No puede resolverse el host "+miHost)
-	
+
 
 	testPartialSuccess("El nombre de dominio "+miHost+" se ha podido resolver correctamente")
 #Final de todos los casos sin fallar
 
 testSuccess()
-
-
-
-
-
