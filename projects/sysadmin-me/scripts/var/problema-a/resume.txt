@@ -1,0 +1,26 @@
+CONFIGURATION
++---------------+-------------------------------------------------------+
+| tt_title      | Executing [teuton] (version 2.1.0)                    |
+| tt_scriptname | ...s/projects/sysadmin-me/scripts/problema-a/start.rb |
+| tt_configfile | ...rojects/sysadmin-me/scripts/problema-a/config.yaml |
+| tt_testname   | problema-a                                            |
+| tt_sequence   | false                                                 |
++---------------+-------------------------------------------------------+
+
+CASES
++---------+-----------+-------+-------+
+| CASE ID | MEMBERS   | GRADE | STATE |
+| case_01 | anonymous |     0 | ?     |
++---------+-----------+-------+-------+
+
+CONN ERRORS
++---------+---------+------+-------+
+| CASE ID | MEMBERS | HOST | ERROR |
++---------+---------+------+-------+
+
+RESULTS
++-------------+---------------------------+
+| start_time  | 2019-10-26 11:52:19 +0100 |
+| finish_time | 2019-10-26 11:52:19 +0100 |
+| duration    | 0.00598021                |
++-------------+---------------------------+

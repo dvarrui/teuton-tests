@@ -1,0 +1,32 @@
+CONFIGURATION
++-------------+------------+
+| tt_members  | anonymous  |
+| tt_sequence | false      |
+| tt_skip     | false      |
+| tt_testname | problema-a |
++-------------+------------+
+
+
+GROUPS
+- Problema A
+    01 (0.0/1.0)
+        Description : Crear el usuario alumno
+        Command     : id alumno
+        Duration    : 0.005 (local)
+        Alterations : find(alumno) & count
+        Expected    : 1 (String)
+        Result      : 0 (Integer)
+
+RESULTS
++--------------+---------------------------+
+| case_id      | 1                         |
+| start_time_  | 2019-10-26 11:52:19 +0100 |
+| finish_time  | 2019-10-26 11:52:19 +0100 |
+| duration     | 0.005222221               |
+| unique_fault | 0                         |
+| max_weight   | 1.0                       |
+| good_weight  | 0.0                       |
+| fail_weight  | 1.0                       |
+| fail_counter | 1                         |
+| grade        | 0                         |
++--------------+---------------------------+
