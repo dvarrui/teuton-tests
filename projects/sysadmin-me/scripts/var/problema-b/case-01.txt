@@ -1,0 +1,53 @@
+CONFIGURATION
++-------------+------------+
+| tt_members  | anonymous  |
+| tt_sequence | false      |
+| tt_skip     | false      |
+| tt_testname | problema-b |
++-------------+------------+
+
+
+GROUPS
+- Problema B
+    01 (1.0/1.0)
+        Description : Resolver nombre de dominio google.es.
+        Command     : host google.es
+        Duration    : 0.286 (local)
+        Alterations : find(has address) & count
+        Expected    : Greater than 0 (String)
+        Result      : 1 (Integer)
+    02 (1.0/1.0)
+        Description : Resolver nombre de dominio aprendeaprogramar.org.
+        Command     : host aprendeaprogramar.org
+        Duration    : 0.33 (local)
+        Alterations : find(has address) & count
+        Expected    : Greater than 0 (String)
+        Result      : 1 (Integer)
+    03 (1.0/1.0)
+        Description : Resolver nombre de dominio programa-me.com.
+        Command     : host programa-me.com
+        Duration    : 0.387 (local)
+        Alterations : find(has address) & count
+        Expected    : Greater than 0 (String)
+        Result      : 1 (Integer)
+    04 (1.0/1.0)
+        Description : Resolver nombre de dominio marca.es.
+        Command     : host marca.es
+        Duration    : 0.332 (local)
+        Alterations : find(has address) & count
+        Expected    : Greater than 0 (String)
+        Result      : 1 (Integer)
+
+RESULTS
++--------------+---------------------------+
+| case_id      | 1                         |
+| start_time_  | 2019-10-26 20:09:08 +0100 |
+| finish_time  | 2019-10-26 20:09:09 +0100 |
+| duration     | 1.337431526               |
+| unique_fault | 0                         |
+| max_weight   | 4.0                       |
+| good_weight  | 4.0                       |
+| fail_weight  | 0.0                       |
+| fail_counter | 0                         |
+| grade        | 100                       |
++--------------+---------------------------+
