@@ -10,8 +10,9 @@ define_check 'user_is_member_of', :user, :group do
   expect_one [ get(:user), get(:group) ]
 end
 
-define_check 'user_home', :user, :home do
-  target "#{get(:user)} user with #{get(:home)} HOME"
+define_check 'user_info', :user, :home do
+  home = get(:home) || "/home/#{get(:user)}"
+  target "#{get(:user)} user with #{home} HOME"
   run "cat /etc/passwd"
-  expect_one [ "#{get(:user)}:", ":#{get(:home)}:" ]
+  expect_one [ "#{get(:user)}:", ":#{home}:" ]
 end
