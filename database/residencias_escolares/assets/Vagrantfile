@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.define "debian-mysql" do |i|
+    i.vm.box = "generic/debian9"
+    i.vm.hostname = "debian-mysql"
+    i.vm.network "public_network", bridge: [
+      "enp2s0",
+      "wlp1s0",
+    ]
+    i.vm.network :forwarded_port, guest: 80, host: 8081
+    i.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y mysql-server mysql-client
+    wget -qO- https://raw.githubusercontent.com/dvarrui/teuton/master/bin/linux_s-node_install.sh | bash
+  SHELL
+
+    i.vm.provider "virtualbox" do |v|
+      v.name = "debian-mysql"
+      v.memory = 2048
+    end
+  end
+end
+
+
+
