@@ -1,6 +1,6 @@
 ```
 Challenge name : learn-06-readme
-Date           : 2019-11-01 14:39:11 +0000
+Date           : 2019-11-01 14:43:00 +0000
 Teuton version : 2.1.0
 ```
 # README.md
@@ -11,6 +11,5 @@ This is our example 06.
 And here we'll see how to use readme keyword
 
 Go to [LOCALHOST](#required-hosts) host, and do next:
-
 * Create user <david>
     * Help: you can use 'useradd' command to create users.
