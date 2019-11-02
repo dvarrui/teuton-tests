@@ -1,18 +1,13 @@
 
-group 'Settings' do
+group "Valid Directory tree" do
   whoami = `whoami`.chop
   home = "/home/#{whoami}"
-  set(:whoami, whoami)
-  set(:home, home)
-end
-
-group "Valid Directory tree" do
 
   folders = [ 'space', 'space/kessel',
               'space/jedha', 'space/skarif' ]
 
   folders.each do |dir|
-    folder = "#{home?}/#{dir}"
+    folder = "#{home}/#{dir}"
     target "Create folder #{folder}"
     goto :localhost, :exec => "file #{folder}"
     expect [ folder, ': directory' ]
@@ -23,6 +18,8 @@ group "Invalid Directory tree" do
   readme 'Tip: Use mv to rename files or directories.'
   readme 'Tip: Use rmdir remove empty directories.'
 
+  whoami = `whoami`.chop
+  home = "/home/#{whoami}"
   folders = [ 'Space', 'Space/Kessel',
               'Space/Jedha', 'Space/Skarif' ]
 
