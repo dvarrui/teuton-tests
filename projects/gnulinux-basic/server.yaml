@@ -5,6 +5,7 @@
   :testunits:
     - '01'
     - '02'
+    - '03'
 :global:
 :cases:
 - :tt_members: client01
