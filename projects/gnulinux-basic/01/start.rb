@@ -16,5 +16,6 @@ group "Directory tree" do
 end
 
 play do
+  show
   export
 end
