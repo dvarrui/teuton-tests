@@ -1,9 +1,12 @@
 ---
 :server:
   :testunits:
-    - '01'
-    - '02'
-    - '03'
+    - '00-true'
+    - '01-treedir'
+    - '02-treedir'
+    - '03-textfiles'
+    - '04-textfiles'
+    - '05-rename-files'
 :clients:
 - :members: client01
   :ip: 127.0.0.1
