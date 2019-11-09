@@ -1,0 +1,9 @@
+---
+:server:
+  :ip: 127.0.0.1
+  :port: 16000
+  :testunits:
+    - testname01
+:clients:
+- :members: client01
+  :ip: 127.0.0.1
