@@ -1,0 +1,13 @@
+---
+:global:
+:cases:
+- :tt_members: MEMBERS
+  :dbname: student01
+  :tbname: items
+  :host1_ip: 192.168.43.78
+  :host1_username: root
+- :tt_members: MEMBERS
+  :dbname: student02
+  :tbname: items
+  :host1_ip: 192.168.43.229
+  :host1_username: root
