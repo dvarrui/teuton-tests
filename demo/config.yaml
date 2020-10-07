@@ -8,7 +8,7 @@
   :host1_username: alumno
   :host1_password: onmula
   :host1_hostname: IDP
-  :host2_ip: 192.168.1.1
+  :host2_ip: 10.0.2.15
   :host2_username: idp
   :host2_password: idp
   :host2_hostname: DESKTOP-57UFI2B
