@@ -1,10 +1,10 @@
 ---
 :global:
   :host1_username: root
+  :domain: curso2021
 :cases:
 - :tt_members: anonymous
   :host1_ip: IP
   :host1_password: password
-  :firstname: name
+  :username: name
   :lastname1: none
-  :lastname2: none
