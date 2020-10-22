@@ -1,0 +1,10 @@
+---
+:global:
+  :host1_username: root
+:cases:
+- :tt_members: anonymous
+  :host1_ip: IP
+  :host1_password: password
+  :firstname: name
+  :lastname1: none
+  :lastname2: none
