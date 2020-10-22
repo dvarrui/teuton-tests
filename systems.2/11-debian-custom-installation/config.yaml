@@ -1,7 +1,7 @@
 ---
 :global:
   :host1_username: root
-  :domain: curso1819
+  :domain: curso2021
 :cases:
 - :tt_members: users
   :number: '01'
