@@ -1,5 +1,5 @@
 
-group "Disk size" do
+group "Disk and partitions" do
   size = '10G'
   target "Disk sda size <#{size}>"
   run "lsblk", on: :host1
@@ -7,9 +7,6 @@ group "Disk size" do
 
   run "blkid | grep sda1", on: :host1
   unique "UUID_sda1", result.value
-end
-
-group "Partitions size and type" do
 
   partitions={ :sda5 => ['[SWAP]','953M', '952M'],
                :sda6 => ['/'     ,'6,5G', '6,5G'],

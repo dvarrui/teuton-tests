@@ -1,57 +1,85 @@
 ```
-Challenge name : 11-debian-custom-installation
-Date           : 2019-08-31 16:11:37 +0100
+Test unit name : 11-debian-custom-installation
+Date           : 2020-10-22 18:00:34 +0100
+Teuton version : 2.2.0
 ```
----
-# README.md
 
-Params configured for every case:
-* domain
+# 11-debian-custom-installation
+
+### Required hosts
+
+| ID | Host | Configuration |
+| -- | ---- | ------------- |
+|1|HOST1|username=root|
+
+> NOTE: SSH Service installation is required on every host.
+
+### Required params
 * firstname
-* host1_hostname
 * host1_ip
 * host1_password
-* host1_username
 * lastname
 * number
-* username
 
-## Disk size
+> NOTE: Save every ':param: value' into config file.
 
-Go to host HOST1, and do next:
-* Disk sda size <10G>
+## Disk and partitions
 
-## Partitions size and type
 
-Go to host HOST1, and do next:
-* Partition sda5 mounted on <[SWAP]>
-* Partition sda5 size near at <953M>
-* Partition sda6 mounted on </>
-* Partition sda6 size near at <6,5G>
-* Partition sda7 mounted on </home>
-* Partition sda7 size near at <476M>
-* Partition sda8 mounted on <sda8>
-* Partition sda8 size near at <94M>
-* Partition <sda6> with type <ext4>
-* Partition <sda7> with type <ext3>
-* Partition <sda8> unmounted
+Go to [HOST1](#required-hosts) host, and do next:
+* Disk sda size <10G>.
+* Partition sda5 mounted on <[SWAP]>.
+* Partition sda5 size near at <953M>.
+* Partition sda6 mounted on </>.
+* Partition sda6 size near at <6,5G>.
+* Partition sda7 mounted on </home>.
+* Partition sda7 size near at <476M>.
+* Partition sda8 mounted on <sda8>.
+* Partition sda8 size near at <94M>.
+* Partition <sda6> with type <ext4>.
+* Partition <sda7> with type <ext3>.
+* Partition <sda8> unmounted.
 
-## HOST configurations
+## Host configurations
 
-Go to host LOCALHOST, and do next:
-* Ensure SSH port is open on VALUE (host1_ip)
-Go to host HOST1, and do next:
-* Update hostname with VALUE (host1_hostname)
+
+Go to [LOCALHOST](#required-hosts) host, and do next:
+* Ensure SSH port is open on [host1_ip](#required-params).
+
+Go to [HOST1](#required-hosts) host, and do next:
+* Update hostname with [host1_hostname](#created-params).
 
 ## Network configuration
 
-Go to host HOST1, and do next:
-* Network gateway configuration working
-* Network DNS configuration working
 
-## GNULinux user configuration
+Go to [HOST1](#required-hosts) host, and do next:
+* Network gateway configuration working.
+* Network DNS configuration working.
 
-Go to host HOST1, and do next:
-* Create user VALUE (username)
-* User VALUE (username) need a no empty password
-* Log into using VALUE (username) user
+## Gnu/linux user configuration
+
+
+Go to [HOST1](#required-hosts) host, and do next:
+* Create user [username](#created-params).
+* User [username](#created-params) need a no empty password.
+* Log into using [username](#created-params) user.
+
+---
+# ANEXO
+
+## Global params
+
+Global parameters that can be modified:
+
+| Global param | Value |
+| ------------ | ----- |
+|domain|curso2021|
+
+## Created params
+
+Params created during challenge execution:
+
+| Created params | Value |
+| -------------- | ----- |
+|host1_hostname|LASTNAMENUMBERd1.curso2021|
+|username|FIRSTNAME|
