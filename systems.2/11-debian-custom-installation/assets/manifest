@@ -1,7 +1,0 @@
-name         = debian-instalacion-personalizada
-author       = David Vargas Ruiz
-description  = Instalación personalizada GNU/Linux Debian
-tags         = instalar, gnu/linux, debian, particiones
-date         = 20190831
-requirements = GNU/Linux Debian
-state        = active
