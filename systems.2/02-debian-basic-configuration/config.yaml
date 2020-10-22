@@ -1,12 +1,11 @@
 ---
 :global:
   :host1_username: root
-  :domain: curso1819
+  :domain: curso2021
 :cases:
 - :tt_members: names
   :number: '01'
   :host1_ip: 172.18.7.41
   :host1_password: 'password'
-  :firstname: firstname
+  :username: firstname
   :lastname1: lastname1
-  :lastname2: lastname2

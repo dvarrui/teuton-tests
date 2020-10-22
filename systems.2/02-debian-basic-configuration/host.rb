@@ -1,14 +1,14 @@
 
 group 'Debian HOSTNAME configuration' do
 
-  set(:host1_hostname, "#{get(:lastname1)}d1.#{get(:domain)}")
+  set(:host1_hostname, "#{get(:lastname1)}d.#{get(:domain)}")
 
   target "Checking hostname #{gett(:host1_hostname)}"
-  goto  :host1, :exec => "hostname -f"
+  run "hostname -f", on: :host1
   expect get(:host1_hostname)
 
   unique "hostname", result.value
-  goto  :host1, :exec => "hostname -f"
+  run "hostname -f", on: :host1
   unique "UUID", result.value
 
 end
@@ -16,10 +16,10 @@ end
 group 'Network configuration' do
 
   target "Ensure Gateway configuration is working"
-  goto  :host1, :exec => "ping 8.8.4.4 -c 1"
+  run "ping 8.8.4.4 -c 1", on: :host1
   expect_one "64 bytes from 8.8.4.4"
 
   target "Ensure network DNS configuration is working"
-  goto  :host1, :exec => "host www.nba.com"
+  run "host www.nba.com", on: :host1
   expect "has address"
 end

@@ -7,5 +7,5 @@
   :number: '01'
   :host1_ip: 1.1.1.1
   :host1_password: password
-  :firstname: name
+  :username: name
   :lastname: none

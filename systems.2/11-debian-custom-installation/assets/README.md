@@ -1,6 +1,6 @@
 ```
 Test unit name : 11-debian-custom-installation
-Date           : 2020-10-22 18:00:34 +0100
+Date           : 2020-10-22 18:13:18 +0100
 Teuton version : 2.2.0
 ```
 
@@ -15,11 +15,11 @@ Teuton version : 2.2.0
 > NOTE: SSH Service installation is required on every host.
 
 ### Required params
-* firstname
 * host1_ip
 * host1_password
 * lastname
 * number
+* username
 
 > NOTE: Save every ':param: value' into config file.
 
@@ -60,9 +60,9 @@ Go to [HOST1](#required-hosts) host, and do next:
 
 
 Go to [HOST1](#required-hosts) host, and do next:
-* Create user [username](#created-params).
-* User [username](#created-params) need a no empty password.
-* Log into using [username](#created-params) user.
+* Create user [username](#required-params).
+* User [username](#required-params) need a no empty password.
+* Log into using [username](#required-params) user.
 
 ---
 # ANEXO
@@ -82,4 +82,3 @@ Params created during challenge execution:
 | Created params | Value |
 | -------------- | ----- |
 |host1_hostname|LASTNAMENUMBERd1.curso2021|
-|username|FIRSTNAME|

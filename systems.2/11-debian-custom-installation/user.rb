@@ -1,8 +1,6 @@
 
 group 'GNU/Linux user configuration' do
 
-  set(:username, get(:firstname))
-
   target "Create user #{gett(:username)}"
   run "cat /etc/passwd", on: :host1
   expect_one get(:username)
