@@ -1,12 +1,10 @@
-******************** [DEBUG] count=0 ********************
-*********************************************************
+```
+Test unit name : 01-install-w10-vbox
+Date           : 2020-10-22 18:10:42 +0100
+Teuton version : 2.2.0
+```
 
-```
-Challenge name : .
-Date           : 2019-09-18 23:02:54 +0100
-Teuton version : 2.1.0
-```
-# README.md
+# 01-install-w10-vbox
 
 ### Required hosts
 
@@ -21,20 +19,17 @@ Teuton version : 2.1.0
 * host1_password
 * host1_username
 
-> NOTE:
-> * Teuton software must known this information.
-> * Save them into challenge config file.
+> NOTE: Save every ':param: value' into config file.
 
-## Install Windows 10 on a VBox virtual machine
+## Install windows 10 on a vbox virtual machine
 
 
 Go to [HOST1](#required-hosts) host, and do next:
-
-* Set 4GB of RAM memory for the virtual machine
-* Set a 25GB hard disk drive for the virtual machine
-* Install Windows 10 Pro on the virtual machine
-* Create user Alumno and make him member of Administradores local group
-* Activate Windows 10
-* Set IDP as computer name
-* Set TimeZone to UTC+00:00 (Dublin, Edimburgh, Lisbon, London)
-* Install Guest Additions on the virtual machine
+* Set 4GB of RAM memory for the virtual machine.
+* Set a 25GB hard disk drive for the virtual machine.
+* Install Windows 10 Pro on the virtual machine.
+* Create user Alumno and make him member of Administradores local group.
+* Activate Windows 10.
+* Set IDP as computer name.
+* Set TimeZone to UTC+00:00 (Dublin, Edimburgh, Lisbon, London).
+* Install Guest Additions on the virtual machine.
