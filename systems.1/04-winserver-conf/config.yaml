@@ -1,0 +1,16 @@
+---
+:global:
+  :ip_prefix: '172.19.'
+  :ip_sufix: '.21'
+  :gateway_ip: 172.19.0.1
+  :winserver_username: teuton
+  :winserver_productname: "Windows 2008 Server"
+  :winserver_version: '6.1'
+  :domain: curso1617
+:cases:
+- :tt_members: MEMBERS
+  :number: '99'
+  :winserver_password: secret
+  :firstname: VALUE
+  :lastname1: VALUE
+  :lastname2: VALUE
