@@ -1,0 +1,14 @@
+global:
+  gateway_ip: 172.18.0.1
+  win_username: teuton
+  win_version: '6.1'
+  win_productname: 'Windows 7 Professional'
+  domain: curso1920
+  ip_prefix: '172.18.'
+  ip_sufix: '.11'
+cases:
+- tt_members: MEMBERS
+  number: '99'
+  win_password: secret
+  firstname: VALUE
+  lastname: VALUE

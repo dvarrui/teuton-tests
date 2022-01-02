@@ -1,0 +1,14 @@
+---
+:global:
+  :gateway_ip: 172.19.0.1
+  :opensuse_username: root
+  :domain: curso1617
+  :ip_prefix: '172.19.'
+  :ip_sufix: '.31'
+:cases:
+- :tt_members: MEMBERS
+  :number: '99'
+  :opensuse_password: secret
+  :firstname: VALUE
+  :lastname1: VALUE
+  :lastname2: VALUE

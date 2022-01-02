@@ -1,7 +1,6 @@
+# Teuton Tests
 
-# Teuton Challenges
-
-This repository contains **challenges** for **TEUTON** application.
+This repository contains **tests** for **TEUTON** application.
 
 ![logo](./images/logo.png)
 
@@ -9,14 +8,14 @@ This repository contains **challenges** for **TEUTON** application.
 
 ## Organisation
 
-All challenges are organized into categories (Using diferents directories).
+All tests are organized into categories (Using diferents directories).
 
 ---
 
 ## How to use it
 
 * First install **TEUTON** software. You can find it at [`github/teuton-software/teuton`](https://github.com/teuton-software/teuton) repository.
-* Second choose a challenges and play with it: `teuton play PATH/TO/CHALLENGE/DIR`.
+* Second choose a challenges and play with it: `teuton run PATH/TO/CHALLENGE/DIR`.
 
 Thanks!
 
