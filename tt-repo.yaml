@@ -1,21 +1,13 @@
 ---
-"/home/david/proy/repos/teuton.d/teuton-tests/systems.1/04-winserver-conf/tt-info.yaml":
-  name: Windows Server configuration
-  description: Windows Server configuration
+"./systems.1/01-windows-conf/tt-info.yaml":
+  name: Windows configuration
+  description: Windows configuration
   author: dvarrui
-  date: 2020-09-06
+  date: 2020-09-20
   tags:
-  - Windows Server
+  - windows
   - configuration
-"/home/david/proy/repos/teuton.d/teuton-tests/systems.1/03-debian-conf/tt-info.yaml":
-  name: Debian configuration
-  description: Debian configuration
-  author: dvarrui
-  date: 2020-09-06
-  tags:
-  - Debian
-  - configuration
-"/home/david/proy/repos/teuton.d/teuton-tests/systems.1/02-opensuse-conf/tt-info.yaml":
+"./systems.1/02-opensuse-conf/tt-info.yaml":
   name: OpenSUSE configuration
   description: OpenSUSE configuration
   author: dvarrui
@@ -23,11 +15,19 @@
   tags:
   - OpenSUSE
   - configuration
-"/home/david/proy/repos/teuton.d/teuton-tests/systems.1/01-windows-conf/tt-info.yaml":
-  name: Windows configuration
-  description: Windows configuration
+"./systems.1/03-debian-conf/tt-info.yaml":
+  name: Debian configuration
+  description: Debian configuration
   author: dvarrui
-  date: 2020-09-20
+  date: 2020-09-06
   tags:
-  - windows
+  - Debian
+  - configuration
+"./systems.1/04-winserver-conf/tt-info.yaml":
+  name: Windows Server configuration
+  description: Windows Server configuration
+  author: dvarrui
+  date: 2020-09-06
+  tags:
+  - Windows Server
   - configuration
