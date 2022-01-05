@@ -1,7 +1,7 @@
 ```
 Test unit name : 01-install-w10-vbox
-Date           : 2020-10-22 18:10:42 +0100
-Teuton version : 2.2.0
+Date           : 2022-01-05 21:47:37 +0000
+Teuton version : 2.2.1
 ```
 
 # 01-install-w10-vbox
@@ -9,8 +9,8 @@ Teuton version : 2.2.0
 ### Required hosts
 
 | ID | Host | Configuration |
-| -- | ---- | ------------- |
-|1|HOST1||
+| --- | --- | --- |
+| 1 | HOST1 |  |
 
 > NOTE: SSH Service installation is required on every host.
 
