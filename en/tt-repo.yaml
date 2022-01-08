@@ -1,0 +1,41 @@
+---
+en/systems.1/01-windows-conf:
+  name: Windows configuration
+  description: Windows configuration
+  author: dvarrui
+  date: 2020-09-20
+  tags:
+  - windows
+  - configuration
+en/systems.1/02-opensuse-conf:
+  name: OpenSUSE configuration
+  description: OpenSUSE configuration
+  author: dvarrui
+  date: 2020-09-06
+  tags:
+  - OpenSUSE
+  - configuration
+en/systems.1/03-debian-conf:
+  name: Debian configuration
+  description: Debian configuration
+  author: dvarrui
+  date: 2020-09-06
+  tags:
+  - Debian
+  - configuration
+en/systems.1/04-winserver-conf:
+  name: Windows Server configuration
+  description: Windows Server configuration
+  author: dvarrui
+  date: 2020-09-06
+  tags:
+  - Windows Server
+  - configuration
+en/systems.2/01-install-w10-vbox:
+  name: Windows 10 instalación y configuración
+  description: Instalar Windows 10 y configurarlo
+  author: fvarrui
+  date: 2020-09-20
+  tags:
+  - windows 10
+  - configuration

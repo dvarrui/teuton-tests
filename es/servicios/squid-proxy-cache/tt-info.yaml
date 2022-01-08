@@ -1,0 +1,13 @@
+# tt-info (version 1)
+name: squid-proxy-cache
+author: Mª Paz Martínez
+date: 20190209
+desc: Squid server. Proxy cache.
+require:
+- GNU/Linux
+- Ubuntu
+- Squid
+tags:
+- squid
+- proxy
+- caché

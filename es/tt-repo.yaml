@@ -1,0 +1,27 @@
+---
+es/servicios/apache2-index-html:
+  name: apache2-several-files
+  author: David Vargas Ruiz
+  date: 20190621
+  desc: Instalación y configuración básica del servidor Web Apache2.
+  require:
+  - SO GNU/Linux
+  - Apache2
+  tags:
+  - demo
+  - apache2
+  - varios
+  - archivos
+es/servicios/squid-proxy-cache:
+  name: squid-proxy-cache
+  author: Mª Paz Martínez
+  date: 20190209
+  desc: Squid server. Proxy cache.
+  require:
+  - GNU/Linux
+  - Ubuntu
+  - Squid
+  tags:
+  - squid
+  - proxy
+  - caché

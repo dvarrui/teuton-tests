@@ -1,7 +1,13 @@
+# tt-info (version 1)
 name: apache2-several-files
 author: David Vargas Ruiz
-description: Demo Servidor Web Apache2. Test several hosts.
-tags: demo, apache2, several, files
 date: 20190621
-requirements: SO GNU/Linux, Apache2
-state: demo
+desc: Instalación y configuración básica del servidor Web Apache2.
+require:
+- SO GNU/Linux
+- Apache2
+tags:
+- demo
+- apache2
+- varios
+- archivos
