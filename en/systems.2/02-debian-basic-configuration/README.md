@@ -1,7 +1,7 @@
 ```
 Test unit name : 02-debian-basic-configuration
-Date           : 2020-10-22 18:17:17 +0100
-Teuton version : 2.2.0
+Date           : 2022-01-11 12:35:05 +0000
+Teuton version : 2.2.1
 ```
 
 # 02-debian-basic-configuration
@@ -9,8 +9,8 @@ Teuton version : 2.2.0
 ### Required hosts
 
 | ID | Host | Configuration |
-| -- | ---- | ------------- |
-|1|HOST1|username=root|
+| --- | --- | --- |
+| 1 | HOST1 | username=root |
 
 > NOTE: SSH Service installation is required on every host.
 
@@ -57,7 +57,7 @@ Go to [HOST1](#required-hosts) host, and do next:
 Global parameters that can be modified:
 
 | Global param | Value |
-| ------------ | ----- |
+| --- | --- |
 |domain|curso2021|
 
 ## Created params
@@ -65,5 +65,5 @@ Global parameters that can be modified:
 Params created during challenge execution:
 
 | Created params | Value |
-| -------------- | ----- |
+| --- | --- |
 |host1_hostname|LASTNAME1d.curso2021|

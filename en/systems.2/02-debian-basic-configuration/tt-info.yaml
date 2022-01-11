@@ -1,0 +1,13 @@
+# tt-info (version 1)
+name: Debian Basic Configuration
+author: dvarrui
+date: 2022-01-01
+desc: Test hostname, network, ssh and user
+require:
+- Debian
+tags:
+- Debian
+- hostname
+- network
+- ssh
+- user
