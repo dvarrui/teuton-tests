@@ -39,3 +39,16 @@ en/systems.2/01-install-w10-vbox:
   tags:
   - windows 10
   - configuration
+en/systems.2/02-debian-basic-configuration:
+  name: Debian Basic Configuration
+  author: dvarrui
+  date: 2022-01-01
+  desc: Test hostname, network, ssh and user
+  require:
+  - Debian
+  tags:
+  - Debian
+  - hostname
+  - network
+  - ssh
+  - user
