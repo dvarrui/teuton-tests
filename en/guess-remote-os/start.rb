@@ -1,7 +1,7 @@
 
 use 'guess-remote-os'
 
-group 'Results' do
+group 'Guess Remote/Local OS' do
   log "OSTYPE = " + get(:ostype)
   log "DISTRO = " + get(:distro)
   log "MODEL  = " + get(:model)
