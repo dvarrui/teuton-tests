@@ -1,4 +1,5 @@
 
+use 'android'
 use 'gnulinux'
 use 'windows'
 

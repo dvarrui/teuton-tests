@@ -1,7 +1,11 @@
 
 group "GNU/Linux" do
 
-  target "Guess remote OS"
+  target "Environ OSTYPE"
+  run "echo $OSTYPE"
+  expect "linux-gnu"
+
+  target "Exist /home folder"
   run "stat /home"
   expect "/home"
 
