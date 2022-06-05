@@ -1,7 +1,5 @@
 
-use 'android'
-use 'gnulinux'
-use 'windows'
+use 'guess-remote-os'
 
 group 'Results' do
   log get(:ostype)
