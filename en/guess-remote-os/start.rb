@@ -2,7 +2,9 @@
 use 'guess-remote-os'
 
 group 'Results' do
-  log get(:ostype)
+  log "OSTYPE = " + get(:ostype)
+  log "DISTRO = " + get(:distro)
+  log "MODEL  = " + get(:model)
 end
 
 play do

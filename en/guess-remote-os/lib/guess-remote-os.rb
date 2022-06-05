@@ -14,7 +14,13 @@ group "GNU/Linux" do
 
   if result.count.eq 1
     set(:ostype, 'gnulinux')
+
+    run "lsb_release -d"
+    items = result.value.split
+    set(:distro, items[1])
+    set(:model, items[2])
   end
+
 end
 
 group "Windows" do
