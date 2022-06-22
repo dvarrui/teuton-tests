@@ -2,7 +2,8 @@
 global:
 cases:
 - tt_members: vagrant-debian
-  host_ip: 192.168.1.12
+  # host_ip: 192.168.1.12
+  host_ip: 172.18.99.154
   host_username: vagrant
   host_password: vagrant
   hostname: vagrant-debian

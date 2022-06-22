@@ -9,5 +9,6 @@ end
 
 play do
   show
-  export
+  export format: :colored_text
+  send copy_to: :host
 end
