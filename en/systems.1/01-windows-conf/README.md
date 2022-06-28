@@ -1,7 +1,7 @@
 ```
 Test unit name : 01-windows-conf
-Date           : 2022-01-02 16:19:40 +0000
-Teuton version : 2.2.1
+Date           : 2022-06-28 23:53:01 +0100
+Teuton version : 2.3.6
 ```
 
 # 01-windows-conf
@@ -20,7 +20,7 @@ Teuton version : 2.2.1
 * number
 * win_password
 
-> NOTE: Save every ':param: value' into config file.
+> NOTE: Save every 'param: value' into config file.
 
 ## Windows external configuration
 
@@ -33,8 +33,10 @@ Go to [LOCALHOST](#required-hosts) host, and do next:
 ## Windows student personal configurations
 
 
-Go to [WIN](#required-hosts) host, and do next:
+Go to [LOCALHOST](#required-hosts) host, and do next:
 * User [firstname](#required-params) home dir.
+
+Go to [WIN](#required-hosts) host, and do next:
 * Windows COMPUTERNAME equal to LASTNAMENUMBERw1.
 
 ## Windows version

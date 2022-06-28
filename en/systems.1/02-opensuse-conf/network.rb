@@ -14,6 +14,6 @@ group "OpenSUSE network configurations" do
   expect_one ' 0% packet loss,'
 
   target "DNS configuration working."
-  run "nslookup www.iespuertodelacruz.es", on: :opensue
+  run "nslookup www.iespuertodelacruz.es", on: :opensuse
   expect_one [ 'Address:', '88.198.18.148' ]
 end
