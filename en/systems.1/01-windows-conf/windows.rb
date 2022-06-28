@@ -1,15 +1,16 @@
 
 group "Settings" do
-  set :win_ip, "#{get(:ip_prefix)}#{get(:number).to_i.to_s}#{get(:ip_sufix)}"
+  ip = "#{get(:ip_prefix)}#{get(:number).to_i.to_s}#{get(:ip_sufix)}"
+  set :win_ip, ip
 end
 
 group "Windows external configuration" do
   target "Conection with #{gett(:win_ip)} working"
-  goto   :localhost, :exec => "ping #{get(:win_ip)} -c 1"
+  run "ping #{get(:win_ip)} -c 1"
   expect_one ", 0% packet loss"
 
   # Execute this only command once
-  goto   :localhost, :exec => "nmap -Pn #{get(:win_ip)}"
+  run "nmap -Pn #{get(:win_ip)}"
 
   ports=[ [ '22/tcp' , 'ssh'],
           [ '139/tcp', 'netbios-ssn'] ]
@@ -23,13 +24,12 @@ end
 
 group "Windows Student personal configurations" do
   target "User #{gett(:firstname)} home dir"
-  goto   :win, :exec => "dir c:\\Users"
+  run :exec => "dir c:\\Users", on: :win
   expect_one get(:firstname)
-  #expect result.find!(get(:username)[1,99]).count!.eq 1
 
   pcname = "#{get(:lastname)}#{get(:number)}w1"
   target "Windows COMPUTERNAME equal to #{pcname}"
-  goto   :win, :exec => 'set'
+  run 'set', on: :win
   expect_one ["COMPUTERNAME", pcname.upcase]
 
   #WARINING: error de acceso denegado!
@@ -40,30 +40,30 @@ end
 
 group "Windows version" do
   target "Windows version #{gett(:win_version)}"
-  goto   :win, :exec => "ver"
+  run "ver", on: :win
   expect_one ["Windows", get(:win_version)]
 
   target "Windows ProductName #{gett(:win_productname)}"
-  goto   :win, :exec => "reg query \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\" /t REG_SZ"
+  run "reg query \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\" /t REG_SZ", on: :win
   expect_one ["ProductName", get(:win_productname)]
 end
 
 group "Windows network configurations" do
-  goto :win, :exec => "ipconfig /all"
+  run "ipconfig /all", on: :win
   mac = result.find!("Direcci").content[0]
   log    ("win_MAC = #{mac}")
   unique "MAC", mac
   #getmac command => MAC number
 
   target "Gateway IP equal to #{gett(:gateway_ip)}"
-  goto   :win, :exec => "ipconfig"
+  run "ipconfig", on: :win
   expect_one ["enlace", get(:gateway_ip)]
 
   target "Internet routing working"
-  goto   :win, :exec => "ping 8.8.4.4"
+  run "ping 8.8.4.4", on: :win
   expect "Respuesta"
 
   target "DNS configuration working"
-  goto   :win, :exec => "nslookup www.iespuertodelacruz.es"
+  run "nslookup www.iespuertodelacruz.es", on: :win
   expect_one ["Address:", "88.198.18.148"]
 end
