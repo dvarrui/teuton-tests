@@ -1,5 +1,5 @@
 ---
-es/servicios/apache2-index-html:
+servicios/apache2-index-html:
   name: apache2-several-files
   author: David Vargas Ruiz
   date: 20190621
@@ -12,7 +12,7 @@ es/servicios/apache2-index-html:
   - apache2
   - varios
   - archivos
-es/servicios/squid-proxy-cache:
+servicios/squid-proxy-cache:
   name: squid-proxy-cache
   author: Mª Paz Martínez
   date: 20190209
