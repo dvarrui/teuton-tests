@@ -1,0 +1,30 @@
+---
+servicios/apache2-index-html:
+  version: 1
+  type: teutontest
+  name: apache2-index-html
+  author: david
+  date: 2022-08-25
+  desc: NODATA
+  tags:
+  - NODATA
+  files:
+  - config.yaml
+  - docs/README.md
+  - docs/tutorial.md
+  - network.rb
+  - start.rb
+  - web_service.rb
+servicios/squid-proxy-cache:
+  name: squid-proxy-cache
+  author: Mª Paz Martínez
+  date: 20190209
+  desc: Squid server. Proxy cache.
+  require:
+  - GNU/Linux
+  - Ubuntu
+  - Squid
+  tags:
+  - squid
+  - proxy
+  - caché

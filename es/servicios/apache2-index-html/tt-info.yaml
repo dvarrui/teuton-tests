@@ -1,0 +1,25 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: apache2-index-html
+author: david
+date: 2022-08-25
+desc: NODATA
+tags:
+- NODATA
+files:
+- config.yaml
+- docs/README.md
+- docs/tutorial.md
+- network.rb
+- start.rb
+- web_service.rb
+###################################
+# Custom attributes after this line
+#
