@@ -1,13 +1,27 @@
-# tt-info (version 1)
-name: apache2-several-files
-author: David Vargas Ruiz
-date: 20190621
-desc: Instalación y configuración básica del servidor Web Apache2.
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: NODATA
+author: NODATA
+date: 2022-01-01
+desc: NODATA
 require:
-- SO GNU/Linux
-- Apache2
+- NODATA
 tags:
-- demo
-- apache2
-- varios
-- archivos
+- NODATA
+files:
+- config.yaml
+- docs/README.md
+- docs/tutorial.md
+- network.rb
+- start.rb
+- web_service.rb
+###################################
+# Custom attributes after this line
+#
