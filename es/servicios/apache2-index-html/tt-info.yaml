@@ -1,20 +1,25 @@
-#############################
-# DONT CHANGE THIS ATTRIBUTES
-# TeutonGet tt-info file
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
 version: 1
 type: teutontest
 
-###################################################
-# UPDATE VALUES
-# Keep this attribute names and update their values.
-name: NODATA
-author: NODATA
-date: 2022-01-01
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: apache2-index-html
+author: david
+date: 2022-08-25
 desc: NODATA
-require:
-- NODATA
 tags:
 - NODATA
-
-############################################
-# Add your custom attributes after this line
+files:
+- config.yaml
+- docs/README.md
+- docs/tutorial.md
+- network.rb
+- start.rb
+- web_service.rb
+###################################
+# Custom attributes after this line
+#
