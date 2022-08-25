@@ -1,5 +1,5 @@
 ---
-en/systems.1/01-windows-conf:
+systems.1/01-windows-conf:
   name: Windows configuration
   description: Windows configuration
   author: dvarrui
@@ -7,7 +7,7 @@ en/systems.1/01-windows-conf:
   tags:
   - windows
   - configuration
-en/systems.1/02-opensuse-conf:
+systems.1/02-opensuse-conf:
   name: OpenSUSE configuration
   description: OpenSUSE configuration
   author: dvarrui
@@ -15,7 +15,7 @@ en/systems.1/02-opensuse-conf:
   tags:
   - OpenSUSE
   - configuration
-en/systems.1/03-debian-conf:
+systems.1/03-debian-conf:
   name: Debian configuration
   description: Debian configuration
   author: dvarrui
@@ -23,7 +23,7 @@ en/systems.1/03-debian-conf:
   tags:
   - Debian
   - configuration
-en/systems.1/04-winserver-conf:
+systems.1/04-winserver-conf:
   name: Windows Server configuration
   description: Windows Server configuration
   author: dvarrui
@@ -31,7 +31,7 @@ en/systems.1/04-winserver-conf:
   tags:
   - Windows Server
   - configuration
-en/systems.2/01-install-w10-vbox:
+systems.2/01-install-w10-vbox:
   name: Windows 10 instalación y configuración
   description: Instalar Windows 10 y configurarlo
   author: fvarrui
@@ -39,7 +39,7 @@ en/systems.2/01-install-w10-vbox:
   tags:
   - windows 10
   - configuration
-en/systems.2/02-debian-basic-configuration:
+systems.2/02-debian-basic-configuration:
   name: Debian Basic Configuration
   author: dvarrui
   date: 2022-01-01
