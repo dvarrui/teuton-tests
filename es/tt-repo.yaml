@@ -4,17 +4,13 @@ servicios/apache2-index-html:
   type: teutontest
   name: apache2-index-html
   author: david
-  date: 2022-08-25
-  desc: NODATA
+  date: 2022-08-27
+  desc: Iniciar el servicio web Apache con un index.html
   tags:
-  - NODATA
-  files:
-  - config.yaml
-  - docs/README.md
-  - docs/tutorial.md
-  - network.rb
-  - start.rb
-  - web_service.rb
+  - servicio
+  - web
+  - apache
+  - index.html
 servicios/squid-proxy-cache:
   name: squid-proxy-cache
   author: Mª Paz Martínez
