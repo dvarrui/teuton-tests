@@ -3,18 +3,13 @@ servicios/apache2-index-html:
   version: 1
   type: teutontest
   name: apache2-index-html
-  author: david
-  date: 2022-08-25
-  desc: NODATA
+  author: quigon
+  date: 2022-08-27
+  desc: Write your description
   tags:
-  - NODATA
-  files:
-  - config.yaml
-  - docs/README.md
-  - docs/tutorial.md
-  - network.rb
-  - start.rb
-  - web_service.rb
+  - Write your
+  - comma separated
+  - tags
 servicios/squid-proxy-cache:
   name: squid-proxy-cache
   author: Mª Paz Martínez
