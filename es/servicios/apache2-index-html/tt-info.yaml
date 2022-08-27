@@ -10,9 +10,12 @@ type: teutontest
 name: apache2-index-html
 author: quigon
 date: 2022-08-27
-desc: NODATA
+desc: Write your description
 tags:
-- NODATA
+- Write your
+- comma separated
+- tags
+
 ###################################
 # Custom attributes after this line
 #
