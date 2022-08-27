@@ -1,5 +1,5 @@
 ---
-systems.1/01-windows-basic-conf:
+systems.1/01-windows-conf:
   version: 1
   type: teutontest
   name: 01-windows-conf
@@ -11,6 +11,11 @@ systems.1/01-windows-basic-conf:
   - os
   - windows
   - configuration
+  files:
+  - README.md
+  - config.yaml
+  - start.rb
+  - windows.rb
 systems.1/02-opensuse-conf:
   name: OpenSUSE configuration
   description: OpenSUSE configuration
@@ -19,6 +24,12 @@ systems.1/02-opensuse-conf:
   tags:
   - OpenSUSE
   - configuration
+  files:
+  - README.md
+  - config.yaml
+  - network.rb
+  - opensuse.rb
+  - start.rb
 systems.1/03-debian-conf:
   name: Debian configuration
   description: Debian configuration
@@ -27,6 +38,12 @@ systems.1/03-debian-conf:
   tags:
   - Debian
   - configuration
+  files:
+  - README.md
+  - config.yaml
+  - debian.rb
+  - network.rb
+  - start.rb
 systems.1/04-winserver-conf:
   name: Windows Server configuration
   description: Windows Server configuration
@@ -35,6 +52,12 @@ systems.1/04-winserver-conf:
   tags:
   - Windows Server
   - configuration
+  files:
+  - README.md
+  - config.yaml
+  - network.rb
+  - start.rb
+  - windows-server.rb
 systems.2/01-install-w10-vbox:
   name: Windows 10 instalación y configuración
   description: Instalar Windows 10 y configurarlo
@@ -43,6 +66,12 @@ systems.2/01-install-w10-vbox:
   tags:
   - windows 10
   - configuration
+  files:
+  - README.md
+  - config.yaml
+  - start.rb
+  - windows-conf.rb
+  - windows-vbox.rb
 systems.2/02-debian-basic-configuration:
   name: Debian Basic Configuration
   author: dvarrui
@@ -56,3 +85,10 @@ systems.2/02-debian-basic-configuration:
   - network
   - ssh
   - user
+  files:
+  - README.md
+  - config.yaml
+  - host.rb
+  - ssh.rb
+  - start.rb
+  - user.rb
