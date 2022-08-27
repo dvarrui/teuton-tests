@@ -1,5 +1,5 @@
 ---
-systems.1/01-windows-conf:
+systems.1/01-windows-basic-conf:
   version: 1
   type: teutontest
   name: 01-windows-conf
