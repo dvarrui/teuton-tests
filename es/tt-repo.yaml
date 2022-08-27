@@ -11,6 +11,13 @@ servicios/apache2-index-html:
   - web
   - apache
   - index.html
+  files:
+  - config.yaml
+  - docs/README.md
+  - docs/tutorial.md
+  - network.rb
+  - start.rb
+  - web_service.rb
 servicios/squid-proxy-cache:
   name: squid-proxy-cache
   author: Mª Paz Martínez
@@ -24,3 +31,12 @@ servicios/squid-proxy-cache:
   - squid
   - proxy
   - caché
+  files:
+  - config.yaml
+  - docs/AUTHORS.md
+  - docs/README.md
+  - docs/ayuda.md
+  - docs/squid.conf
+  - host-config.rb
+  - squid-service.rb
+  - start.rb
