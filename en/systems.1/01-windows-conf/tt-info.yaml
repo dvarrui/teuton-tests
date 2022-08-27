@@ -1,8 +1,22 @@
-# Teuton tests info
-name: Windows configuration
-description: Windows configuration
-author: dvarrui
-date: 2020-09-20
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 01-windows-conf
+author: david
+date: 2022-08-27
+desc: Windows OS basic configuration
 tags:
+- basic
+- os
 - windows
 - configuration
+
+###################################
+# Custom attributes after this line
+#
