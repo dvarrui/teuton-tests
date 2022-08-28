@@ -10,16 +10,32 @@ servicios/apache2-index-html:
   - Write your
   - comma separated
   - tags
+  files:
+  - config.yaml
+  - docs/README.md
+  - docs/tutorial.md
+  - network.rb
+  - start.rb
+  - web_service.rb
 servicios/squid-proxy-cache:
+  version: 1
+  type: teutontest
   name: squid-proxy-cache
   author: Mª Paz Martínez
-  date: 20190209
+  date: 2019-02-09
   desc: Squid server. Proxy cache.
-  require:
+  tags:
   - GNU/Linux
   - Ubuntu
-  - Squid
-  tags:
   - squid
   - proxy
   - caché
+  files:
+  - config.yaml
+  - docs/AUTHORS.md
+  - docs/README.md
+  - docs/ayuda.md
+  - docs/squid.conf
+  - host-config.rb
+  - squid-service.rb
+  - start.rb
