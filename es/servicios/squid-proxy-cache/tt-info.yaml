@@ -1,13 +1,23 @@
-# tt-info (version 1)
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
 name: squid-proxy-cache
 author: Mª Paz Martínez
-date: 20190209
+date: 2019-02-09
 desc: Squid server. Proxy cache.
-require:
+tags:
 - GNU/Linux
 - Ubuntu
-- Squid
-tags:
 - squid
 - proxy
 - caché
+
+###################################
+# Custom attributes after this line
+#
