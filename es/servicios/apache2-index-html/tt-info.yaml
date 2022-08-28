@@ -8,13 +8,14 @@ type: teutontest
 # UPDATE THESE VALUES (Keep names and update their values
 #
 name: apache2-index-html
-author: quigon
+author: david
 date: 2022-08-27
-desc: Write your description
+desc: Iniciar el servicio web Apache con un index.html
 tags:
-- Write your
-- comma separated
-- tags
+- servicio
+- web
+- apache
+- index.html
 
 ###################################
 # Custom attributes after this line
