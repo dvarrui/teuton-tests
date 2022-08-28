@@ -7,16 +7,10 @@ servicios/apache2-index-html:
   date: 2022-08-27
   desc: Iniciar el servicio web Apache con un index.html
   tags:
-<<<<<<< HEAD
-  - Write your
-  - comma separated
-  - tags
-=======
   - servicio
   - web
   - apache
   - index.html
->>>>>>> 0f6411952710262f361e72d275157497bb62b756
   files:
   - config.yaml
   - docs/README.md
