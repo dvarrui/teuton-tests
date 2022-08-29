@@ -15,6 +15,7 @@ systems.1/01-windows-conf:
   - README.md
   - config.yaml
   - start.rb
+  - tt-info.yaml
   - windows.rb
 systems.1/02-opensuse-conf:
   name: OpenSUSE configuration
@@ -30,6 +31,7 @@ systems.1/02-opensuse-conf:
   - network.rb
   - opensuse.rb
   - start.rb
+  - tt-info.yaml
 systems.1/03-debian-conf:
   name: Debian configuration
   description: Debian configuration
@@ -44,6 +46,7 @@ systems.1/03-debian-conf:
   - debian.rb
   - network.rb
   - start.rb
+  - tt-info.yaml
 systems.1/04-winserver-conf:
   name: Windows Server configuration
   description: Windows Server configuration
@@ -57,6 +60,7 @@ systems.1/04-winserver-conf:
   - config.yaml
   - network.rb
   - start.rb
+  - tt-info.yaml
   - windows-server.rb
 systems.2/01-install-w10-vbox:
   name: Windows 10 instalación y configuración
@@ -70,6 +74,7 @@ systems.2/01-install-w10-vbox:
   - README.md
   - config.yaml
   - start.rb
+  - tt-info.yaml
   - windows-conf.rb
   - windows-vbox.rb
 systems.2/02-debian-basic-configuration:
@@ -91,4 +96,5 @@ systems.2/02-debian-basic-configuration:
   - host.rb
   - ssh.rb
   - start.rb
+  - tt-info.yaml
   - user.rb

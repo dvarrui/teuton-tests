@@ -17,6 +17,7 @@ servicios/apache2-index-html:
   - docs/tutorial.md
   - network.rb
   - start.rb
+  - tt-info.yaml
   - web_service.rb
 servicios/squid-proxy-cache:
   version: 1
@@ -40,3 +41,4 @@ servicios/squid-proxy-cache:
   - host-config.rb
   - squid-service.rb
   - start.rb
+  - tt-info.yaml
