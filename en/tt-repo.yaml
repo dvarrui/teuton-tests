@@ -1,5 +1,5 @@
 ---
-systems.1/01-windows-conf:
+en/systems.1/01-windows-conf:
   version: 1
   type: teutontest
   name: 01-windows-conf
@@ -17,7 +17,7 @@ systems.1/01-windows-conf:
   - start.rb
   - tt-info.yaml
   - windows.rb
-systems.1/02-opensuse-conf:
+en/systems.1/02-opensuse-conf:
   name: OpenSUSE configuration
   description: OpenSUSE configuration
   author: dvarrui
@@ -32,7 +32,7 @@ systems.1/02-opensuse-conf:
   - opensuse.rb
   - start.rb
   - tt-info.yaml
-systems.1/03-debian-conf:
+en/systems.1/03-debian-conf:
   name: Debian configuration
   description: Debian configuration
   author: dvarrui
@@ -47,7 +47,7 @@ systems.1/03-debian-conf:
   - network.rb
   - start.rb
   - tt-info.yaml
-systems.1/04-winserver-conf:
+en/systems.1/04-winserver-conf:
   name: Windows Server configuration
   description: Windows Server configuration
   author: dvarrui
@@ -62,7 +62,7 @@ systems.1/04-winserver-conf:
   - start.rb
   - tt-info.yaml
   - windows-server.rb
-systems.2/01-install-w10-vbox:
+en/systems.2/01-install-w10-vbox:
   name: Windows 10 instalación y configuración
   description: Instalar Windows 10 y configurarlo
   author: fvarrui
@@ -77,7 +77,7 @@ systems.2/01-install-w10-vbox:
   - tt-info.yaml
   - windows-conf.rb
   - windows-vbox.rb
-systems.2/02-debian-basic-configuration:
+en/systems.2/02-debian-basic-configuration:
   name: Debian Basic Configuration
   author: dvarrui
   date: 2022-01-01
