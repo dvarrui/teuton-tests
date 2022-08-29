@@ -1,0 +1,23 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 03-debian-mkdir-command
+author: david
+date: 2022-08-29
+desc: Practice basic commands into Debian host.
+tags:
+- practice
+- basic
+- command
+- debian
+- host
+
+###################################
+# Custom attributes after this line
+#

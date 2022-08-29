@@ -98,3 +98,24 @@ systems.2/02-debian-basic-configuration:
   - start.rb
   - tt-info.yaml
   - user.rb
+systems.2/03-debian-mkdir-command:
+  version: 1
+  type: teutontest
+  name: 03-debian-mkdir-command
+  author: david
+  date: 2022-08-29
+  desc: Practice basic commands into Debian host.
+  tags:
+  - practice
+  - basic
+  - command
+  - debian
+  - host
+  files:
+  - README.md
+  - config.yaml
+  - host.rb
+  - mkdir.rb
+  - start.rb
+  - tt-info.yaml
+  - user.rb
