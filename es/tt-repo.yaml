@@ -1,5 +1,5 @@
 ---
-check-ssh:
+check/ssh:
   version: 1
   type: teutontest
   name: check-ssh
