@@ -1,4 +1,21 @@
 ---
+check-ssh:
+  version: 1
+  type: teutontest
+  name: check-ssh
+  author: dvarrui
+  date: 2022-09-05
+  desc: Comprobar la conexión SSH y el nombre del equipo
+  tags:
+  - comprobar
+  - conexion
+  - conexión
+  - ssh
+  - hostname
+  files:
+  - config.yaml
+  - start.rb
+  - tt-info.yaml
 servicios/apache2-index-html:
   version: 1
   type: teutontest
