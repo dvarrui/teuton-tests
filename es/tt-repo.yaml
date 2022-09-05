@@ -1,4 +1,24 @@
 ---
+check/aulas:
+  version: 1
+  type: teutontest
+  name: aulas
+  author: dvarrui
+  date: 2022-09-05
+  desc: Comprobar el estado de los equipos del aula
+  tags:
+  - comprobar
+  - estado
+  - equipo
+  - equipos
+  - aula
+  files:
+  - config.yaml
+  - lib/home.rb
+  - lib/red.rb
+  - lib/software.rb
+  - start.rb
+  - tt-info.yaml
 check/ssh:
   version: 1
   type: teutontest
