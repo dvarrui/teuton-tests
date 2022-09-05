@@ -14,6 +14,7 @@ desc: Comprobar la conexión SSH y el nombre del equipo
 tags:
 - comprobar
 - conexion
+- conexión
 - ssh
 - hostname
 
