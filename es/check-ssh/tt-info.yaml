@@ -1,0 +1,22 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: check-ssh
+author: dvarrui
+date: 2022-09-05
+desc: Comprobar la conexión SSH y el nombre del equipo
+tags:
+- comprobar
+- conexion
+- ssh
+- hostname
+
+###################################
+# Custom attributes after this line
+#
