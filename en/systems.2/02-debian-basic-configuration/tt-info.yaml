@@ -1,13 +1,24 @@
-# tt-info (version 1)
-name: Debian Basic Configuration
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: Debian basic configuration
 author: dvarrui
-date: 2022-01-01
-desc: Test hostname, network, ssh and user
-require:
-- Debian
+date: 2022-09-06
+desc: Configure Debian hostname, network, ssh and user
 tags:
-- Debian
+- configure
+- debian
 - hostname
 - network
 - ssh
 - user
+
+###################################
+# Custom attributes after this line
+#
