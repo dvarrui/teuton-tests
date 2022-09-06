@@ -111,14 +111,15 @@ systems.2/01-install-w10-vbox:
   - windows-conf.rb
   - windows-vbox.rb
 systems.2/02-debian-basic-configuration:
-  name: Debian Basic Configuration
+  version: 1
+  type: teutontest
+  name: Debian basic configuration
   author: dvarrui
-  date: 2022-01-01
-  desc: Test hostname, network, ssh and user
-  require:
-  - Debian
+  date: 2022-09-06
+  desc: Configure Debian hostname, network, ssh and user
   tags:
-  - Debian
+  - configure
+  - debian
   - hostname
   - network
   - ssh
@@ -152,3 +153,23 @@ systems.2/03-debian-mkdir-command:
   - start.rb
   - tt-info.yaml
   - user.rb
+systems.2/04-debian-users-grants:
+  version: 1
+  type: teutontest
+  name: 04-debian-users-grants
+  author: dvarrui
+  date: 2019-01-14
+  desc: Practice users and groups into Debian host
+  tags:
+  - practice
+  - users
+  - groups
+  - debian
+  - host
+  files:
+  - config.yaml
+  - folders.rb
+  - host.rb
+  - start.rb
+  - tt-info.yaml
+  - users.rb
