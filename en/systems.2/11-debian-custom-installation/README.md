@@ -1,7 +1,7 @@
 ```
 Test unit name : 11-debian-custom-installation
-Date           : 2020-10-22 18:26:55 +0100
-Teuton version : 2.2.0
+Date           : 2022-09-06 13:12:04 +0100
+Teuton version : 2.3.6
 ```
 
 # 11-debian-custom-installation
@@ -9,8 +9,8 @@ Teuton version : 2.2.0
 ### Required hosts
 
 | ID | Host | Configuration |
-| -- | ---- | ------------- |
-|1|HOST1|username=root|
+| --- | --- | --- |
+| 1 | HOST1 | username=root |
 
 > NOTE: SSH Service installation is required on every host.
 
@@ -21,7 +21,14 @@ Teuton version : 2.2.0
 * number
 * username
 
-> NOTE: Save every ':param: value' into config file.
+> NOTE: Save every 'param: value' into config file.
+
+## Network configuration
+
+
+Go to [HOST1](#required-hosts) host, and do next:
+* Network gateway configuration working.
+* Network DNS configuration working.
 
 ## Disk and partitions
 
@@ -49,13 +56,6 @@ Go to [LOCALHOST](#required-hosts) host, and do next:
 Go to [HOST1](#required-hosts) host, and do next:
 * Update hostname with [host1_hostname](#created-params).
 
-## Network configuration
-
-
-Go to [HOST1](#required-hosts) host, and do next:
-* Network gateway configuration working.
-* Network DNS configuration working.
-
 ## Gnu/linux user configuration
 
 
@@ -72,7 +72,7 @@ Go to [HOST1](#required-hosts) host, and do next:
 Global parameters that can be modified:
 
 | Global param | Value |
-| ------------ | ----- |
+| --- | --- |
 |domain|curso2021|
 
 ## Created params
@@ -80,5 +80,5 @@ Global parameters that can be modified:
 Params created during challenge execution:
 
 | Created params | Value |
-| -------------- | ----- |
+| --- | --- |
 |host1_hostname|LASTNAMENUMBERd1.curso2021|

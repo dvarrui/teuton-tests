@@ -5,6 +5,7 @@
  Doc URL     : https://github.com/dvarrui/libro-de-actividades/tree/master/actividades/sistemas.2/instalacion/instalacion-personalizada
 =end
 
+use 'network'
 use 'disk'
 use 'host'
 use 'user'

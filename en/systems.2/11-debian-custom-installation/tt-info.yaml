@@ -1,0 +1,26 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 11-debian-custom-installation
+author: dvarrui
+date: 2020-10-22
+desc: Custom Debian host installation: network, partitions, configurarion, users
+tags:
+- debian
+- custom
+- installation
+- network
+- disk
+- partitions
+- configuration
+- user
+
+###################################
+# Custom attributes after this line
+#
