@@ -4,9 +4,9 @@
  MV OS       : GNU/Linux Debian 7
 =end
 
-require_relative 'host'
-require_relative 'user'
-require_relative 'mkdir'
+use 'host'
+use 'user'
+use 'mkdir'
 
 play do
 	show
