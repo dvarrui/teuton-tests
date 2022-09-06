@@ -2,7 +2,7 @@
 group "Checking Starwars Directories" do
 
   target "Directory <friends>"
-  goto :host1, :exec => "vdir #{ "/home/"+get(:username) }"
+  run "vdir #{ "/home/"+get(:username) }", on: :host1
   expect result.grep(/^drwxrwx---/).grep( get(:groupname) ).grep("friends").count.equal(1)
 
   result.restore!
