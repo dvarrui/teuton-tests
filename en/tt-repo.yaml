@@ -92,12 +92,16 @@ systems.1/04-winserver-conf:
   - tt-info.yaml
   - windows-server.rb
 systems.2/01-install-w10-vbox:
-  name: Windows 10 instalación y configuración
-  description: Instalar Windows 10 y configurarlo
+  version: 1
+  type: teutontest
+  name: 01-install-w10-vbox
   author: fvarrui
-  date: 2020-09-20
+  date: 2022-09-06
+  desc: Windows 10 installation and configuration
   tags:
-  - windows 10
+  - windows
+  - 10
+  - installation
   - configuration
   files:
   - README.md
