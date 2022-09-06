@@ -1,4 +1,23 @@
 ---
+etc/guess-remote-os:
+  version: 1
+  type: teutontest
+  name: guess-remote-os
+  author: dvarrui
+  date: 2022-09-06
+  desc: Guess remote host OS using Teuton
+  tags:
+  - guess
+  - remote
+  - host
+  - os
+  - teuton
+  - command
+  files:
+  - config.yaml
+  - lib/guess-remote-os.rb
+  - start.rb
+  - tt-info.yaml
 systems.1/01-windows-conf:
   version: 1
   type: teutontest
@@ -18,12 +37,15 @@ systems.1/01-windows-conf:
   - tt-info.yaml
   - windows.rb
 systems.1/02-opensuse-conf:
-  name: OpenSUSE configuration
-  description: OpenSUSE configuration
+  version: 1
+  type: teutontest
+  name: 02-opensuse-conf
   author: dvarrui
-  date: 2020-09-06
+  date: 2022-09-06
+  desc: OpenSUSE basic configuration
   tags:
-  - OpenSUSE
+  - opensuse
+  - basic
   - configuration
   files:
   - README.md
@@ -33,12 +55,15 @@ systems.1/02-opensuse-conf:
   - start.rb
   - tt-info.yaml
 systems.1/03-debian-conf:
-  name: Debian configuration
-  description: Debian configuration
+  version: 1
+  type: teutontest
+  name: 03-debian-conf
   author: dvarrui
-  date: 2020-09-06
+  date: 2022-09-06
+  desc: Debian basic configuration
   tags:
-  - Debian
+  - debian
+  - basic
   - configuration
   files:
   - README.md
@@ -48,12 +73,16 @@ systems.1/03-debian-conf:
   - start.rb
   - tt-info.yaml
 systems.1/04-winserver-conf:
-  name: Windows Server configuration
-  description: Windows Server configuration
+  version: 1
+  type: teutontest
+  name: 04-winserver-conf
   author: dvarrui
-  date: 2020-09-06
+  date: 2022-09-06
+  desc: Windows Server basic configuration
   tags:
-  - Windows Server
+  - windows
+  - server
+  - basic
   - configuration
   files:
   - README.md
