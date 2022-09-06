@@ -173,3 +173,28 @@ systems.2/04-debian-users-grants:
   - start.rb
   - tt-info.yaml
   - users.rb
+systems.2/11-debian-custom-installation:
+  version: 1
+  type: teutontest
+  name: 11-debian-custom-installation
+  author: dvarrui
+  date: 2020-10-22
+  desc: Custom Debian host installation, network, partitions, configurarion, users
+  tags:
+  - debian
+  - custom
+  - installation
+  - network
+  - disk
+  - partitions
+  - configuration
+  - user
+  files:
+  - README.md
+  - config.yaml
+  - disk.rb
+  - host.rb
+  - network.rb
+  - start.rb
+  - tt-info.yaml
+  - user.rb
