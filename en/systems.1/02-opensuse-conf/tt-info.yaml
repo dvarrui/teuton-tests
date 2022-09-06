@@ -1,9 +1,21 @@
-# Teuton tests info
-# Date
-name: OpenSUSE configuration
-description: OpenSUSE configuration
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 02-opensuse-conf
 author: dvarrui
-date: 2020-09-06
+date: 2022-09-06
+desc: OpenSUSE basic configuration
 tags:
-- OpenSUSE
+- opensuse
+- basic
 - configuration
+
+###################################
+# Custom attributes after this line
+#
