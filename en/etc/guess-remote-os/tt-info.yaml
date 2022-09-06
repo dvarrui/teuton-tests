@@ -1,0 +1,24 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: guess-remote-os
+author: dvarrui
+date: 2022-09-06
+desc: Guess remote host OS using Teuton
+tags:
+- guess
+- remote
+- host
+- os
+- teuton
+- command
+
+###################################
+# Custom attributes after this line
+#
