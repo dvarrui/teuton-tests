@@ -1,9 +1,22 @@
-# Teuton tests info
-# Date
-name: Windows Server configuration
-description: Windows Server configuration
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 04-winserver-conf
 author: dvarrui
-date: 2020-09-06
+date: 2022-09-06
+desc: Windows Server basic configuration
 tags:
-- Windows Server
+- windows
+- server
+- basic
 - configuration
+
+###################################
+# Custom attributes after this line
+#

@@ -7,14 +7,16 @@ type: teutontest
 #########################################################
 # UPDATE THESE VALUES (Keep names and update their values
 #
-name: 03-debian-conf
+name: check-ssh
 author: dvarrui
-date: 2022-09-06
-desc: Debian basic configuration
+date: 2022-09-05
+desc: Comprobar la conexión SSH y el nombre del equipo
 tags:
-- debian
-- basic
-- configuration
+- comprobar
+- conexion
+- conexión
+- ssh
+- hostname
 
 ###################################
 # Custom attributes after this line

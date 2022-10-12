@@ -1,0 +1,10 @@
+---
+global:
+cases:
+- tt_members: MEMBERS
+  host_ip: HOSTIP
+  # host_port: 22 (Default value) 
+  host_username: USERNAME
+  host_password: PASSWORD
+  hostname: HOSTNAME
+ 

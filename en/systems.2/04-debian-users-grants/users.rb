@@ -3,7 +3,7 @@
 group "Checking Starwars Characters" do
 
   target "Exists user <#{get(:username)}>"
-  goto :host1, :exec => "id #{ get(:username) }"
+  run "id #{ get(:username) }", on: :host1
   expect result.count.equal(1)
 
   result.restore!

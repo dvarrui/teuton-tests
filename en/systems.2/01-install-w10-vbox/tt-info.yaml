@@ -1,8 +1,22 @@
-# Teuton tests info
-name: Windows 10 instalación y configuración
-description: Instalar Windows 10 y configurarlo
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 01-install-w10-vbox
 author: fvarrui
-date: 2020-09-20
+date: 2022-09-06
+desc: Windows 10 installation and configuration
 tags:
-- windows 10
+- windows
+- 10
+- installation
 - configuration
+
+###################################
+# Custom attributes after this line
+#

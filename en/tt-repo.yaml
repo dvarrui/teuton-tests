@@ -1,4 +1,23 @@
 ---
+etc/guess-remote-os:
+  version: 1
+  type: teutontest
+  name: guess-remote-os
+  author: dvarrui
+  date: 2022-09-06
+  desc: Guess remote host OS using Teuton
+  tags:
+  - guess
+  - remote
+  - host
+  - os
+  - teuton
+  - command
+  files:
+  - config.yaml
+  - lib/guess-remote-os.rb
+  - start.rb
+  - tt-info.yaml
 systems.1/01-windows-conf:
   version: 1
   type: teutontest
@@ -18,12 +37,15 @@ systems.1/01-windows-conf:
   - tt-info.yaml
   - windows.rb
 systems.1/02-opensuse-conf:
-  name: OpenSUSE configuration
-  description: OpenSUSE configuration
+  version: 1
+  type: teutontest
+  name: 02-opensuse-conf
   author: dvarrui
-  date: 2020-09-06
+  date: 2022-09-06
+  desc: OpenSUSE basic configuration
   tags:
-  - OpenSUSE
+  - opensuse
+  - basic
   - configuration
   files:
   - README.md
@@ -33,12 +55,15 @@ systems.1/02-opensuse-conf:
   - start.rb
   - tt-info.yaml
 systems.1/03-debian-conf:
-  name: Debian configuration
-  description: Debian configuration
+  version: 1
+  type: teutontest
+  name: 03-debian-conf
   author: dvarrui
-  date: 2020-09-06
+  date: 2022-09-06
+  desc: Debian basic configuration
   tags:
-  - Debian
+  - debian
+  - basic
   - configuration
   files:
   - README.md
@@ -48,12 +73,16 @@ systems.1/03-debian-conf:
   - start.rb
   - tt-info.yaml
 systems.1/04-winserver-conf:
-  name: Windows Server configuration
-  description: Windows Server configuration
+  version: 1
+  type: teutontest
+  name: 04-winserver-conf
   author: dvarrui
-  date: 2020-09-06
+  date: 2022-09-06
+  desc: Windows Server basic configuration
   tags:
-  - Windows Server
+  - windows
+  - server
+  - basic
   - configuration
   files:
   - README.md
@@ -63,12 +92,16 @@ systems.1/04-winserver-conf:
   - tt-info.yaml
   - windows-server.rb
 systems.2/01-install-w10-vbox:
-  name: Windows 10 instalación y configuración
-  description: Instalar Windows 10 y configurarlo
+  version: 1
+  type: teutontest
+  name: 01-install-w10-vbox
   author: fvarrui
-  date: 2020-09-20
+  date: 2022-09-06
+  desc: Windows 10 installation and configuration
   tags:
-  - windows 10
+  - windows
+  - 10
+  - installation
   - configuration
   files:
   - README.md
@@ -78,14 +111,15 @@ systems.2/01-install-w10-vbox:
   - windows-conf.rb
   - windows-vbox.rb
 systems.2/02-debian-basic-configuration:
-  name: Debian Basic Configuration
+  version: 1
+  type: teutontest
+  name: Debian basic configuration
   author: dvarrui
-  date: 2022-01-01
-  desc: Test hostname, network, ssh and user
-  require:
-  - Debian
+  date: 2022-09-06
+  desc: Configure Debian hostname, network, ssh and user
   tags:
-  - Debian
+  - configure
+  - debian
   - hostname
   - network
   - ssh
@@ -116,6 +150,51 @@ systems.2/03-debian-mkdir-command:
   - config.yaml
   - host.rb
   - mkdir.rb
+  - start.rb
+  - tt-info.yaml
+  - user.rb
+systems.2/04-debian-users-grants:
+  version: 1
+  type: teutontest
+  name: 04-debian-users-grants
+  author: dvarrui
+  date: 2019-01-14
+  desc: Practice users and groups into Debian host
+  tags:
+  - practice
+  - users
+  - groups
+  - debian
+  - host
+  files:
+  - config.yaml
+  - folders.rb
+  - host.rb
+  - start.rb
+  - tt-info.yaml
+  - users.rb
+systems.2/11-debian-custom-installation:
+  version: 1
+  type: teutontest
+  name: 11-debian-custom-installation
+  author: dvarrui
+  date: 2020-10-22
+  desc: Custom Debian host installation, network, partitions, configurarion, users
+  tags:
+  - debian
+  - custom
+  - installation
+  - network
+  - disk
+  - partitions
+  - configuration
+  - user
+  files:
+  - README.md
+  - config.yaml
+  - disk.rb
+  - host.rb
+  - network.rb
   - start.rb
   - tt-info.yaml
   - user.rb

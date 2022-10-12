@@ -6,7 +6,7 @@ group "Create files to be saved" do
   files1.each do |filename|
     filepath = dir1+filename
     target "Exist file #{filepath}"
-    goto  :opensuse, :exec => "file '#{filepath}'"
+    run "file '#{filepath}'", on: :opensuse
     expect_one filepath
   end
 
@@ -16,7 +16,7 @@ group "Create files to be saved" do
   files2.each do |filename|
     filepath = dir2 + filename
     target "Exist file #{filepath}"
-    goto   :opensuse, :exec => "file '#{filepath}'"
+    run "file '#{filepath}'", on: :opensuse
     expect_one filepath
   end
 end
@@ -29,14 +29,14 @@ group "Check backup output" do
   dir      = "/var/backup-#{pcnumber}/#{get(:firstname)}1"
 
   target "Exist directory #{dir}"
-  goto   :opensuse, :exec => "file '#{dir}'"
+  run "file '#{dir}'", on: :opensuse
   expect_one [dir, "directory"]
 
   target "#{dir} owner/group is #{username}/#{groupname}"
-  goto   :opensuse, :exec => "vdir '#{dir}' -d"
+  run "vdir '#{dir}' -d", on: :opensuse
   expect_one [ username, groupname ]
 
   target "Permisions of #{dir} must be drwxrwx---"
-  goto   :opensuse, :exec => "vdir '#{dir}' -d"
+  run "vdir '#{dir}' -d", on: :opensuse
   expect_one 'drwxrwx--- '
 end

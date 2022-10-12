@@ -7,14 +7,17 @@ type: teutontest
 #########################################################
 # UPDATE THESE VALUES (Keep names and update their values
 #
-name: 03-debian-conf
+name: guess-remote-os
 author: dvarrui
 date: 2022-09-06
-desc: Debian basic configuration
+desc: Guess remote host OS using Teuton
 tags:
-- debian
-- basic
-- configuration
+- guess
+- remote
+- host
+- os
+- teuton
+- command
 
 ###################################
 # Custom attributes after this line
