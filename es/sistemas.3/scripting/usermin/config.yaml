@@ -1,10 +1,9 @@
 ---
 global:
-  cmd: es/sistemas.3/scripting/usermin/vagrant/demo.rb
+  cmd: /vagrant/usermine.rb
   listar:
-    - "nobody,65534,/bin/bash,nobody"
-    - "quigon,1000,/bin/zsh,quigon"
-    - "profesor,1001,/bin/bash,"
+    - nobody,65534,/usr/sbin/nologin,nobody
+    - vagrant,1000,/bin/bash,vagrant,,,
   consultar:
     - root
     - 0
@@ -12,5 +11,9 @@ global:
     - /bin/bash
     - /root
 cases:
-- tt_members: MEMBERS
-  tt_moodle_id: MOODLE_ID
+- tt_members: profesor
+  tt_moodle_id: profesor@moodle.id
+  host1_ip: 192.168.1.140
+  host1_port: 2241
+  host1_username: vagrant
+  host1_password: vagrant

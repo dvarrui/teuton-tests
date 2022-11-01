@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-DISTRO=USERMINE
+DISTRO=USERMIN
 AUTHOR=teuton-software
-URL=https://github.com/teuton-software/teuton-tests
+URL=https://github.com/teuton-software
 
 apt update
 apt install -y vim nano
 apt install -y tree nmap
 apt install -y git
-apt install -y ruby 
+apt install -y ruby
 
 apt install -y figlet
 figlet $DISTRO > /etc/motd
