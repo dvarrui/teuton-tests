@@ -1,9 +1,9 @@
 ---
 global:
-  cmd: /vagrant/usermine.rb
+  cmd: /vagrant/usermin.rb
   listar:
-    - nobody,65534,/usr/sbin/nologin,nobody
-    - vagrant,1000,/bin/bash,vagrant,,,
+    - "nobody,65534,/usr/sbin/nologin,nobody"
+    - "vagrant,1000,/bin/bash,vagrant,,,"
   consultar:
     - root
     - 0
