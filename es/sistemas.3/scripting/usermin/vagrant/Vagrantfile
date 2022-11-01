@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+NAME = "teuton-test-debian"
+
+Vagrant.configure("2") do |config|
+  config.vm.define NAME do |i|
+    # Configure BOX
+    i.vm.box = "generic/debian11"
+
+    # Configure VM
+    i.vm.hostname = NAME
+    #i.vm.network "public_network", bridge: [ "eth0" ]
+    #i.vm.network "public_network", bridge: [ "wlp6s0" ]
+    i.vm.network :forwarded_port, guest: 22, host: 2241
+    i.vm.network :forwarded_port, guest: 80, host: 8080
+    i.vm.network :forwarded_port, guest: 443, host: 8443
+    i.vm.synced_folder "./", "/vagrant"
+    i.vm.provision "shell", path: 'install-software.sh'
+
+    # Configure VIRTUALBOX
+    i.vm.provider "virtualbox" do |v|
+      v.name = NAME
+      v.memory = 2048
+    end
+  end
+end
