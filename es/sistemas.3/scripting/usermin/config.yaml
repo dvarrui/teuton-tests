@@ -1,18 +1,18 @@
 ---
 global:
-  cmd: /vagrant/usermin.rb
   listar:
     - "nobody,65534,/usr/sbin/nologin,nobody"
     - "vagrant,1000,/bin/bash,vagrant,,,"
   consultar:
-    - root
-    - 0
-    - 0
-    - /bin/bash
-    - /root
+    - Usuario, root
+    - UID, 0
+    - GID, 0
+    - Shell, /bin/bash
+    - HOME, /root
 cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id
+  cmd: /vagrant/usermin.rb
   host1_ip: 192.168.1.140
   host1_port: 2241
   host1_username: vagrant

@@ -91,6 +91,6 @@ done < fichero_a_leer
 | Opción --help | Mostrar la ayuda del comando | 10 |
 | Opción --listar | Listar todos los usuarios desde el UID 1000 en adelante| 15 |
 | Opción --consultar | Mostrar la ficha de un usuario concreto| 15 |
-Opción –nuevo 	Crear un nuevo usuario. 	20
-Opción –eliminar 	Eliminar un usuario existente. 	20
-Opción -f 	Crear usuarios por lotes desde un fichero. 	20
+| Opción --nuevo | Crear un nuevo usuario | 20 |
+| Opción --eliminar | Eliminar un usuario existente | 20 |
+| Opción -f | Crear usuarios por lotes desde un fichero | 20 |
