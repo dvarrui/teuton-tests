@@ -60,9 +60,11 @@ HOME: /home/fran
 
 Un ejemplo de fichero para la opción -f del script sería el siguiente:
 
+```
 michael,nait,/bin/bash,Michael Night
 pirana,1234,/bin/bash,Pirañita
 messi,gol,/bin/sh,Leo Messi
+```
 
 ## Recorrer el fichero
 
@@ -88,8 +90,7 @@ done < fichero_a_leer
 | ------------- | ------------- | -------- |
 | Opción --help | Mostrar la ayuda del comando | 10 |
 | Opción --listar | Listar todos los usuarios desde el UID 1000 en adelante| 15 |
-
-Opción –consultar 	Mostrar la ficha de un usuario concreto. 	15
+| Opción --consultar | Mostrar la ficha de un usuario concreto| 15 |
 Opción –nuevo 	Crear un nuevo usuario. 	20
 Opción –eliminar 	Eliminar un usuario existente. 	20
 Opción -f 	Crear usuarios por lotes desde un fichero. 	20
