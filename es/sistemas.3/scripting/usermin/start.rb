@@ -1,6 +1,6 @@
-# use "lib1/help"
-# use "lib1/listar"
-# use "lib1/consultar"
+# use "lib/mv/help"
+# use "lib/mv/listar"
+# use "lib/mv/consultar"
 
 play do
   show
