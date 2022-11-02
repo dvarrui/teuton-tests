@@ -1,6 +1,6 @@
 group "Opción --listar" do
   # Execute "path/to/script --listar"
-  run get(:cmd1) + " --listar", on: :host1
+  run get(:cmd) + " --listar", on: :host1
 
   listar = get(:listar)
   peso = 15.0/listar.size
