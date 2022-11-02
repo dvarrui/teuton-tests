@@ -1,6 +1,6 @@
-use "lib/help"
-use "lib/listar"
-use "lib/consultar"
+# use "lib1/help"
+# use "lib1/listar"
+# use "lib1/consultar"
 
 play do
   show

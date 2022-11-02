@@ -12,7 +12,8 @@ global:
 cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id
-  cmd: /vagrant/usermin.rb
+  cmd1: /vagrant/usermin.rb
+  cmd2: es/sistemas.3/scripting/usermin/docker/run
   host1_ip: 192.168.1.140
   host1_port: 2241
   host1_username: vagrant
