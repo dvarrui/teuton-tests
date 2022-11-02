@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+DOCKER_NAME=usermin
+DOCKER_IMAGE=ruby
+LOCAL_SCRIPT=$*
+
+docker run -it --rm --name $DOCKER_NAME -v "$PWD":/opt -w /opt $DOCKER_IMAGE $LOCAL_SCRIPT
