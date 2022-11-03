@@ -3,7 +3,8 @@
 # use "lib/vm/consultar"
 
 use "lib/docker/help"
-# use "lib/docker/listar"
+use "lib/docker/listar"
+use "lib/docker/consultar"
 
 play do
   show
