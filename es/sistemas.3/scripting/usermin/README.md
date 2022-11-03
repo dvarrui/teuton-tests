@@ -94,3 +94,13 @@ done < fichero_a_leer
 | Opción --nuevo | Crear un nuevo usuario | 20 |
 | Opción --eliminar | Eliminar un usuario existente | 20 |
 | Opción -f | Crear usuarios por lotes desde un fichero | 20 |
+
+----
+
+# ANEXO
+
+## Requisitos para el profesor
+
+* Tener docker instalado en la máquina con Teuton.
+* Descargar los scripts de los alumnos en una carpeta local. Por ejemplo `temp`.
+* Revisar y adaptar el fichero de configuración `config.yaml` del test.
