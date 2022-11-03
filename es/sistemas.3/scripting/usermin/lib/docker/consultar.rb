@@ -1,6 +1,7 @@
 group "Opción --consultar USERNAME" do
-  cmd = get(:cmd).join(" ")
-  run "#{cmd} --consultar root", on: :host1
+  cmd = get(:cmd).join(" ") + get(:script)
+  username = "obiwan2"
+  run "#{cmd} --consultar #{username}", on: :host1
 
   consultar = get(:consultar)
   peso = 15.0/consultar.size

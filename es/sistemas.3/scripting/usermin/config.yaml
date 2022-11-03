@@ -1,13 +1,15 @@
 ---
 global:
   listar:
-    - "nobody,65534,/usr/sbin/nologin,nobody"
+    - "vader1,1000,/bin/bash,teuton"
+    - "obiwan2,1001,/bin/bash,teuton"
+    - "yoda3,1002,/bin/bash,teuton"
   consultar:
-    - Usuario, root
-    - UID, 0
-    - GID, 0
+    - Usuario, obiwan2
+    - UID, 1001
+    - GID, 100
     - Shell, /bin/bash
-    - HOME, /root
+    - HOME, /home/obiwan
 cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id
@@ -16,6 +18,7 @@ cases:
     - "docker run -it --rm --name"
     - usermin
     - "-v /home/david/proy/repos/teuton.d/teuton-tests/temp/usermin:/opt"
+    - "-v /home/david/proy/repos/teuton.d/teuton-tests/temp/etc:/etc"
     - "-w /opt"
-    - "ruby:latest"
-    - "ruby profesor.rb"
+    - "ruby:latest "
+  script: " ruby profesor.rb"

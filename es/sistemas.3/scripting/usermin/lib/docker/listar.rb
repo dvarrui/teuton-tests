@@ -1,5 +1,5 @@
 group "Opción --listar" do
-  cmd = get(:cmd).join(" ")
+  cmd = get(:cmd).join(" ") + get(:script)
   run cmd + " --listar", on: :host1
 
   listar = get(:listar)

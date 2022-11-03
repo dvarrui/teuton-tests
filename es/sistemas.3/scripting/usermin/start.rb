@@ -3,11 +3,11 @@
 # use "lib/vm/consultar"
 
 use "lib/docker/help"
+use "lib/docker/nuevo"
 use "lib/docker/listar"
 use "lib/docker/consultar"
-use "lib/docker/nuevo"
 
 play do
   show
-  export
+  export format: :colored_text
 end
