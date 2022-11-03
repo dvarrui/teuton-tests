@@ -11,5 +11,12 @@ global:
 cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id
-  cmd: "ruby temp/usermin/profesor.rb"
   host1_ip: localhost
+  cmd:
+#     "/home/david/proy/repos/teuton.d/teuton-tests/temp/docker.ruby ruby profesor.rb "
+    - "docker run -it --rm --name"
+    - usermin
+    - "-v /home/david/proy/repos/teuton.d/teuton-tests/temp/usermin:/opt"
+    - "-w /opt"
+    - "ruby:latest"
+    - "ruby profesor.rb"
