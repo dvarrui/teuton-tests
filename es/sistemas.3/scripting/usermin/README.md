@@ -31,7 +31,7 @@ usermin.sh [ --help | --listar | --consultar usuario | --nuevo usuario | --elimi
 | --help  |	Muestra la ayuda, explicando para qué sirve el script, sus distintas opciones y cómo se utiliza |
 | --listar | Muestra un listado con los nombres, UID y Shell de todos los usuarios del sistema del 1000 en adelante, separando los campos con una coma (,) |
 | --consultar usuario | Muestra los datos del usuario especificado en forma de ficha (nombre de usuario,UID, GID, Shell y directorio HOME) |
-| --nuevo usuario | Crea un nuevo usuario, pidiendo por teclado uno a uno los datos del nuevo usuario; los datos que se pedirán son “comentario”, “shell” y “contraseña” |
+| --nuevo usuario "comentario" shell contraseña | Crea un nuevo usuario de forma no interactiva |
 | --eliminar usuario | Elimina un usuario existente. Se deberá comprobar si el usuario existe; y si no existe, devolver un mensaje de error. Asimismo, se deberá pedir confirmación al usuario (Sí/No) antes de eliminarlo |
 | -f fichero | Crear usuarios por lotes, a partir de los datos especificados en un fichero. Se deberá leer línea a línea el fichero especificado, conteniendo cada línea la información de un usuario diferente. El formato de cada línea será el siguiente (los campos van separados por comas ,): `usuario,contraseña,shell,comentario` |
 

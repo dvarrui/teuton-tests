@@ -13,7 +13,6 @@ cases:
   tt_moodle_id: profesor@moodle.id
   host1_ip: localhost
   cmd:
-#     "/home/david/proy/repos/teuton.d/teuton-tests/temp/docker.ruby ruby profesor.rb "
     - "docker run -it --rm --name"
     - usermin
     - "-v /home/david/proy/repos/teuton.d/teuton-tests/temp/usermin:/opt"
