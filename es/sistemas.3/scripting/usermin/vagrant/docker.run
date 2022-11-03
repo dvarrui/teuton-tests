@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+DNAME=usermin
+DIMAGE=ruby
+# DVOLUME="$PWD"
+DVOLUME=/home/quigon/proy/repos/teuton.d/teuton-tests/es/sistemas.3/scripting/usermin/vagrant
+LOCAL_SCRIPT=$*
+
+docker run -it --rm --name $DNAME -v $DVOLUME:/opt -w /opt $DIMAGE $LOCAL_SCRIPT

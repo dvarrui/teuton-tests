@@ -1,0 +1,20 @@
+---
+global:
+  listar:
+    - "nobody,65534,/usr/sbin/nologin,nobody"
+    - "vagrant,1000,/bin/bash,vagrant,,,"
+  consultar:
+    - Usuario, root
+    - UID, 0
+    - GID, 0
+    - Shell, /bin/bash
+    - HOME, /root
+cases:
+- tt_members: profesor
+  tt_moodle_id: profesor@moodle.id
+  cmd1: /vagrant/usermin.rb
+  cmd2: es/sistemas.3/scripting/usermin/docker/run
+  host1_ip: 192.168.1.140
+  host1_port: 2241
+  host1_username: vagrant
+  host1_password: vagrant
