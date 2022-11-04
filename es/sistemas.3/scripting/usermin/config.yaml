@@ -1,16 +1,20 @@
 ---
 global:
   tt_sequence: true
+  nuevo:
+    - "vader1"
+    - "obiwan2"
   listar:
     - "vader1,1000,/bin/bash,teuton"
     - "obiwan2,1001,/bin/bash,teuton"
-    - "yoda3,1002,/bin/bash,teuton"
   consultar:
     - Usuario, obiwan2
     - UID, 1001
     - GID, 100
     - Shell, /bin/bash
     - HOME, /home/obiwan
+  eliminar:
+    - "obiwan2"
 cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id

@@ -6,6 +6,7 @@ use "lib/docker/help"
 use "lib/docker/nuevo"
 use "lib/docker/listar"
 use "lib/docker/consultar"
+use "lib/docker/eliminar"
 
 play do
   show

@@ -2,7 +2,7 @@ group "Opción --nuevo USERNAME" do
   docker = get(:cmd).join(" ")
   script = docker + get(:script)
 
-  users = [ "vader1", "obiwan2", "yoda3" ]
+  users = get(:nuevo)
   peso = 20.0/users.size
 
   users.each do |name|

@@ -47,7 +47,7 @@ def create_user(username: , comment:, shell:, password:)
 end
 
 def delete_user(username)
-  system("userdel #{username} -c #{comment} -s #{shell} -p #{password}")
+  system("userdel #{username} -f")
 end
 
 case option
