@@ -1,5 +1,14 @@
 group "Opción --help" do
-  target "exec script --help", weight: 10
-  run get(:cmd) + " --help", on: :host1
-  expect "Show help"
+  cmd = get(:cmd).join(" ") + get(:script)
+
+  run cmd + " --help", on: :host1
+
+  options = ["--help", "--listar", "--consultar", "--nuevo", "--eliminar", "-f fichero"]
+  peso = 10.0/options.size
+
+  options.each do |option|
+    target "exec script --help", weight: peso
+    result.restore
+    expect option
+  end
 end
