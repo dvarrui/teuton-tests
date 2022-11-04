@@ -16,10 +16,10 @@ Esta es la forma clásica y más sencilla de usar el test.
 
 **Ejecutar el test**
 
-* Asegurarse de que en el fichero `start.rb` las instrucciones `use` activas apuntan todas a `lib/vm/*`. Comentar el resto.
+* Asegurarse de que en el fichero `vm.rb` las instrucciones `use` activas apuntan todas a `lib/vm/*`. Comentar el resto.
 * Ejecutamos el reto con el fichero de configuración `vm.yaml`.
 ```
-teuton PATH/TO/THIS/TEST -cname=vm
+teuton PATH/TO/THIS/TEST/vm.rb
 ```
 * Personalizar la configuración del fichero `vm.yaml`.
 
@@ -37,7 +37,7 @@ Esta forma de usar el test de Teuton con contenedores es poco habitual, pero se 
 
 **Ejecutar el test**
 
-* Asegurarse de que en el fichero `start.rb` las instrucciones `use` activas apuntan todas a `lib/docker/*`. Comentar el resto.
+* Asegurarse de que en el fichero `start.rb` las instrucciones `use` activas apuntan todas a `lib/docker/*`.
 * Ejecutamos el reto con el fichero de configuración por defecto.
 ```
 teuton PATH/TO/THIS/TEST

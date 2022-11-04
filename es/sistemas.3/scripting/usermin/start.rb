@@ -1,7 +1,3 @@
-# use "lib/vm/help"
-# use "lib/vm/listar"
-# use "lib/vm/consultar"
-
 use "lib/docker/help"
 use "lib/docker/nuevo"
 use "lib/docker/listar"
