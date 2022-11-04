@@ -17,8 +17,8 @@ cases:
   cmd:
     - "docker run -it --rm --name"
     - usermin
-    - "-v /home/david/proy/repos/teuton.d/teuton-tests/temp/usermin:/opt"
-    - "-v /home/david/proy/repos/teuton.d/teuton-tests/temp/etc:/etc"
+    - "-v /home/david/proy/repos/teuton.d/teuton-tests/var/temp/usermin:/opt"
+    - "-v /home/david/proy/repos/teuton.d/teuton-tests/var/temp/etc:/etc"
     - "-w /opt"
     - "ruby:latest "
   script: " ruby profesor.rb"
