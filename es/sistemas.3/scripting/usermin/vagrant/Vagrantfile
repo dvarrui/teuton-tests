@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-NAME="teuton-test-usermine"
+NAME="test-usermine"
 
 Vagrant.configure("2") do |config|
   config.vm.define NAME do |i|

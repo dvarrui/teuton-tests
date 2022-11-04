@@ -3,7 +3,13 @@
 option = ARGV[0]
 
 def show_help
-  puts "Show help"
+  puts "Modo de uso"
+  puts "  --help       Mostrar la ayuda del comando"
+  puts "  --listar     Listar todos los usuarios desde el UID 1000 en adelante"
+  puts "  --consultar  Mostrar la ficha de un usuario concreto"
+  puts "  --nuevo      Crear un nuevo usuario"
+  puts "  --eliminar   Eliminar un usuario existente"
+  puts "  -f fichero   Crear usuarios por lotes desde un fichero"
 end
 
 def show_users
@@ -34,6 +40,16 @@ def show_user(username)
   end
 end
 
+def create_user(username: , comment:, shell:, password:)
+  # useradd vader1 -c "sith" -s /bin/bash -p 123456
+  system("useradd #{username} -c #{comment} -s #{shell} -p #{password}")
+  # system("id #{username}")
+end
+
+def delete_user(username)
+  system("userdel #{username} -f")
+end
+
 case option
 when "--help"
   show_help
@@ -41,6 +57,15 @@ when "--listar"
   show_users
 when "--consultar"
   show_user(ARGV[1])
+when "--nuevo"
+  create_user(
+    username: ARGV[1],
+    comment: ARGV[2],
+    shell: ARGV[3],
+    password: ARGV[4]
+  )
+when "--eliminar"
+  delete_user(ARGV[1])
 else
   exit 1
 end

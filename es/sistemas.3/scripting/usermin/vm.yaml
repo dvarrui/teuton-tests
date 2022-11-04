@@ -9,12 +9,16 @@ global:
     - GID, 0
     - Shell, /bin/bash
     - HOME, /root
+  nuevo:
+    - "vader1"
+    - "obiwan2"
+  eliminar:
+    - "obiwan2"
 cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id
-  cmd: ruby
-  script: /vagrant/profesor.rb
-  host1_ip: 192.168.1.140
+  script: ruby /vagrant/profesor.rb
+  host1_ip: 192.168.1.13
   host1_port: 2241
-  host1_username: vagrant
+  host1_username: root
   host1_password: vagrant

@@ -1,6 +1,6 @@
 group "Opción --consultar USERNAME" do
   # Execute "path/to/script --consultar"
-  run "#{get(:cmd)} --consultar root", on: :host1
+  run "#{get(:script)} --consultar root", on: :host1
 
   consultar = get(:consultar)
   peso = 15.0/consultar.size
