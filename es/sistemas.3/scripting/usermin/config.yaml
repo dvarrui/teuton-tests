@@ -1,5 +1,6 @@
 ---
 global:
+  tt_sequence: true
   listar:
     - "vader1,1000,/bin/bash,teuton"
     - "obiwan2,1001,/bin/bash,teuton"
