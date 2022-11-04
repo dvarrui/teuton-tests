@@ -4,8 +4,8 @@ DNAME=usermin
 DIMAGE=ruby
 # DVOLUME="$PWD/temp/usermin"
 # DVOLUME=/home/quigon/proy/repos/teuton.d/teuton-tests/es/sistemas.3/scripting/usermin/vagrant
-DVOLUME=$PWD/temp/usermin
-ETC=$PWD/temp/etc
+DVOLUME=$PWD/var/temp/usermin
+ETC=$PWD/var/temp/etc
 LOCAL_SCRIPT=$*
 
 docker run -it --rm --name $DNAME -v $DVOLUME:/opt -v $ETC:/etc -w /opt $DIMAGE $LOCAL_SCRIPT
