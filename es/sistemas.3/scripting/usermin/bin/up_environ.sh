@@ -8,8 +8,13 @@ title () {
   echo "==> $APPNAME: [$1] $2."
 }
 
-title 1 "Install docker"
-sudo zypper install docker
+CMD=`docker -v`
+if [ "$?" == "0" ]; then
+  title 1 "$CMD"
+else
+  title 1 "Install docker"
+  sudo zypper install docker
+fi
 
 title 2 "Start docker service"
 sudo systemctl start docker
