@@ -14,6 +14,11 @@ Esta es la forma clásica y más sencilla de usar el test.
 * Aquí tenemos poco o nada que preparar. Son los alumnos los que deben tener sus máquinas accesibles por SSH y listo.
 * Para realizar pruebas hemos preparado un fichero `vagrant/Vagranfile` para levantar una máquina virtual mediante Vagrant.
 
+**Configuración**
+
+Personalizar la configuración del fichero `vm.yaml`.
+* Parámetros de la configuración de cada `case`.
+
 **Ejecutar el test**
 
 * Asegurarse de que en el fichero `vm.rb` las instrucciones `use` activas apuntan todas a `lib/vm/*`. Comentar el resto.
@@ -21,7 +26,6 @@ Esta es la forma clásica y más sencilla de usar el test.
 ```
 teuton PATH/TO/THIS/TEST/vm.rb
 ```
-* Personalizar la configuración del fichero `vm.yaml`.
 
 ## Modo 2: Contenedores
 
@@ -37,6 +41,10 @@ Ejecutar el script `bin/up_environ.sh` desde el directorio donde tenemos la carp
     * `var/usermin/docker/profesor/opt`, para la persistencia del contenedor y ubicar los scripts a evaluar.
 4. Copia el script del profesor en `var/usermin/docker/profesor/opt`.
 
+**Configuración**
+
+* Personalizar la configuración del fichero `config.yaml`. Sobre todo tener en cuenta las rutas de los volúmenes.
+
 **Ejecutar el test**
 
 * Asegurarse de que en el fichero `start.rb` las instrucciones `use` activas apuntan todas a `lib/docker/*`.
@@ -44,17 +52,16 @@ Ejecutar el script `bin/up_environ.sh` desde el directorio donde tenemos la carp
 ```
 teuton PATH/TO/THIS/TEST
 ```
-* Personalizar la configuración del fichero `config.yaml`.
+
+**Advertencia**
 
 Hacer notar que por defecto todos los `cases` se ejecutan en paralelo para optimizar los tiempos de ejecución. Sin embargo en este caso hemos desactivado el modo paralelo y lo tenemos en secuencial `tt_sequence: true`. Esto es, que todos los `cases` se ejecutan uno detrás de otro.
 
 ¿Por qué? Porque hemos preparado nuestro entorno de ejecución para usar únicamente 1 contenedor. Y ese contenedor no debe estar compartido por varios `cases` al mismo tiempo para evitar que se mezclen lo resultados.
 
 ¿Se pueden ejecutar las pruebas en paralelo en contenedores diferentes? ¡Sí! Pero hay que hacer algunos cambios. Cada `case` tiene que tener los siguientes parámetros diferentes:
-* `docker_name`: El nombre del contenedor docker debe ser único.
-* `docker_vol_etc`: El directorio del volumen `etc` debe ser único.
+* El nombre de cada contenedor docker debe ser único. Por ejemplo `usermin_profesor`, `usermin01`, `usermin02`, etc.
+* El directorio del volumen `etc` debe ser único. Por ejemplo `var/usermin/docker/01/etc`, `var/usermin/docker/02/etc`, etc.
+* El directorio del volumen `opt` debe ser único. Por ejemplo `var/usermin/docker/01/opt`, `var/usermin/docker/02/opt`, etc.
 
 El volumen del directorio `opt` puede estar compartido por todas las instancias, siempre que los nombres de los scripts de cada alumno no entren en conflicto. Además este volumen se puede poner en modo de sólo lectura por seguridad.
-
-* `docker_vol_opt`: Puede ser uno compartido por todos o uno único por `case`.
-* `script`: El nombre del script de cada alumno debe ser único, si se ponen todos en la misma carpeta.
