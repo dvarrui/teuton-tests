@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 APPNAME=up_environ
 TESTNAME=usermin
-FOLDER=var/$TESTNAME/docker
+DIRBASE=`dirname $0`
+FOLDER=var/$TESTNAME/docker/profesor
 
 title () {
   echo "==> $APPNAME: [$1] $2."
 }
 
-title 1 "Install docker" 
-title 2 "Start docker service" 
+title 1 "Install docker"
+sudo zypper install docker
+
+title 2 "Start docker service"
+sudo systemctl start docker
 
 title 3 "Create directory tree"
-mkdir -p $FOLDER/01/etc
-mkdir -p $FOLDER/01/opt
+mkdir -p $FOLDER/etc
+mkdir -p $FOLDER/opt
 
 title 4 "Copy script"
-echo $PWD
-echo $0
-echo dirbase $0
-
+cp $DIRBASE/../vagrant/profesor.rb $FOLDER/opt

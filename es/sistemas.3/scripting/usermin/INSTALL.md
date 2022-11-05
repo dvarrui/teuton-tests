@@ -29,11 +29,13 @@ Esta forma de usar el test de Teuton con contenedores es poco habitual, pero se 
 
 **Preparar el entorno**
 
-* Instalar docker en la máquina T-NODE (`zypper install docker`). Esto es, donde vamos a ejecutar Teuton.
-* Levantar el servicio de Docker (`sudo systemctl start docker`)
-* Crear las carpetas siguientes:
-    * `var/temp/etc`, para la persistencia del contenedor.
-    * `var/temp/usermin`, para poner los scripts a evaluar.
+Ejecutar el script `bin/up_environ.sh` desde el directorio donde tenemos la carpeta `var`. Esto es, desde  donde vamos a lanzar los tests. El script realiza lo siguiente:
+1. Instalar docker en la máquina T-NODE (`zypper install docker`). Esto es, donde vamos a ejecutar Teuton.
+2. Levantar el servicio de Docker (`sudo systemctl start docker`)
+3. Crear las carpetas siguientes:
+    * `var/usermin/docker/profesor/etc`, para la persistencia del contenedor.
+    * `var/usermin/docker/profesor/opt`, para la persistencia del contenedor y ubicar los scripts a evaluar.
+4. Copia el script del profesor en `var/usermin/docker/profesor/opt`.
 
 **Ejecutar el test**
 
