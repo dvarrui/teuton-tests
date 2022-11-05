@@ -1,24 +1,4 @@
 ---
-check/aulas:
-  version: 1
-  type: teutontest
-  name: aulas
-  author: dvarrui
-  date: 2022-09-05
-  desc: Comprobar el estado de los equipos del aula
-  tags:
-  - comprobar
-  - estado
-  - equipo
-  - equipos
-  - aula
-  files:
-  - config.yaml
-  - lib/home.rb
-  - lib/red.rb
-  - lib/software.rb
-  - start.rb
-  - tt-info.yaml
 check/ssh:
   version: 1
   type: teutontest
@@ -79,3 +59,39 @@ servicios/squid-proxy-cache:
   - squid-service.rb
   - start.rb
   - tt-info.yaml
+sistemas.3/scripting/usermin:
+  version: 1
+  type: teutontest
+  name: usermin
+  author: fvarrui, dvarrui
+  date: 2022-11-05
+  desc: Usermin  stript para la gestión de usuarios
+  tags:
+  - script
+  - usuario
+  - crear
+  - consultar
+  - listar
+  - eliminar
+  files:
+  - INSTALL.md
+  - README.md
+  - bin/docker.run
+  - bin/up_environ.sh
+  - config.yaml
+  - lib/docker/consultar.rb
+  - lib/docker/eliminar.rb
+  - lib/docker/help.rb
+  - lib/docker/listar.rb
+  - lib/docker/nuevo.rb
+  - lib/vm/consultar.rb
+  - lib/vm/eliminar.rb
+  - lib/vm/help.rb
+  - lib/vm/listar.rb
+  - lib/vm/nuevo.rb
+  - start.rb
+  - tt-info.yaml
+  - vagrant/install-software.sh
+  - vagrant/profesor.rb
+  - vm.rb
+  - vm.yaml

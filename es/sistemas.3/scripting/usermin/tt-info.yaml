@@ -1,0 +1,24 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: usermin
+author: fvarrui, dvarrui
+date: 2022-11-05
+desc: Usermin  stript para la gestión de usuarios
+tags:
+- script
+- usuario
+- crear
+- consultar
+- listar
+- eliminar
+
+###################################
+# Custom attributes after this line
+#
