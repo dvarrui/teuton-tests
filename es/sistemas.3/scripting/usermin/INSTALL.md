@@ -61,7 +61,7 @@ Hacer notar que por defecto todos los `cases` se ejecutan en paralelo para optim
 
 ¿Se pueden ejecutar las pruebas en paralelo en contenedores diferentes? ¡Sí! Pero hay que hacer algunos cambios. Cada `case` tiene que tener los siguientes parámetros diferentes:
 * El nombre de cada contenedor docker debe ser único. Por ejemplo `usermin_profesor`, `usermin01`, `usermin02`, etc.
-* El directorio del volumen `etc` debe ser único. Por ejemplo `var/usermin/docker/01/etc`, `var/usermin/docker/02/etc`, etc.
-* El directorio del volumen `opt` debe ser único. Por ejemplo `var/usermin/docker/01/opt`, `var/usermin/docker/02/opt`, etc.
+* El directorio del volumen `etc` debe ser único. Por ejemplo `var/usermin/cases/01/etc`, `var/usermin/cases/02/etc`, etc.
+* El directorio del volumen `opt` debe ser único. Por ejemplo `var/usermin/cases/01/opt`, `var/usermin/cases/02/opt`, etc.
 
 El volumen del directorio `opt` puede estar compartido por todas las instancias, siempre que los nombres de los scripts de cada alumno no entren en conflicto. Además este volumen se puede poner en modo de sólo lectura por seguridad.

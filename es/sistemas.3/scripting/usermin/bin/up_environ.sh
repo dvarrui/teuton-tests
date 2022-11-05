@@ -2,7 +2,7 @@
 APPNAME=up_environ
 TESTNAME=usermin
 DIRBASE=`dirname $0`
-FOLDER=var/$TESTNAME/docker/profesor
+FOLDER=var/$TESTNAME/temp/profesor
 
 title () {
   echo "==> $APPNAME: [$1] $2."
@@ -17,7 +17,10 @@ else
 fi
 
 title 2 "Start docker service"
-sudo systemctl start docker
+CMD=`systemctl status docker |grep "(running)" |wc -l`
+if [ $CMD == "0\n" ]; then
+  sudo systemctl start docker
+fi
 
 title 3 "Create directory tree"
 mkdir -p $FOLDER/etc
