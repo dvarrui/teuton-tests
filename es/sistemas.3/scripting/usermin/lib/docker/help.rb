@@ -1,7 +1,6 @@
 group "Opción --help" do
-  cmd = get(:cmd).join(" ") + get(:script)
-  cmd.gsub!("FOLDER", get(:folder))
-
+  cmd = _cmd.join(" ") + _script
+  cmd.gsub!("FOLDER", _folder)
   run cmd + " --help", on: :host1
 
   options = ["--help", "--listar", "--consultar", "--nuevo", "--eliminar", "-f fichero"]

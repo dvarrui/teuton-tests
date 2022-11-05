@@ -1,10 +1,10 @@
 group "Opción --nuevo USERNAME" do
-  docker = get(:cmd).join(" ")
-  docker.gsub!("FOLDER", get(:folder))
-  script = docker + get(:script)
-  script.gsub!("FOLDER", get(:folder))
+  docker = _cmd.join(" ")
+  docker.gsub!("FOLDER", _folder)
+  script = docker + _script
+  script.gsub!("FOLDER", _folder)
 
-  users = get(:nuevo)
+  users = _nuevo
   peso = 20.0/users.size
 
   for name in users do
