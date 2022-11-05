@@ -19,11 +19,12 @@ cases:
 - tt_members: profesor
   tt_moodle_id: profesor@moodle.id
   host1_ip: localhost
+  folder: profesor
   cmd:
     - "docker run -it --rm --name"
-    - usermin_profesor
-    - "-v /home/quigon/proy/repos/teuton.d/teuton-tests/var/usermin/temp/profesor/etc:/etc"
-    - "-v /home/quigon/proy/repos/teuton.d/teuton-tests/var/usermin/temp/profesor/opt:/opt"
+    - usermin_FOLDER
+    - "-v /home/quigon/proy/repos/teuton.d/teuton-tests/var/usermin/temp/FOLDER/etc:/etc"
+    - "-v /home/quigon/proy/repos/teuton.d/teuton-tests/var/usermin/temp/FOLDER/opt:/opt"
     - "-w /opt"
     - "ruby:latest "
   script: " ruby profesor.rb"

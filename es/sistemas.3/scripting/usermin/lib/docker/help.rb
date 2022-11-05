@@ -1,5 +1,6 @@
 group "Opción --help" do
   cmd = get(:cmd).join(" ") + get(:script)
+  cmd.gsub!("FOLDER", get(:folder))
 
   run cmd + " --help", on: :host1
 
