@@ -7,7 +7,7 @@ group "Opción --help" do
   options = ["--help", "--listar", "--consultar", "--nuevo", "--eliminar", "-f fichero"]
   peso = 10.0/options.size
 
-  options.each do |option|
+  for option in options do
     target "exec script --help", weight: peso
     result.restore
     expect option

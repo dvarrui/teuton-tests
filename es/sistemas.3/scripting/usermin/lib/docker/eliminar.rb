@@ -6,7 +6,7 @@ group "Opción --eliminar USERNAME" do
   users = get(:eliminar)
   peso = 20.0/users.size
 
-  users.each do |name|
+  for name in users do
     target "script --eliminar #{name}", weight: peso
     run "#{script} --eliminar #{name}", on: :host1
     run "#{docker} id #{name}", on: :host1

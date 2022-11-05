@@ -6,7 +6,7 @@ group "Opción --listar" do
   listar = get(:listar)
   peso = 15.0/listar.size
 
-  listar.each do |line|
+  for line in listar do
     target "exec script --listar", weight: peso
     result.restore
     expect_one line

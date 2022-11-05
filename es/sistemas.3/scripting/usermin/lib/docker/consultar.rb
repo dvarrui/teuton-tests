@@ -8,7 +8,7 @@ group "Opción --consultar USERNAME" do
   consultar = get(:consultar)
   peso = 15.0/consultar.size
 
-  consultar.each do |items|
+  for items in consultar do
     label = items[0]
     value = items[1]
 
