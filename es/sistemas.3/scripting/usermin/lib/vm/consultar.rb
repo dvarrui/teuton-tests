@@ -1,5 +1,4 @@
 group "Opción --consultar USERNAME" do
-  # Execute "path/to/script --consultar"
   run "#{get(:script)} --consultar root", on: :host1
 
   consultar = get(:consultar)

@@ -1,6 +1,6 @@
 group "Opción --eliminar USERNAME" do
-  script = get(:script)
-  users = get(:eliminar)
+  script = _script
+  users = _eliminar
   peso = 20.0/users.size
 
   users.each do |name|
