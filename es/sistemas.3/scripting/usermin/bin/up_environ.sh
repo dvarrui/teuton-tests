@@ -18,7 +18,7 @@ fi
 
 title 2 "Start docker service"
 CMD=`systemctl status docker |grep "(running)" |wc -l`
-if [ $CMD == "0\n" ]; then
+if [ $CMD == "0" ]; then
   sudo systemctl start docker
 fi
 
