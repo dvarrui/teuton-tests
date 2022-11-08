@@ -16,7 +16,7 @@ end
 
 desc 'Delete output files'
 task :clean do
-  system("rm -r #{File.join('var', '*')}")
+  system("rm -r #{File.join('var', '*')} 2>/dev/null")
 end
 
 desc 'Show help'
