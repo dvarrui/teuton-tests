@@ -3,7 +3,7 @@
 Área   : Administración de Sistemas Operativos
 Nombre : Proyecto USERMIN
 Autor  : fvarrui
-URL    : https://asir-add.github.io/docs/scripting/bash/proyectos/usermin)
+URL    : https://asir-add.github.io/docs/scripting/bash/proyectos/usermin
 ```
 
 # Proyecto USERMIN

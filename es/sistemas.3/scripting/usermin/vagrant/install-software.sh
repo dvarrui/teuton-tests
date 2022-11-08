@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DISTRO=USERMIN
+DISTRO=Teuton
 AUTHOR=teuton-software
 URL=https://github.com/teuton-software
 
