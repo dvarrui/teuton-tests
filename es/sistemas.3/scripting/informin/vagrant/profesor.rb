@@ -4,57 +4,47 @@ option = ARGV[0]
 
 def show_help
   puts "Modo de uso"
-  puts "  --help       Mostrar la ayuda del comando"
-  puts "  --listar     Listar todos los usuarios desde el UID 1000 en adelante"
-  puts "  --consultar  Mostrar la ficha de un usuario concreto"
-  puts "  --nuevo      Crear un nuevo usuario"
-  puts "  --eliminar   Eliminar un usuario existente"
-  puts "  -f fichero   Crear usuarios por lotes desde un fichero"
+  puts "  --help      Ayuda del script"
+  puts "  --usuarios  Crear HTML de usuarios"
+  puts "  --discos"
+  puts "  --completo"
+  puts "  --detallado"
+  puts "  Sin opcione"
 end
 
-def show_users
+def show_users(option)
+  detallado = true if option == "--detallado"
   lines = File.read("/etc/passwd").split("\n")
   users = []
   lines.each do |line|
+    # nombre, UID y GID. --detallado,Shell y el HOME
     items = line.split(":")
-    next if items[2].to_i < 1000
-    user = [items[0], items[2], items[6], items[4]]
-    users << user.join(",")
+    user = [items[0], items[2], items[3]]
+    user += [items[5], items[6]] if detallado
+    users << "<tr><td>#{user.join("</td><td>")}</td></tr>"
   end
-  puts users
+
+  puts cabecera_html
+  puts users.join("\n")
 end
 
-def show_user(username)
-  lines = File.read("/etc/passwd").split("\n")
-  users = []
-  lines.each do |line|
-    items = line.split(":")
-    if items[0] == username
-      puts "Usuario: #{items[0]}"
-      puts "UID: #{items[2]}"
-      puts "GID: #{items[3]}"
-      puts "Shell: #{items[6]}"
-      puts "HOME: #{items[5]}"
-      return
-    end
-  end
-end
-
-def create_user(username: , comment:, shell:, password:)
-  # useradd vader1 -c "sith" -s /bin/bash -p 123456
-  system("useradd #{username} -c #{comment} -s #{shell} -p #{password}")
-  # system("id #{username}")
-end
-
-def delete_user(username)
-  system("userdel #{username} -f")
+def cabecera_html
+  text = <<-HEAD
+<html>
+  <head><title>Informin</title></head>
+  <body>
+    <h2>Informe sobre usuarios </h2>
+    <table>
+      <tr><th>Nombre</th><th>UID</th><th>GID</th></tr>
+HEAD
+  puts text
 end
 
 case option
 when "--help"
   show_help
-when "--listar"
-  show_users
+when "--usuarios"
+  show_users(ARGV[1])
 when "--consultar"
   show_user(ARGV[1])
 when "--nuevo"
