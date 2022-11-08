@@ -1,4 +1,4 @@
-user "lib/help"
+use "lib/help"
 
 play do
   show
