@@ -1,10 +1,6 @@
-group "GROUP NAME" do
-  target "TARGET_1 DESCRIPTION"
-  run "COMMAND_1"
-  expect "TEXT_1"
-end
+user "lib/help"
 
 play do
   show
-  export
+  export format: :colored_text
 end

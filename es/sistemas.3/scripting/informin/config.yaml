@@ -1,5 +1,9 @@
 ---
 global:
+  host1_username: root
 cases:
-- tt_members: MEMBERS
-  tt_moodle_id: MOODLE_ID
+- tt_members: profesor
+  tt_moodle_id: profesor@moodle.id
+  host1_ip: 192.168.140
+  host1_port: 2241
+  host1_password: vagrant

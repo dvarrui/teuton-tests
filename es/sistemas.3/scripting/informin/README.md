@@ -1,4 +1,11 @@
 
+```
+Área   : Administración de Sistemas Operativos
+Nombre : Proyecto INFORMIN
+Autor  : fvarrui
+URL: https://asir-add.github.io/docs/scripting/bash/proyectos/informin
+```
+
 # Proyecto INFORMIN
 
 ## Descripción
