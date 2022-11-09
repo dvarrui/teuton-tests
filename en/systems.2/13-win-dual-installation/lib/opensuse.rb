@@ -6,21 +6,19 @@ end
 
 group 'Opensuse HOSTNAME configurations' do
   target "Checking hostname #{get(:opensuse1_hostname)}"
-  goto  :opensuse1, :exec => "hostname -f"
+  run "hostname -f", on: :opensuse1
   expect result.equal?(get(:opensuse1_hostname))
 
   unique "hostname", result.value
-  goto  :opensuse1, :exec => "hostname -f"
-  unique "UUID", result.value
 end
 
 group "Ensure UNIQUE values for opensuse1" do
-  goto :opensuse1, :exec => "blkid |grep sda1"
+  run "blkid |grep sda1", on: :opensuse1
   unique "UUID_sda1", result.value
-  goto :opensuse1, :exec => "blkid |grep sda2"
+  run "blkid |grep sda2", on: :opensuse1
   unique "UUID_sda2", result.value
-  goto :opensuse1, :exec => "blkid |grep sda6"
+  run "blkid |grep sda6", on: :opensuse1
   unique "UUID_sda6", result.value
-  goto :opensuse1, :exec => "blkid |grep sda7"
+  run "blkid |grep sda7", on: :opensuse1
   unique "UUID_sda7", result.value
 end
