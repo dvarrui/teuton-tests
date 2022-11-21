@@ -1,0 +1,12 @@
+---
+:global:
+  :opensuse1_username: root
+  :dominio: curso1819
+:cases:
+- :tt_members: VALUE
+  :number: '99'
+  :opensuse1_ip: 172.18.7.31
+  :opensuse1_password: 'secret'
+  :firstname: VALUE
+  :lastname1: VALUE
+  :lastname2: VALUE

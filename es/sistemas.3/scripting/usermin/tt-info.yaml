@@ -10,7 +10,7 @@ type: teutontest
 name: usermin
 author: fvarrui, dvarrui
 date: 2022-11-05
-desc: Usermin  stript para la gestión de usuarios
+desc: Usermin. Script para la gestión de usuarios
 tags:
 - script
 - usuario
