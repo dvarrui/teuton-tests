@@ -1,8 +1,11 @@
 group "Opción --nuevo USERNAME" do
   docker = _cmd.join(" ")
   docker.gsub!("FOLDER", _folder)
+  cmd.gsub!("PWD", _pwd)
+
   script = docker + _script
   script.gsub!("FOLDER", _folder)
+  cmd.gsub!("PWD", _pwd)
 
   users = _nuevo
   peso = 20.0/users.size

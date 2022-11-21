@@ -1,6 +1,8 @@
 group "Opción --listar" do
   cmd = _cmd.join(" ") + _script
   cmd.gsub!("FOLDER", _folder)
+  cmd.gsub!("PWD", _pwd)
+
   run cmd + " --listar", on: :host1
 
   listar = _listar

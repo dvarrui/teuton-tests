@@ -1,6 +1,15 @@
 ---
 global:
   tt_sequence: true
+  pwd: /home/david/proy/repos/teuton.d/teuton-tests
+  cmd:
+    - docker run -it --rm --name
+    - usermin_FOLDER
+    - "-v PWD/var/usermin/temp/FOLDER/etc:/etc"
+    - "-v PWD/var/usermin/temp/FOLDER/opt:/opt"
+    - "-w /opt"
+    - "ruby:latest "
+  script: " bash usermin.sh"
   nuevo:
     - "vader1"
     - "obiwan2"
@@ -20,11 +29,4 @@ cases:
   tt_moodle_id: profesor@moodle.id
   host1_ip: localhost
   folder: profesor
-  cmd:
-    - "docker run -it --rm --name"
-    - usermin_FOLDER
-    - "-v /home/quigon/proy/repos/teuton.d/teuton-tests/var/usermin/temp/FOLDER/etc:/etc"
-    - "-v /home/quigon/proy/repos/teuton.d/teuton-tests/var/usermin/temp/FOLDER/opt:/opt"
-    - "-w /opt"
-    - "ruby:latest "
   script: " ruby profesor.rb"

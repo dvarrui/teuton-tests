@@ -1,6 +1,7 @@
 group "Opción --consultar USERNAME" do
   cmd = _cmd.join(" ") + _script
   cmd.gsub!("FOLDER", _folder)
+  cmd.gsub!("PWD", _pwd)
 
   username = "obiwan2"
   run "#{cmd} --consultar #{username}", on: :host1
