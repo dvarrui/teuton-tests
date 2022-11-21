@@ -1,7 +1,6 @@
 ---
 global:
   tt_sequence: true
-  pwd: /home/david/proy/repos/teuton.d/teuton-tests
   cmd:
     - docker run -it --rm --name
     - usermin_FOLDER

@@ -1,9 +1,5 @@
 group "Opción --help" do
-  cmd = _cmd.join(" ") + _script
-  cmd.gsub!("FOLDER", _folder)
-  cmd.gsub!("PWD", _pwd)
-  
-  run cmd + " --help", on: :host1
+  run _script + " --help", on: :host1
 
   options = ["--help", "--listar", "--consultar", "--nuevo", "--eliminar", "-f fichero"]
   peso = 10.0/options.size

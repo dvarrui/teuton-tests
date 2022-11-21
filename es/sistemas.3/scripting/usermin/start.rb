@@ -1,3 +1,4 @@
+use "lib/docker/settings"
 use "lib/docker/help"
 use "lib/docker/nuevo"
 use "lib/docker/listar"
