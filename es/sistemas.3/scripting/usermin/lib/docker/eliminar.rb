@@ -2,7 +2,7 @@ group "Opción --eliminar USERNAME" do
   docker = _cmd.join(" ")
   script = docker + _script
   script.gsub!("FOLDER", _folder)
-  cmd.gsub!("PWD", _pwd)
+  script.gsub!("PWD", _pwd)
 
   users = _eliminar
   peso = 20.0/users.size
