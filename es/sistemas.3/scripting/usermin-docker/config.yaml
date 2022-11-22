@@ -1,6 +1,6 @@
 ---
 global:
-  tt_sequence: true
+  tt_sequence: false
   cmd:
     - docker run -it --rm --name
     - usermin_FOLDER

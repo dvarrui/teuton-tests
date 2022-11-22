@@ -1,8 +1,8 @@
-use "lib/vm/help"
-use "lib/vm/listar"
-use "lib/vm/consultar"
-use "lib/vm/nuevo"
-use "lib/vm/eliminar"
+use "lib/help"
+use "lib/listar"
+use "lib/consultar"
+use "lib/nuevo"
+use "lib/eliminar"
 
 play do
   show

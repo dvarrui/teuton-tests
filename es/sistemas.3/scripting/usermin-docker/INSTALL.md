@@ -26,13 +26,9 @@ teuton PATH/TO/THIS/TEST
 
 ## Advertencia
 
-Hacer notar que por defecto todos los `cases` se ejecutan en paralelo para optimizar los tiempos de ejecución. Sin embargo en este caso hemos desactivado el modo paralelo y lo tenemos en secuencial `tt_sequence: true`. Esto es, que todos los `cases` se ejecutan uno detrás de otro.
+Hacer notar que por defecto todos los `cases` se ejecutan en paralelo para optimizar los tiempos de ejecución. Aunque también podemos ejecutarlos de forma secuencial configurando el parámetro `tt_sequence: true`.
 
-¿Por qué? Porque hemos preparado nuestro entorno de ejecución para usar únicamente 1 contenedor. Y ese contenedor no debe estar compartido por varios `cases` al mismo tiempo para evitar que se mezclen lo resultados.
-
-¿Se pueden ejecutar las pruebas en paralelo en contenedores diferentes? ¡Sí! Pero hay que hacer algunos cambios. Cada `case` tiene que tener los siguientes parámetros diferentes:
+Tener en cuenta que:
 * El nombre de cada contenedor docker debe ser único. Por ejemplo `usermin_profesor`, `usermin01`, `usermin02`, etc.
-* El directorio del volumen `etc` debe ser único. Por ejemplo `var/usermin/cases/01/etc`, `var/usermin/cases/02/etc`, etc.
-* El directorio del volumen `opt` debe ser único. Por ejemplo `var/usermin/cases/01/opt`, `var/usermin/cases/02/opt`, etc.
-
-El volumen del directorio `opt` puede estar compartido por todas las instancias, siempre que los nombres de los scripts de cada alumno no entren en conflicto. Además este volumen se puede poner en modo de sólo lectura por seguridad.
+* El directorio del volumen `etc` debe ser único. Por ejemplo `var/usermin/temp/01/etc`, `var/usermin/temp/02/etc`, etc.
+* El directorio del volumen `opt` debe ser único. Por ejemplo `var/usermin/temp/01/opt`, `var/usermin/temp/02/opt`, etc. El volumen del directorio `opt` podría estar compartido por todas las instancias, siempre que los nombres de los scripts de cada alumno no entren en conflicto. Además este volumen se puede poner en modo de sólo lectura por seguridad.
