@@ -65,7 +65,7 @@ sistemas.3/scripting/usermin:
   name: usermin
   author: fvarrui, dvarrui
   date: 2022-11-05
-  desc: Usermin  stript para la gestión de usuarios
+  desc: Usermin. Script para la gestión de usuarios
   tags:
   - script
   - usuario
@@ -84,6 +84,7 @@ sistemas.3/scripting/usermin:
   - lib/docker/help.rb
   - lib/docker/listar.rb
   - lib/docker/nuevo.rb
+  - lib/docker/settings.rb
   - lib/vm/consultar.rb
   - lib/vm/eliminar.rb
   - lib/vm/help.rb
