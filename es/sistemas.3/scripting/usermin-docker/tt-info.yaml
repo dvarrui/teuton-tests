@@ -10,8 +10,9 @@ type: teutontest
 name: usermin
 author: fvarrui, dvarrui
 date: 2022-11-05
-desc: Usermin  stript para la gestión de usuarios
+desc: Usermin. Crear un script para la gestión de usuarios.
 tags:
+- docker
 - script
 - usuario
 - crear

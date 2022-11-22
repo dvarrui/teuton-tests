@@ -27,4 +27,4 @@ mkdir -p $FOLDER/etc
 mkdir -p $FOLDER/opt
 
 title 4 "Copy script"
-cp $DIRBASE/../vagrant/profesor.rb $FOLDER/opt
+cp $DIRBASE/profesor.rb $FOLDER/opt

@@ -1,9 +1,9 @@
-use "lib/docker/settings"
-use "lib/docker/help"
-use "lib/docker/nuevo"
-use "lib/docker/listar"
-use "lib/docker/consultar"
-use "lib/docker/eliminar"
+use "lib/settings"
+use "lib/help"
+use "lib/nuevo"
+use "lib/listar"
+use "lib/consultar"
+use "lib/eliminar"
 
 play do
   show
