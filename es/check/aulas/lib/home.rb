@@ -1,9 +1,8 @@
 
 group "Verificar HOMES" do
-
   folders = [ 'asir', 'daw', 'super' ]
 
-  folders.each do |name|
+  for name in folders do
     target "Existe directorio /home/#{name}"
     run "vdir /home", on: :host
     expect [ 'drwx', name ]
