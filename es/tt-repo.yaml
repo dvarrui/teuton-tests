@@ -1,46 +1,26 @@
 ---
-servicios/apache2-index-html:
+check/aulas:
   version: 1
   type: teutontest
-  name: apache2-index-html
-  author: david
-  date: 2022-08-27
-  desc: Iniciar el servicio web Apache con un index.html
+  name: aulas
+  author: dvarrui
+  date: 2023-01-25
+  desc: Comprobar la configuración de los equipos de las aulas
   tags:
-  - servicio
-  - web
-  - apache
-  - index.html
+  - comprobar
+  - configuración
+  - equipo
+  - aula
+  - equipos
+  - aulas
+  - centro
+  - clase
   files:
   - config.yaml
-  - network.rb
-  - web_service.rb
+  - lib/home.rb
+  - lib/red.rb
+  - lib/software.rb
   - start.rb
-  - docs/README.md
-  - docs/tutorial.md
-  - tt-info.yaml
-servicios/squid-proxy-cache:
-  version: 1
-  type: teutontest
-  name: squid-proxy-cache
-  author: Mª Paz Martínez
-  date: 2019-02-09
-  desc: Squid server. Proxy cache.
-  tags:
-  - GNU/Linux
-  - Ubuntu
-  - squid
-  - proxy
-  - caché
-  files:
-  - config.yaml
-  - start.rb
-  - host-config.rb
-  - squid-service.rb
-  - docs/README.md
-  - docs/AUTHORS.md
-  - docs/squid.conf
-  - docs/ayuda.md
   - tt-info.yaml
 check/ssh:
   version: 1
@@ -56,29 +36,79 @@ check/ssh:
   - ssh
   - hostname
   files:
-  - start.rb
   - config.yaml
+  - start.rb
   - tt-info.yaml
-check/aulas:
+servicios/apache2-index-html:
   version: 1
   type: teutontest
-  name: aulas
-  author: dvarrui
-  date: 2022-09-05
-  desc: Comprobar el estado de los equipos del aula
+  name: apache2-index-html
+  author: david
+  date: 2022-08-27
+  desc: Iniciar el servicio web Apache con un index.html
   tags:
-  - comprobar
-  - estado
-  - equipo
-  - equipos
-  - aula
+  - servicio
+  - web
+  - apache
+  - index.html
   files:
-  - lib/software.rb
-  - lib/home.rb
-  - lib/red.rb
-  - start.rb
   - config.yaml
+  - docs/README.md
+  - docs/tutorial.md
+  - network.rb
+  - start.rb
   - tt-info.yaml
+  - web_service.rb
+servicios/squid-proxy-cache:
+  version: 1
+  type: teutontest
+  name: squid-proxy-cache
+  author: Mª Paz Martínez
+  date: 2019-02-09
+  desc: Squid server. Proxy cache.
+  tags:
+  - GNU/Linux
+  - Ubuntu
+  - squid
+  - proxy
+  - caché
+  files:
+  - config.yaml
+  - docs/AUTHORS.md
+  - docs/README.md
+  - docs/ayuda.md
+  - docs/squid.conf
+  - host-config.rb
+  - squid-service.rb
+  - start.rb
+  - tt-info.yaml
+sistemas.3/scripting/usermin:
+  version: 1
+  type: teutontest
+  name: usermin
+  author: fvarrui, dvarrui
+  date: 2022-11-05
+  desc: Usermin. Crear un script para la gestión de usuarios
+  tags:
+  - script
+  - usuario
+  - crear
+  - consultar
+  - listar
+  - eliminar
+  files:
+  - INSTALL.md
+  - README.md
+  - config.yaml
+  - lib/consultar.rb
+  - lib/eliminar.rb
+  - lib/help.rb
+  - lib/listar.rb
+  - lib/nuevo.rb
+  - start.rb
+  - tt-info.yaml
+  - vagrant/install-software.sh
+  - vagrant/profesor.rb
 sistemas.3/scripting/usermin-docker:
   version: 1
   type: teutontest
@@ -95,44 +125,17 @@ sistemas.3/scripting/usermin-docker:
   - listar
   - eliminar
   files:
+  - INSTALL.md
+  - README.md
+  - bin/docker.run
+  - bin/profesor.rb
+  - bin/up_environ.sh
+  - config.yaml
   - lib/consultar.rb
   - lib/eliminar.rb
   - lib/help.rb
   - lib/listar.rb
   - lib/nuevo.rb
   - lib/settings.rb
-  - bin/docker.run
-  - bin/profesor.rb
-  - bin/up_environ.sh
-  - config.yaml
-  - README.md
-  - tt-info.yaml
-  - INSTALL.md
   - start.rb
-sistemas.3/scripting/usermin:
-  version: 1
-  type: teutontest
-  name: usermin
-  author: fvarrui, dvarrui
-  date: 2022-11-05
-  desc: Usermin. Crear un script para la gestión de usuarios
-  tags:
-  - script
-  - usuario
-  - crear
-  - consultar
-  - listar
-  - eliminar
-  files:
-  - lib/help.rb
-  - lib/listar.rb
-  - lib/nuevo.rb
-  - lib/consultar.rb
-  - lib/eliminar.rb
-  - vagrant/profesor.rb
-  - vagrant/install-software.sh
-  - config.yaml
-  - start.rb
-  - INSTALL.md
-  - README.md
   - tt-info.yaml
