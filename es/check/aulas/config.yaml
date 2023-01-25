@@ -1,0 +1,7 @@
+---
+:global:
+:cases:
+- :tt_members: VALUE
+  :host_ip: VALUE
+  :host_username: VALUE
+  :host_password: VALUE
