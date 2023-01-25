@@ -1,0 +1,26 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: aulas
+author: dvarrui
+date: 2023-01-25
+desc: Comprobar la configuración de los equipos de las aulas
+tags:
+- comprobar
+- configuración
+- equipo
+- aula
+- equipos
+- aulas
+- centro
+- clase
+
+###################################
+# Custom attributes after this line
+#
