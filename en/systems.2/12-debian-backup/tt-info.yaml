@@ -1,0 +1,22 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 12-debian-backup
+author: dvarrui
+date: 2019-01-14
+desc: Basic backup exercise
+tags:
+- backup
+- windows
+- server
+- gnu/linux
+
+###################################
+# Custom attributes after this line
+#

@@ -9,9 +9,9 @@
  Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/idp/backup/README.md
 =end
 
-use 'windows/config'
-use 'opensuse/config'
-use 'opensuse/backup'
+use "windows/config"
+use "opensuse/config"
+use "opensuse/backup"
 
 start do
 	show
