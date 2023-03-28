@@ -1,0 +1,386 @@
+---
+en/etc/guess-remote-os:
+  version: 1
+  type: teutontest
+  name: guess-remote-os
+  author: dvarrui
+  date: 2022-09-06
+  desc: Guess remote host OS using Teuton
+  tags:
+  - guess
+  - remote
+  - host
+  - os
+  - teuton
+  - command
+  files:
+  - config.yaml
+  - lib/guess-remote-os.rb
+  - start.rb
+  - tt-info.yaml
+en/systems.1/01-windows-conf:
+  version: 1
+  type: teutontest
+  name: 01-windows-conf
+  author: david
+  date: 2022-08-27
+  desc: Windows OS basic configuration
+  tags:
+  - basic
+  - os
+  - windows
+  - configuration
+  files:
+  - README.md
+  - config.yaml
+  - start.rb
+  - tt-info.yaml
+  - windows.rb
+en/systems.1/02-opensuse-conf:
+  version: 1
+  type: teutontest
+  name: 02-opensuse-conf
+  author: dvarrui
+  date: 2022-09-06
+  desc: OpenSUSE basic configuration
+  tags:
+  - opensuse
+  - basic
+  - configuration
+  files:
+  - README.md
+  - config.yaml
+  - network.rb
+  - opensuse.rb
+  - start.rb
+  - tt-info.yaml
+en/systems.1/03-debian-conf:
+  version: 1
+  type: teutontest
+  name: 03-debian-conf
+  author: dvarrui
+  date: 2022-09-06
+  desc: Debian basic configuration
+  tags:
+  - debian
+  - basic
+  - configuration
+  files:
+  - README.md
+  - config.yaml
+  - debian.rb
+  - network.rb
+  - start.rb
+  - tt-info.yaml
+en/systems.1/04-winserver-conf:
+  version: 1
+  type: teutontest
+  name: 04-winserver-conf
+  author: dvarrui
+  date: 2022-09-06
+  desc: Windows Server basic configuration
+  tags:
+  - windows
+  - server
+  - basic
+  - configuration
+  files:
+  - README.md
+  - config.yaml
+  - network.rb
+  - start.rb
+  - tt-info.yaml
+  - windows-server.rb
+en/systems.2/01-install-w10-vbox:
+  version: 1
+  type: teutontest
+  name: 01-install-w10-vbox
+  author: fvarrui
+  date: 2022-09-06
+  desc: Windows 10 installation and configuration
+  tags:
+  - windows
+  - 10
+  - installation
+  - configuration
+  files:
+  - README.md
+  - config.yaml
+  - start.rb
+  - tt-info.yaml
+  - windows-conf.rb
+  - windows-vbox.rb
+en/systems.2/02-debian-basic-configuration:
+  version: 1
+  type: teutontest
+  name: Debian basic configuration
+  author: dvarrui
+  date: 2022-09-06
+  desc: Configure Debian hostname, network, ssh and user
+  tags:
+  - configure
+  - debian
+  - hostname
+  - network
+  - ssh
+  - user
+  files:
+  - README.md
+  - config.yaml
+  - host.rb
+  - ssh.rb
+  - start.rb
+  - tt-info.yaml
+  - user.rb
+en/systems.2/03-debian-mkdir-command:
+  version: 1
+  type: teutontest
+  name: 03-debian-mkdir-command
+  author: david
+  date: 2022-08-29
+  desc: Practice basic commands into Debian host.
+  tags:
+  - practice
+  - basic
+  - command
+  - debian
+  - host
+  files:
+  - README.md
+  - config.yaml
+  - host.rb
+  - mkdir.rb
+  - start.rb
+  - tt-info.yaml
+  - user.rb
+en/systems.2/04-debian-users-grants:
+  version: 1
+  type: teutontest
+  name: 04-debian-users-grants
+  author: dvarrui
+  date: 2019-01-14
+  desc: Practice users and groups into Debian host
+  tags:
+  - practice
+  - users
+  - groups
+  - debian
+  - host
+  files:
+  - config.yaml
+  - folders.rb
+  - host.rb
+  - start.rb
+  - tt-info.yaml
+  - users.rb
+en/systems.2/11-debian-custom-installation:
+  version: 1
+  type: teutontest
+  name: 11-debian-custom-installation
+  author: dvarrui
+  date: 2020-10-22
+  desc: Custom Debian host installation, network, partitions, configurarion, users
+  tags:
+  - debian
+  - custom
+  - installation
+  - network
+  - disk
+  - partitions
+  - configuration
+  - user
+  files:
+  - README.md
+  - config.yaml
+  - disk.rb
+  - host.rb
+  - network.rb
+  - start.rb
+  - tt-info.yaml
+  - user.rb
+en/systems.2/12-debian-backup:
+  version: 1
+  type: teutontest
+  name: 12-debian-backup
+  author: dvarrui
+  date: 2019-01-14
+  desc: Basic backup exercise
+  tags:
+  - backup
+  - windows
+  - server
+  - gnu/linux
+  files:
+  - README.md
+  - config.yaml
+  - opensuse/backup.rb
+  - opensuse/config.rb
+  - start.rb
+  - tt-info.yaml
+  - windows/config.rb
+en/systems.2/32-debian-nagios:
+  version: 1
+  type: teutontest
+  name: 32-debian-nagios
+  author: dvarrui
+  date: 2016-01-01
+  desc: Nagios server installation and configuration on Debian
+  tags:
+  - nagios
+  - server
+  - install
+  - configure
+  - debian
+  - windows
+  files:
+  - config.yaml
+  - debian1/config-mv.rb
+  - debian1/monit.rb
+  - debian1/nagios-server.rb
+  - debian2/agent.rb
+  - debian2/config-mv.rb
+  - register_information.rb
+  - start.rb
+  - tt-info.yaml
+  - windows1/agent.rb
+  - windows1/config-mv.rb
+es/check/aulas:
+  version: 1
+  type: teutontest
+  name: aulas
+  author: dvarrui
+  date: 2023-01-25
+  desc: Comprobar la configuración de los equipos de las aulas
+  tags:
+  - comprobar
+  - configuración
+  - equipo
+  - aula
+  - equipos
+  - aulas
+  - centro
+  - clase
+  files:
+  - config.yaml
+  - lib/home.rb
+  - lib/red.rb
+  - lib/software.rb
+  - start.rb
+  - tt-info.yaml
+es/check/ssh:
+  version: 1
+  type: teutontest
+  name: check-ssh
+  author: dvarrui
+  date: 2022-09-05
+  desc: Comprobar la conexión SSH y el nombre del equipo
+  tags:
+  - comprobar
+  - conexion
+  - conexión
+  - ssh
+  - hostname
+  files:
+  - config.yaml
+  - start.rb
+  - tt-info.yaml
+es/servicios/apache2-index-html:
+  version: 1
+  type: teutontest
+  name: apache2-index-html
+  author: david
+  date: 2022-08-27
+  desc: Iniciar el servicio web Apache con un index.html
+  tags:
+  - servicio
+  - web
+  - apache
+  - index.html
+  files:
+  - config.yaml
+  - docs/README.md
+  - docs/tutorial.md
+  - network.rb
+  - start.rb
+  - tt-info.yaml
+  - web_service.rb
+es/servicios/squid-proxy-cache:
+  version: 1
+  type: teutontest
+  name: squid-proxy-cache
+  author: Mª Paz Martínez
+  date: 2019-02-09
+  desc: Squid server. Proxy cache.
+  tags:
+  - GNU/Linux
+  - Ubuntu
+  - squid
+  - proxy
+  - caché
+  files:
+  - config.yaml
+  - docs/AUTHORS.md
+  - docs/README.md
+  - docs/ayuda.md
+  - docs/squid.conf
+  - host-config.rb
+  - squid-service.rb
+  - start.rb
+  - tt-info.yaml
+es/sistemas.3/scripting/usermin:
+  version: 1
+  type: teutontest
+  name: usermin
+  author: fvarrui, dvarrui
+  date: 2022-11-05
+  desc: Usermin. Crear un script para la gestión de usuarios
+  tags:
+  - script
+  - usuario
+  - crear
+  - consultar
+  - listar
+  - eliminar
+  files:
+  - INSTALL.md
+  - README.md
+  - config.yaml
+  - lib/consultar.rb
+  - lib/eliminar.rb
+  - lib/help.rb
+  - lib/listar.rb
+  - lib/nuevo.rb
+  - start.rb
+  - tt-info.yaml
+  - vagrant/install-software.sh
+  - vagrant/profesor.rb
+es/sistemas.3/scripting/usermin-docker:
+  version: 1
+  type: teutontest
+  name: usermin
+  author: fvarrui, dvarrui
+  date: 2022-11-05
+  desc: Usermin. Crear un script para la gestión de usuarios.
+  tags:
+  - docker
+  - script
+  - usuario
+  - crear
+  - consultar
+  - listar
+  - eliminar
+  files:
+  - INSTALL.md
+  - README.md
+  - bin/docker.run
+  - bin/profesor.rb
+  - bin/up_environ.sh
+  - config.yaml
+  - lib/consultar.rb
+  - lib/eliminar.rb
+  - lib/help.rb
+  - lib/listar.rb
+  - lib/nuevo.rb
+  - lib/settings.rb
+  - start.rb
+  - tt-info.yaml
