@@ -233,6 +233,7 @@ systems.2/32-debian-nagios:
   - debian
   - windows
   files:
+  - config.yaml
   - debian1/config-mv.rb
   - debian1/monit.rb
   - debian1/nagios-server.rb
