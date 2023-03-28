@@ -17,16 +17,16 @@ task "Windows: Configure Nagios Agent" do
   texts << ["CheckSystem"         , "1"]
   texts << ["CheckDisk"           , "1"]
   texts << ["CheckExternalScripts", "1"]
-  
+
   texts << ["check_load"             , "CheckCpu" ]
   texts << ["check_disk"             , "CheckDriveSize" ]
   texts << ["check_firewall_service" , "CheckServiceState MpsSvc" ]
   texts << ["allowed hosts"          , get(:debian1_ip) ]
-   
+
   texts.each do |text|
     target "<#{file}> content: <#{text.join(" = ")}>"
     goto   :windows1, :exec => "type #{file}"
-    
+
     text.each { |item| result.find!(item) }
     expect result.count!.eq 1
   end
@@ -48,13 +48,13 @@ task "Windows1: Restart Agent service" do
 
 task "Check service on Windows1" do
 
-  target "Windows1: check Agent Nagios service"
+  target "Windows1: check Agent Nagios service", :weight => 5
   goto :windows1, :exec => "sc query"
-  expect result.find!("NSClient").count!.eq(1), :weight => 5
+  expect result.find("NSClient").count.eq(1)
 
-  target "Debian1 nmap to debian2"
+  target "Debian1 nmap to debian2", :weight => 5
   goto :debian1, :exec => "nmap -Pn #{get(:windows1_ip)}"
-  expect result.find!("5666").find!("open").count!.eq(1), :weight => 5
+  expect result.find!("5666").find!("open").count!.eq(1)
 
   target "NRPE debian1 to windows1"
   goto :debian1, :exec => "/usr/lib/nagios/plugins/check_nrpe -H #{get(:windows1_ip)}"

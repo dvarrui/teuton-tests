@@ -1,54 +1,26 @@
-# encoding: utf-8
 
-=begin
-  Course name : IDP1516
-     Activity : Nagios Debian Windows (Trimestre2)
-        MV OS : debian1 => Debian8
-              : debian2 => Debian8
-              : windows1 => Windows7
-   Teacher OS : GNU/Linux
-  English URL : (Under construction. Sorry!)
-  Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/idp/monitorizar/nagios-debian-windows.md
-=end 
+# Course name : IDP1516
+#    Activity : Nagios Debian Windows (Trimestre2)
+#       MV OS : debian1 => Debian8
+#             : debian2 => Debian8
+#             : windows1 => Windows7
+#  Teacher OS : GNU/Linux
+# English URL : (Under construction. Sorry!)
+# Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/sistamas.2/monitorizar/nagios-debian-windows.md
 
-
-task "Register Information" do
-  goto :debian1, :exec => "blkid |grep sda1"
-  log ("debian1_sda1_UUID = #{result.value}")	
-
-  goto :debian2, :exec => "blkid |grep sda1"
-  log ("debian2_sda1_UUID = #{result.value}")	
-
-  goto :debian1, :exec => "ip a"
-  mac=result.grep!("link/ether").value
-  log ("debian1_MAC = #{mac}")
-  unique "MAC", mac
-
-  goto :debian2, :exec => "ip a"
-  mac=result.grep!("link/ether").value
-  log ("debian2_MAC = #{mac}")
-  unique "MAC", mac
-  
-  goto :windows1, :exec => "ipconfig /all"
-  mac=result.find!("Direcci").content[0]
-  log ("windows1_MAC = #{mac}")
-  unique "MAC", mac
-  
-end
-
-
-require_relative 'debian1-config-mv'
-require_relative 'debian1-nagios-server'
-require_relative 'debian2-config-mv'
-require_relative 'debian2-agent'
-require_relative 'windows1-config-mv'
-require_relative 'windows1-agent'
-require_relative 'debian1-monit'
+use 'register_information'
+use 'debian1-config-mv'
+use 'debian1-nagios-server'
+use 'debian2-config-mv'
+use 'debian2-agent'
+use 'windows1-config-mv'
+use 'windows1-agent'
+use 'debian1-monit'
 
 start do
   show
-  export :format => :colored_text
-  send :copy_to => :debian1
+  export format: :colored_text
+  send copy_to: :debian1
 end
 
 =begin

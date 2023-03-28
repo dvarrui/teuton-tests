@@ -41,11 +41,11 @@ task "Debian1: Monit configuration" do
   texts << [ "if 5 restarts within 5 cycles then timeout" ]
 
   texts.each do |text|
-    target "<#{file}> must contain <#{text.join(" ")}> line"
+    target "<#{file}> must contain <#{text.join(" ")}> line", :weight => 0.2
     goto   :debian1, :exec => "cat #{file}"
 
     text.each { |item| result.find!(item) }
-    expect result.not_find!("#").count!.eq(1), :weight => 0.2
+    expect result.not_find("#").count.eq(1)
   end
 end
 
@@ -54,16 +54,16 @@ task "Debian1: Restart Monit service" do
   target "Debian1: Stop monit service"
   goto   :debian1, :exec => "service monit stop"
   goto   :debian1, :exec => "service monit status"
-  expect result.find!("Active").find!("inactive").count!.eq 1
+  expect result.find("Active").find("inactive").count.eq 1
 
-  target "Debian1: Start monit service"
+  target "Debian1: Start monit service", :weight => 2
   goto   :debian1, :exec => "service monit start"
   goto   :debian1, :exec => "service monit status"
-  expect result.find!("Active").find!("active").count!.eq(1), :weight => 2
+  expect result.find("Active").find("active").count.eq(1)
 
-  target "Debian1: monit working on por 2812"
+  target "Debian1: monit working on por 2812", :weight => 2
   goto   :debian1, :exec => "netstat -ntap"
-  expect result.find!("2812").find!("monit").count!.eq(1), :weight => 2
+  expect result.find("2812").find("monit").count.eq(1)
 
 #  target "nmap debian1"
 #  goto :localhost, :exec => "nmap -Pn #{get(:debian1_ip)}"

@@ -36,7 +36,7 @@ task "Configure Nagios Agent on Debian2" do
   texts << [ "command", "check_load"  , "/usr/lib/nagios/plugins/check_load"]
   texts << [ "command", "check_disk"  , "/usr/lib/nagios/plugins/check_disk"]
   texts << [ "command", "check_procs" , "/usr/lib/nagios/plugins/check_procs"]
-  
+
   texts.each do |item|
     target "<#{file}> content: \"#{item.to_s}\""
     goto :debian2, :exec => "cat #{file}| grep -v '#'| grep -v 'zombie'"
@@ -51,18 +51,17 @@ task "Debian2: Restart Agent service on Debian2" do
   goto   :debian2, :exec => "service nagios-nrpe-server status |grep Active|grep inactive| wc -l"
   expect result.eq 1
 
-  target "Debian2: Start agent service"
+  target "Debian2: Start agent service", :weight => 5
   goto   :debian2, :exec => "service nagios-nrpe-server start"
   goto   :debian2, :exec => "service nagios-nrpe-server status |grep Active|grep active| wc -l"
-  expect result.eq(1), :weight => 5
-  
-  target "Debian1 nmap to debian2"
+  expect result.eq(1)
+
+  target "Debian1 nmap to debian2", :weight => 5
   goto :debian1, :exec => "nmap -Pn #{get(:debian2_ip)}"
-  expect result.grep!("5666").size!.eq(1), :weight => 5
+  expect result.grep("5666").size.eq(1)
 
-  target "NRPE debian1 to debian2"
+  target "NRPE debian1 to debian2", :weight => 5
   goto :debian1, :exec => "/usr/lib/nagios/plugins/check_nrpe -H #{get(:debian2_ip)} |wc -l"
-  expect result.eq(1), :weight => 5
-  
-end
+  expect result.eq(1)
 
+end
