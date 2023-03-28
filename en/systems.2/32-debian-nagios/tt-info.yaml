@@ -1,0 +1,24 @@
+#####################################################
+# DONT CHANGE THESE ATTRIBUTES (Created by teutonget)
+#
+version: 1
+type: teutontest
+
+#########################################################
+# UPDATE THESE VALUES (Keep names and update their values
+#
+name: 32-debian-nagios
+author: dvarrui
+date: 2016-01-01
+desc: Nagios server installation and configuration on Debian
+tags:
+- nagios
+- server
+- install
+- configure
+- debian
+- windows
+
+###################################
+# Custom attributes after this line
+#
