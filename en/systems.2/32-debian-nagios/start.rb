@@ -22,29 +22,3 @@ start do
   export format: :colored_text
   send copy_to: :debian1
 end
-
-=begin
-# Configuration file params:
----
-:global:
-:cases:
-- :tt_members: VALUE
-  :debian1_ip: VALUE
-  :debian1_username: VALUE
-  :debian1_password: VALUE
-  :debian2_ip: VALUE
-  :debian2_username: VALUE
-  :debian2_password: VALUE
-  :windows1_ip: VALUE
-  :windows1_username: VALUE
-  :windows1_password: VALUE
-  :lastname1: VALUE
-  :domain: VALUE
-  :firstname: VALUE
-  :gateway: VALUE
-  :dns: VALUE
-  :bender_ip: VALUE
-  :caronte_ip: VALUE
-  :leela_ip: VALUE
-  :windows1_productname: VALUE
-=end
