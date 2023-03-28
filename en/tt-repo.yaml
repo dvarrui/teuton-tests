@@ -218,3 +218,28 @@ systems.2/12-debian-backup:
   - start.rb
   - tt-info.yaml
   - windows/config.rb
+systems.2/32-debian-nagios:
+  version: 1
+  type: teutontest
+  name: 32-debian-nagios
+  author: dvarrui
+  date: 2016-01-01
+  desc: Nagios server installation and configuration on Debian
+  tags:
+  - nagios
+  - server
+  - install
+  - configure
+  - debian
+  - windows
+  files:
+  - debian1/config-mv.rb
+  - debian1/monit.rb
+  - debian1/nagios-server.rb
+  - debian2/agent.rb
+  - debian2/config-mv.rb
+  - register_information.rb
+  - start.rb
+  - tt-info.yaml
+  - windows1/agent.rb
+  - windows1/config-mv.rb
