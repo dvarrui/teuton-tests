@@ -24,24 +24,27 @@ start do
 end
 
 =begin
-#Example of configuration file:
+# Configuration file params:
 ---
 :global:
-  :gateway: 172.19.0.1
-  :dns: 8.8.4.4
-  :bender_ip: 172.19.0.1
-  :caronte_ip: 192.168.1.1
-  :leela_ip: 172.20.1.2
-  :debian1_username: root
-  :debian2_username: root
 :cases:
-- :tt_members: student name
-  :firstname: name
-  :lastname1: lastname
-  :lastname2: lastname
-  :debian1_ip: 172.19.2.41
-  :debian1_password: password
-  :debian2_ip: 172.19.2.42
-  :debian2_password: password
-  :windows1_ip: 172.19.2.11
+- :tt_members: VALUE
+  :debian1_ip: VALUE
+  :debian1_username: VALUE
+  :debian1_password: VALUE
+  :debian2_ip: VALUE
+  :debian2_username: VALUE
+  :debian2_password: VALUE
+  :windows1_ip: VALUE
+  :windows1_username: VALUE
+  :windows1_password: VALUE
+  :lastname1: VALUE
+  :domain: VALUE
+  :firstname: VALUE
+  :gateway: VALUE
+  :dns: VALUE
+  :bender_ip: VALUE
+  :caronte_ip: VALUE
+  :leela_ip: VALUE
+  :windows1_productname: VALUE
 =end
