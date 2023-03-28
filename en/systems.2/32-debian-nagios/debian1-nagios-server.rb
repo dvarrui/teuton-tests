@@ -1,45 +1,44 @@
-# encoding: utf-8
 
-task "Configure Nagios Server" do
+group "Configure Nagios Server" do
 
   packages=['nagios3', 'nagios3-doc', 'nagios-nrpe-plugin']
 
   packages.each do |package|
     target "Package #{package} installed"
-    goto :debian1, :exec => "dpkg -l #{package}| grep 'ii' |wc -l"
-    expect result.eq 1
+    run "dpkg -l #{package}", on: :debian1
+    expect_one 'ii'
   end
 
   dir="/etc/nagios3/#{get(:firstname)}.d"
   target "Directory <#{dir}> exist"
-  goto :debian1, :exec => "file #{dir}| grep 'directory' |wc -l"
-  expect result.eq 1
+  run "file #{dir}", on: :debian1
+  expect_one 'directory'
 
   files=['grupos','grupo-de-routers','grupo-de-servidores','grupo-de-clientes']
   pathtofiles=[]
   files.each do |file|
     f=dir+"/"+file+@student_number+".cfg"
     target "File <#{f}> exist"
-    goto :debian1, :exec => "file #{f}| grep 'text' |wc -l"
-    expect result.eq 1
+    run "file #{f}", on: :debian1
+    expect_one 'text'
 
     pathtofiles << f
   end
 
-  #grupos.XX.cfg
+  # grupos.XX.cfg
   f= pathtofiles.select { |i| i.include? 'grupos'}
   filepath=f[0]
 
   target "<#{filepath}> content"
-  goto :debian1, :exec => "cat #{filepath}| grep 'hostgroup_name' |wc -l"
+  run "cat #{filepath}| grep 'hostgroup_name' |wc -l", on: :debian1
   expect result.eq 3
 
   target "<#{filepath}> content"
-  goto :debian1, :exec => "cat #{filepath}| grep 'hostgroup_name'|grep 'routers#{@student_number}' |wc -l"
+  run "cat #{filepath}| grep 'hostgroup_name'|grep 'routers#{@student_number}' |wc -l", on: :debian1
   expect result.eq 1
 
   target "<#{filepath}> content"
-  goto :debian1, :exec => "cat #{filepath}| grep 'hostgroup_name'|grep 'servidores#{@student_number}' |wc -l"
+  run "cat #{filepath}| grep 'hostgroup_name'|grep 'servidores#{@student_number}' |wc -l", on: :debian1
   expect result.eq 1
 
   target "<#{filepath}> content"
