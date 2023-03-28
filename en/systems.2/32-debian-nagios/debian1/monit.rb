@@ -1,17 +1,15 @@
-# encoding: utf-8
 
+group "Debian1: Monit configuration" do
 
-task "Debian1: Monit configuration" do
-
-  file="/etc/monit/monitrc"
+  file = "/etc/monit/monitrc"
 
   target "File <#{file}.bak> exist"
-  goto :debian1, :exec => "file #{file}.bak"
-  expect result.find!("text").count!.eq 1
+  run "file #{file}.bak", on: :debian1
+  expect_one "text"
 
   target "File <#{file}> exist"
-  goto :debian1, :exec => "file #{file}"
-  expect result.find!("text").count!.eq 1
+  run "file #{file}", on: :debian1
+  expect_one "text"
 
   texts = []
   texts << [ "set daemon"      , "120" ]
@@ -42,28 +40,28 @@ task "Debian1: Monit configuration" do
 
   texts.each do |text|
     target "<#{file}> must contain <#{text.join(" ")}> line", :weight => 0.2
-    goto   :debian1, :exec => "cat #{file}"
+    run "cat #{file}", on: :debian1
 
-    text.each { |item| result.find!(item) }
+    text.each { |item| result.find(item) }
     expect result.not_find("#").count.eq(1)
   end
 end
 
-task "Debian1: Restart Monit service" do
+group "Debian1: Restart Monit service" do
 
   target "Debian1: Stop monit service"
-  goto   :debian1, :exec => "service monit stop"
-  goto   :debian1, :exec => "service monit status"
-  expect result.find("Active").find("inactive").count.eq 1
+  run "service monit stop", on: :debian1
+  run "service monit status", on: :debian1
+  expect_one [ "Active", "inactive" ]
 
   target "Debian1: Start monit service", :weight => 2
-  goto   :debian1, :exec => "service monit start"
-  goto   :debian1, :exec => "service monit status"
-  expect result.find("Active").find("active").count.eq(1)
+  run "service monit start", on: :debian1
+  run  "service monit status", on: :debian1
+  expect_one [ "Active", "active" ]
 
   target "Debian1: monit working on por 2812", :weight => 2
-  goto   :debian1, :exec => "netstat -ntap"
-  expect result.find("2812").find("monit").count.eq(1)
+  run "netstat -ntap", on: :debian1
+  expect_one [ "2812", "monit" ]
 
 #  target "nmap debian1"
 #  goto :localhost, :exec => "nmap -Pn #{get(:debian1_ip)}"

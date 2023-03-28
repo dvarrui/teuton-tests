@@ -34,12 +34,12 @@ group "Configure Nagios Server" do
   expect result.eq 3
 
   target "<#{filepath}> content"
-  run "cat #{filepath}| grep 'hostgroup_name'|grep 'routers#{@student_number}' |wc -l", on: :debian1
-  expect result.eq 1
+  run "cat #{filepath}", on: :debian1
+  expect_one [ "hostgroup_name", "routers#{@student_number}" ]
 
   target "<#{filepath}> content"
-  run "cat #{filepath}| grep 'hostgroup_name'|grep 'servidores#{@student_number}' |wc -l", on: :debian1
-  expect result.eq 1
+  run "cat #{filepath}", on: :debian1
+  expect_one [ "hostgroup_name", "servidores#{@student_number}" ]
 
   target "<#{filepath}> content"
   run "cat #{filepath}", on: :debian1

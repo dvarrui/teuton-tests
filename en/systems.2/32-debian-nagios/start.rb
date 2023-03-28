@@ -9,13 +9,13 @@
 # Spanish URL : https://github.com/dvarrui/libro-de-actividades/blob/master/actividades/sistamas.2/monitorizar/nagios-debian-windows.md
 
 use 'register_information'
-use 'debian1-config-mv'
-use 'debian1-nagios-server'
-use 'debian2-config-mv'
-use 'debian2-agent'
-use 'windows1-config-mv'
-use 'windows1-agent'
-use 'debian1-monit'
+use 'debian1/config-mv'
+use 'debian1/nagios-server'
+use 'debian2/config-mv'
+use 'debian2/agent'
+use 'windows1/config-mv'
+use 'windows1/agent'
+use 'debian1/monit'
 
 start do
   show
