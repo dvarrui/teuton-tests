@@ -1,0 +1,9 @@
+---
+global:
+  pc1_ip: 192.168.1.201
+  pc2_ip: 192.168.1.202
+cases:
+- tt_members: Anonymous
+  host1_ip: 127.0.0.1
+  project_file: lab01.gns3
+  project_dir: project
