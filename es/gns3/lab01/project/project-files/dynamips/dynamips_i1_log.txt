@@ -1,0 +1,12 @@
+Apr 05 15:30:22.524 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Apr 05 15:30:22.524 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 48493.
+Apr 05 15:30:22.526 HYPERVISOR: exec_cmd: hypervisor version 
+Apr 05 15:30:22.526 HYPERVISOR: exec_cmd: hypervisor working_dir /home/quigon/proy/repos/teuton.d/teuton-tests/es/gns3/lab01/project/project-files/dynamips 
+Apr 05 15:30:22.526 GENERAL: working_dir=/home/quigon/proy/repos/teuton.d/teuton-tests/es/gns3/lab01/project/project-files/dynamips
+Apr 05 15:30:22.526 HYPERVISOR: exec_cmd: ethsw create Switch1 
+Apr 05 15:30:22.555 HYPERVISOR: exec_cmd: nio create_udp udp-b2680026-8284-4653-bdf1-9c9ca33a41e9 10001 192.168.1.89 10000 
+Apr 05 15:30:22.555 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-b2680026-8284-4653-bdf1-9c9ca33a41e9 
+Apr 05 15:30:22.559 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-b2680026-8284-4653-bdf1-9c9ca33a41e9 1 
+Apr 05 15:30:22.586 HYPERVISOR: exec_cmd: nio create_udp udp-7447a768-3015-49bb-95ac-4564f790e844 10003 192.168.1.89 10002 
+Apr 05 15:30:22.586 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-7447a768-3015-49bb-95ac-4564f790e844 
+Apr 05 15:30:22.599 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-7447a768-3015-49bb-95ac-4564f790e844 1 

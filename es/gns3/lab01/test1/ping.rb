@@ -4,7 +4,7 @@ group "Comprobar las conexiones" do
   console = get(:pc1_console)
   remote_ip = get(:pc2_ip)
   cmd1 = "ping #{remote_ip} -c 4"
-  cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://127.0.0.1:#{console}"
+  cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://#{get(:gns3server_ip)}:#{console}"
   run cmd2
   expect "bytes from"
 
@@ -12,7 +12,7 @@ group "Comprobar las conexiones" do
   console = get(:pc2_console)
   remote_ip = get(:pc1_ip)
   cmd1 = "ping #{remote_ip} -c 4"
-  cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://127.0.0.1:#{console}"
+  cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://#{get(:gns3server_ip)}:#{console}"
   run cmd2
   expect "bytes from"
 
