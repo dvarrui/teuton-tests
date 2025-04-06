@@ -28,14 +28,14 @@ group "Comprobar la conectividad entre los dispositivos" do
   console = get(:pc1_console)
   cmd1 = "ping #{get(:pc2_ip)} -c 4"
   cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://#{get(:gns3server_ip)}:#{console}"
-  run cmd2
+  run cmd2, on: :host
   expect "bytes from"
 
   target "ping pc2 -> pc1"
   console = get(:pc2_console)
   cmd1 = "ping #{get(:pc1_ip)} -c 4"
   cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://#{get(:gns3server_ip)}:#{console}"
-  run cmd2
+  run cmd2, on: :host
   expect "bytes from"
 
 end
