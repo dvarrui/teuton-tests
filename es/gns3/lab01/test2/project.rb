@@ -19,7 +19,7 @@ group "Revisar el contenido del proyecto GNS3" do
   for node_name in node_names do
     target "Crear el nodo <#{node_name}>"
     run "jq '.topology.nodes[].name' #{get(:project_path)}", on: :host
-    expect node_name,  
+    expect node_name
   end
 
 end
