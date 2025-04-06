@@ -10,16 +10,16 @@ group "Revisar el contenido del proyecto GNS3" do
 
   # Seguir evaluando los targets
   target "Crear el proyecto GNS3 <#{get(:project_path)}>"
-  run "ls #{get(:project_dir)}"
-  expect get(:project_file), on: :host
+  run "ls #{get(:project_dir)}", on: :host
+  expect get(:project_file)
 
   # Se crea un iterador para las acciones repetidas
   node_names = ['PC1', 'PC2', 'Switch1']
 
   for node_name in node_names do
     target "Crear el nodo <#{node_name}>"
-    run "jq '.topology.nodes[].name' #{get(:project_path)}"
-    expect node_name, on: :host  
+    run "jq '.topology.nodes[].name' #{get(:project_path)}", on: :host
+    expect node_name,  
   end
 
 end
