@@ -26,16 +26,16 @@ Esto es, suponemos que
 * El GNS3 Server está configurado para escuchar en la IP localhost.
 * Cada alumno tiene instalado el servicio SSH en su máquina (Host).
 * El profesor debe tener acceso SSH a cada máquina de los alumnos.
-* En cada Host deben estar los comandos jq y curl.
+* En cada Host deben estar los comandos `jq` y `curl`.
 
 ## Tests de Teuton
 
-Se han creado varias versiones del mismo test de Teuton, cada una es una mejora de la versión anterior.
+A continuación vamos con el test de Teuton necesario para comprobar que se cumple el enunciado del laboratorio. Para facilitar el aprendizaje de las posibildiades que ofrece Teuton, se han creado varias versiones del mismo test, donde cada una incluye una pequeña mejora con respecto de la versión anterior.
 
-* Test1
-* Test2
-* Test3: En desarrollo!
+* **Test1**: Primera versión
+* **Test2**: Cambiando tareas repetitivas por bucles (Iteradores)
+* **Test3**: Cambiando el uso de los comandos `echo` y `curl` por conexiones Telnet directas. Es necesario que el cliente `Telnet` esté disponible en cada Host.
 
+### Test1: Primera versión
 
-### Test1
 

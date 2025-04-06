@@ -1,13 +1,19 @@
 ---
 global:
-  host_ip: localhost
-  gns3server_ip: localhost
 cases:
 - tt_members: Student1
+  host_ip: localhost
   project_path: project/lab.gns3
   # Los parámetro siguientes no son necesarios
   # porque se calculan a partir de project_path en 'project.rb'
   # project_file: lab.gns3
   # project_dir: project
+  gns3server_ip: localhost
+  pc1_ip: 192.168.1.201
+  pc2_ip: 192.168.1.202
+- tt_members: Student2
+  host_ip: 10.0.0.2
+  project_path: project/lab.gns3
+  gns3server_ip: localhost
   pc1_ip: 192.168.1.201
   pc2_ip: 192.168.1.202

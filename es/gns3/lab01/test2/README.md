@@ -1,5 +1,5 @@
 ```
-Date   : 2025-04-06 14:02:33 +0100
+Date   : 2025-04-06 20:23:26 +0100
 Teuton : 2.9.3
 ```
 
@@ -9,11 +9,13 @@ Teuton : 2.9.3
 
 | ID  | Host | Configuration |
 | --- | ---- | ------------- |
-| 1 | HOST | ip=localhost |
+| 1 | HOST |  |
 
 > NOTE: SSH Service installation is required on every host.
 
 ### Required params
+* gns3server_ip
+* host_ip
 * host_password
 * host_username
 * pc1_ip
@@ -22,7 +24,7 @@ Teuton : 2.9.3
 
 ## Revisar el contenido del proyecto gns3
 
-Go to [LOCALHOST](#required-hosts) host, and do next:
+Go to [HOST](#required-hosts) host, and do next:
 * (x1.0) Crear el proyecto GNS3 <PROJECT_PATH>.
 * (x1.0) Crear el nodo <PC1>.
 * (x1.0) Crear el nodo <PC2>.
@@ -50,12 +52,6 @@ Go to [HOST](#required-hosts) host, and do next:
 # ANEXO
 
 ## Params
-
-Global parameters:
-
-| Param | Value |
-| ----- | ----- |
-|gns3server_ip|localhost|
 
 Created during execution:
 
