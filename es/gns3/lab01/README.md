@@ -38,4 +38,16 @@ A continuación vamos con el test de Teuton necesario para comprobar que se cump
 
 ### Test1: Primera versión
 
+El test tiene los `targets` definidos en dos ficheros.
+
+* Fichero `project.rb`:
+  * Se definen `targets` que leen el contenido del proyecto GNS3 (`project/lab.gns3`). 
+  * Se hacen consultas al proyecto GNS3 para crear nuevos parámetros con los valores de los puerto correspondientes a la consola de cada dispositivo VPCS.
+  * Vemos como se usa el comando `jq` para leer el contenido JSON del fichero del proyecto GNS3.
+* Fichero `interfaces.rb`:
+  * Se definen `targets` que "inyectan" comandos en la consola de cada dispositivo VPCS del simulador y valoran su salida.
+  * Se usan los comandos `echo` y `curl` para "inyectar" comandos en IP:Port correspondiente a la consola de cada dispositivo.
+  * Es necesario que el GNS3 server esté en ejecución y los dispositivos activados.
+
+### Test2: Cambiando tareas repetitivas por bucles (Iteradores)
 
