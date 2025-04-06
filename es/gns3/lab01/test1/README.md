@@ -1,5 +1,5 @@
 ```
-Date   : 2025-04-06 13:39:22 +0100
+Date   : 2025-04-06 14:02:28 +0100
 Teuton : 2.9.3
 ```
 
@@ -44,7 +44,7 @@ NOTA:
 - GNS3 debe estar iniciado con el proyecto abierto
 - Los dispositivos deben estar iniciados
 
-Go to [LOCALHOST](#required-hosts) host, and do next:
+Go to [HOST](#required-hosts) host, and do next:
 * (x1.0) ping pc1 -> pc2.
 * (x1.0) ping pc2 -> pc1.
 
@@ -61,7 +61,7 @@ Global parameters:
 
 Created during execution:
 
-| Param | Value |
-| ----- | ----- |
-|pc1_console||
-|pc2_console||
+| Param |
+| ----- |
+|pc1_console|
+|pc2_console|
