@@ -13,4 +13,4 @@ El alumno debe crear un proyecto GNS3 con los siguientes requisitos:
 
 Conectar los dispositivos según el siguiente esquema:
 
-![](images/esquema.png
+![](images/esquema.png)
