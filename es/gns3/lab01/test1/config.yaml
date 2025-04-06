@@ -2,9 +2,10 @@
 global:
   host_ip: localhost
   gns3server_ip: localhost
-  pc1_ip: 192.168.1.201
-  pc2_ip: 192.168.1.202
 cases:
-- tt_members: Anonymous
+- tt_members: Student1
   project_file: lab.gns3
   project_dir: project
+  project_path: project/lab.gns3
+  pc1_ip: 192.168.1.201
+  pc2_ip: 192.168.1.202

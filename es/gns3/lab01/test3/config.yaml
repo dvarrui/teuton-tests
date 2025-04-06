@@ -1,0 +1,12 @@
+---
+global:
+  host_ip: localhost
+  gns3server_ip: localhost
+  # gns3server_ip: 192.168.1.89
+  gns3server_protocol: telnet
+  pc1_ip: 192.168.1.201
+  pc2_ip: 192.168.1.202
+cases:
+- tt_members: Anonymous
+  project_file: lab.gns3
+  project_dir: project

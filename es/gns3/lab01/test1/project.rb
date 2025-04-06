@@ -1,23 +1,36 @@
-group "Localizar los puertos de los dispositivos" do
+group "Revisar el contenido del proyecto GNS3" do
 
-  project_path = "#{get(:project_dir)}/#{get(:project_file)}"
-
-  target "Crear el proyecto GNS3 <#{project_path}>"
+  target "Crear el proyecto GNS3 <#{get(:project_path)}>"
   run "ls #{get(:project_dir)}"
-  expect get(:project_file)
+  expect get(:project_file), on: :host
 
-  nodes = ['PC1','PC2','Switch1']
-  set(:nodes, nodes)
+  node_name = 'PC1'
+  target "Crear el nodo <#{node_name}>"
+  run "jq '.topology.nodes[].name' #{get(:project_path)}"
+  expect node_name, on: :host
 
-  nodes.each do |node|
-    target "Crear el nodo <#{node}>"
-    run "jq '.topology.nodes[].name' #{project_path}"
-    expect node
+  node_name = 'PC2'
+  target "Crear el nodo <#{node_name}>"
+  run "jq '.topology.nodes[].name' #{get(:project_path)}"
+  expect node_name, on: :host
 
-    # Localizar la consola
-    cmd = "jq '.topology.nodes[] | select (.name == \"#{node}\") | .console' #{project_path}"
-    run cmd
-    # Guardar el valor de la consola para el nodo
-    set("#{node.downcase}_console".to_sym, result.value)
-  end
+  node_name = 'Switch1'
+  target "Crear el nodo <#{node_name}>"
+  run "jq '.topology.nodes[].name' #{get(:project_path)}"
+  expect node_name, on: :host
+
+end
+
+group "Localizar la consola de cada dispositivo y guardar su valor" do
+
+  node_name = 'PC1'
+  cmd = "jq '.topology.nodes[] | select (.name == \"#{node_name}\") | .console' #{get(:project_path)}"
+  run cmd, on: :host
+  set("#{node_name.downcase}_console".to_sym, result.value)
+
+  node_name = 'PC2'
+  cmd = "jq '.topology.nodes[] | select (.name == \"#{node_name}\") | .console' #{get(:project_path)}"
+  run cmd, on: :host
+  set("#{node_name.downcase}_console".to_sym, result.value)
+
 end
