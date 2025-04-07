@@ -17,11 +17,9 @@ El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
 ## Entorno 1
 
-Vamos a suponer que tenemos el siguiente entorno:
-
 ![](images/diagrama1.png)
 
-Esto es, suponemos que 
+Vamos a suponer que tenemos el siguiente entorno:
 * Tenemos una máquina que tiene instalado Teuton y el GNS3.
 * El GNS3 Server está configurado para escuchar en la IP localhost.
 * En el Host deben estar los comandos `jq`, `curl` y el fichero del proyecto GNS3
@@ -67,11 +65,9 @@ Podemos consultar el resultado en el fichero [test2/README.md](test2/README.md).
 
 ## Entorno 2
 
-Vamos a suponer que tenemos el siguiente entorno:
-
 ![](images/diagrama2.png)
 
-Esto es, suponemos que 
+Vamos a suponer que tenemos el siguiente entorno:
 * Cada alumno tiene su propia máquina, donde tiene instalado el GNS3.
 * El GNS3 Server está configurado para escuchar en la IP localhost.
 * Cada alumno tiene instalado el servicio SSH en su máquina (Host).
