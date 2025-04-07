@@ -1,13 +1,13 @@
 
-# Laboratorio GNS3 con Teuton - 01
+# Laboratorio 01 - GNS3 con Teuton
 
-## Enunciado del problema GNS3
+## Enunciado
 
 El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
 ![](images/esquema.png)
 
-* El proyecto debe estar en la ruta `project/lab.gns3`.
+* El fichero del proyecto debe estar en la ruta `project/lab.gns3`.
 * Crear un VPCS con el nombre `PC1` y la IP `192.168.1.201`.
 * Crear un VPCS con el nombre `PC2` y la IP `192.168.1.202`.
 * Crear un switch con el nombre `Switch1`.
@@ -15,22 +15,18 @@ El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
 > Recordar que hay que grabar las configuraciones.
 
-## Entorno de trabajo
+## Entorno 1
 
 Vamos a suponer que tenemos el siguiente entorno:
 
 ![](images/diagrama1.png)
 
 Esto es, suponemos que 
-* Cada alumno tiene su propia máquina, donde tiene instalado el GNS3.
+* Tenemos una máquina que tiene instalado Teuton y el GNS3.
 * El GNS3 Server está configurado para escuchar en la IP localhost.
-* Cada alumno tiene instalado el servicio SSH en su máquina (Host).
-* El profesor debe tener acceso SSH a cada máquina de los alumnos.
-* En cada Host deben estar los comandos `jq` y `curl`.
+* En el Host deben estar los comandos `jq`, `curl` y el fichero del proyecto GNS3
 
-## Tests de Teuton
-
-A continuación vamos con el test de Teuton necesario para comprobar que se cumple el enunciado del laboratorio. Para facilitar el aprendizaje de las posibildiades que ofrece Teuton, se han creado varias versiones del mismo test, donde cada una incluye una pequeña mejora con respecto de la versión anterior.
+Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
 
 * **Test1**: Primera versión
 * **Test2**: Cambiando tareas repetitivas por bucles (Iteradores)
@@ -68,3 +64,49 @@ teuton readme test2 > test2/README.md
 ```
 
 Podemos consultar el resultado en el fichero [test2/README.md](test2/README.md).
+
+## Entorno 2
+
+Vamos a suponer que tenemos el siguiente entorno:
+
+![](images/diagrama2.png)
+
+Esto es, suponemos que 
+* Cada alumno tiene su propia máquina, donde tiene instalado el GNS3.
+* El GNS3 Server está configurado para escuchar en la IP localhost.
+* Cada alumno tiene instalado el servicio SSH en su máquina (Host).
+* El profesor debe tener acceso SSH a cada máquina de los alumnos.
+* En cada Host deben estar los comandos `jq` y `curl`.
+
+Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
+
+* **Test1**: Primera versión
+* **Test2**: Cambiando tareas repetitivas por bucles (Iteradores)
+* **Test3 (EN DESARROLLO)**: Cambiando el uso de los comandos `echo` y `curl` por conexiones Telnet directas. Es necesario que el cliente `Telnet` esté disponible en cada Host.
+
+### Test1: Primera versión
+
+En este caso se modifica el fichero `test1/config.yaml` de la siguiente forma:
+* Se añaden las confifguraciones de los diferentes alumnos (`cases`).
+* Los parámetros que se repiten en cada `case` se pone en la sección `global`.
+* Cada alumno tiene una IP diferente en su Host.
+
+```yaml
+---
+global:
+  project_file: lab.gns3
+  project_dir: project
+  project_path: project/lab.gns3
+  gns3server_ip: localhost
+  pc1_ip: 192.168.99.1
+  pc2_ip: 192.168.99.2
+cases:
+- tt_members: Student1
+  host_ip: 192.168.1.1
+- tt_members: Student2
+  host_ip: 192.168.1.2
+```
+
+### Test2: Cambiando tareas repetitivas por bucles (Iteradores)
+
+En este caso usa un fichero `test2/config.yaml` similar al `test2/config.yaml` anterior, donde se reflejan las configuraciones de cada uno de los alumnos.
