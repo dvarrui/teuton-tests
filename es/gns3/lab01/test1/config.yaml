@@ -2,7 +2,7 @@
 global:
 cases:
 - tt_members: Student1
-  host_ip: 192.168.1.100
+  host_ip: localhost
   project_file: lab.gns3
   project_dir: project
   project_path: project/lab.gns3
