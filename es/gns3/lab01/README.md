@@ -17,6 +17,8 @@ El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
 ## Entorno 1
 
+Instalación por defecto de GNS3 en una única máquina.
+
 ![](images/diagrama1.png)
 
 Vamos a suponer que tenemos el siguiente entorno:
@@ -25,10 +27,6 @@ Vamos a suponer que tenemos el siguiente entorno:
 * En el Host deben estar los comandos `jq`, `curl` y el fichero del proyecto GNS3
 
 Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
-
-* **Test1**: Primera versión
-* **Test2**: Cambiando tareas repetitivas por bucles (Iteradores)
-* **Test3 (EN DESARROLLO)**: Cambiando el uso de los comandos `echo` y `curl` por conexiones Telnet directas. Es necesario que el cliente `Telnet` esté disponible en cada Host.
 
 ### Test1: Primera versión
 
@@ -65,6 +63,8 @@ Podemos consultar el resultado en el fichero [test2/README.md](test2/README.md).
 
 ## Entorno 2
 
+Instalación por defecto de GNS3 en varias máquinas.
+
 ![](images/diagrama2.png)
 
 Vamos a suponer que tenemos el siguiente entorno:
@@ -75,10 +75,6 @@ Vamos a suponer que tenemos el siguiente entorno:
 * En cada Host deben estar los comandos `jq` y `curl`.
 
 Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
-
-* **Test1**: Primera versión
-* **Test2**: Cambiando tareas repetitivas por bucles (Iteradores)
-* **Test3 (EN DESARROLLO)**: Cambiando el uso de los comandos `echo` y `curl` por conexiones Telnet directas. Es necesario que el cliente `Telnet` esté disponible en cada Host.
 
 ### Test1: Primera versión
 
@@ -106,3 +102,5 @@ cases:
 ### Test2: Cambiando tareas repetitivas por bucles (Iteradores)
 
 En este caso usa un fichero `test2/config.yaml` similar al `test2/config.yaml` anterior, donde se reflejan las configuraciones de cada uno de los alumnos.
+
+## Entorno 3
