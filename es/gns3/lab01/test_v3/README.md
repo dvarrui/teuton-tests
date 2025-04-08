@@ -1,15 +1,17 @@
 ```
-Date   : 2025-04-07 18:51:24 +0100
+Date   : 2025-04-08 20:04:59 +0100
 Teuton : 2.9.3
 ```
 
-# Test: test2
+# Test: test_v3
 
 ### Required hosts
 
 | ID  | Host | Configuration |
 | --- | ---- | ------------- |
 | 1 | HOST |  |
+| 2 | VPC1 | ip=GNS3SERVER_IP |
+| 3 | VPC2 | ip=GNS3SERVER_IP |
 
 > NOTE: SSH Service installation is required on every host.
 
@@ -21,6 +23,10 @@ Teuton : 2.9.3
 * pc1_ip
 * pc2_ip
 * project_path
+* vpc1_password
+* vpc1_username
+* vpc2_password
+* vpc2_username
 
 ## Revisar el contenido del proyecto gns3
 
@@ -35,8 +41,10 @@ NOTA:
 - GNS3 debe estar iniciado con el proyecto abierto
 - Los dispositivos deben estar iniciados
 
-Go to [HOST](#required-hosts) host, and do next:
+Go to [VPC1](#required-hosts) host, and do next:
 * (x1.0) Configurar pc1 ip <PC1_IP>.
+
+Go to [VPC2](#required-hosts) host, and do next:
 * (x1.0) Configurar pc2 ip <PC2_IP>.
 
 ## Comprobar la conectividad entre los dispositivos
@@ -44,8 +52,10 @@ NOTA:
 - GNS3 debe estar iniciado con el proyecto abierto
 - Los dispositivos deben estar iniciados
 
-Go to [HOST](#required-hosts) host, and do next:
+Go to [VPC1](#required-hosts) host, and do next:
 * (x1.0) ping pc1 -> pc2.
+
+Go to [VPC2](#required-hosts) host, and do next:
 * (x1.0) ping pc2 -> pc1.
 
 ---
@@ -59,5 +69,7 @@ Created during execution:
 | ----- |
 |project_file|
 |project_dir|
-|pc1_console|
-|pc2_console|
+|vpc1_port|
+|vpc1_ip|
+|vpc2_port|
+|vpc2_ip|

@@ -15,7 +15,7 @@ El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
 > Recordar que hay que grabar las configuraciones.
 
-## Entorno 1
+## Situación 1: Ejecución en localhost
 
 Instalación por defecto de GNS3 en una única máquina.
 
@@ -26,11 +26,15 @@ Vamos a suponer que tenemos el siguiente entorno:
 * El GNS3 Server está configurado para escuchar en la IP localhost.
 * En el Host deben estar los comandos `jq`, `curl` y el fichero del proyecto GNS3
 
-Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
+Esta situación es útil en:
+* Un profesor está desarrollando y probando la actividad en local.
+* Un alumno está trabajando la actividad y usa los test para autoevaluar su progreso.
 
-### Test1: Primera versión
+> Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
 
-[Consultar el test1](test1)
+### Test_v1: Primera versión
+
+[Consultar el test_v1](test_v1)
 
 El test tiene los `targets` definidos en dos ficheros.
 
@@ -43,9 +47,9 @@ El test tiene los `targets` definidos en dos ficheros.
   * Se usan los comandos `echo` y `curl` para "inyectar" comandos en IP:Port correspondiente a la consola de cada dispositivo.
   * Es necesario que el GNS3 server esté en ejecución y los dispositivos activados.
 
-### Test2: Cambiando tareas repetitivas por bucles (Iteradores)
+### Test_v2: Cambiando tareas repetitivas por bucles (Iteradores)
 
-[Consultar el test2](test2)
+[Consultar el test_v2](test_v2)
 
 Este test es una copia del anterior pero se han realizado algunas mejoras.
 
@@ -56,14 +60,14 @@ Este test es una copia del anterior pero se han realizado algunas mejoras.
 Para construir un enunciado a partir del test hacemos:
 
 ```bash
-teuton readme test2 > test2/README.md
+teuton readme test_v2 > test2/README.md
 ```
 
-Podemos consultar el resultado en el fichero [test2/README.md](test2/README.md).
+Podemos consultar el resultado en el fichero [test_v2/README.md](test2/README.md).
 
-## Entorno 2
+## Situación 2: Ejecución en una red de máquinas
 
-Instalación por defecto de GNS3 en varias máquinas.
+Instalación por defecto de GNS3 en varias máquinas con acceso SSH desde el exterior.
 
 ![](images/diagrama2.png)
 
@@ -74,13 +78,16 @@ Vamos a suponer que tenemos el siguiente entorno:
 * El profesor debe tener acceso SSH a cada máquina de los alumnos.
 * En cada Host deben estar los comandos `jq` y `curl`.
 
-Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
+Esta situación es útil para:
+* Un profesor desea evaluar el trabajo que están desarrollando los alumnos en sus máquinas.
 
-### Test1: Primera versión
+> Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
 
-En este caso se modifica el fichero `test1/config.yaml` de la siguiente forma:
-* Se añaden las confifguraciones de los diferentes alumnos (`cases`).
-* Los parámetros que se repiten en cada `case` se pone en la sección `global`.
+### Test_v1: Primera versión
+
+En este caso se modifica el fichero `test_v1/config.yaml` de la siguiente forma:
+* Se añaden las configuraciones de los diferentes alumnos (`cases`).
+* Los parámetros que se repiten de cada `case` se ponen en la sección `global`.
 * Cada alumno tiene una IP diferente en su Host.
 
 ```yaml
@@ -99,8 +106,10 @@ cases:
   host_ip: 192.168.1.2
 ```
 
-### Test2: Cambiando tareas repetitivas por bucles (Iteradores)
+### Test_v2: Cambiando tareas repetitivas por bucles (Iteradores)
 
-En este caso usa un fichero `test2/config.yaml` similar al `test2/config.yaml` anterior, donde se reflejan las configuraciones de cada uno de los alumnos.
+En este caso usa un fichero `test_v2/config.yaml`, donde se reflejan las configuraciones de cada uno de los alumnos (`cases`).
 
-## Entorno 3
+## Situación 3
+
+EN DESAROLLO!

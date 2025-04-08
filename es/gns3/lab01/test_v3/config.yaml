@@ -5,6 +5,5 @@ cases:
   host_ip: localhost
   project_path: project/lab.gns3
   gns3server_ip: localhost
-  gns3server_protocol: telnet
   pc1_ip: 192.168.99.1
   pc2_ip: 192.168.99.2

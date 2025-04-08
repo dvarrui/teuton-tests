@@ -32,7 +32,13 @@ group "Localizar la consola de cada dispositivo y guardar su valor" do
   for node_name in node_names do
     cmd = "jq '.topology.nodes[] | select (.name == \"#{node_name}\") | .console' #{get(:project_path)}"
     run cmd, on: :host
-    set("#{node_name.downcase}_console".to_sym, result.value)  
+    # Definimos lo siguiente:
+    #   vpc?_port     = <puerto de acceso al dispositivo>
+    #   vpc?_ip       = <gns3server_ip>
+    #   vpc?_protocol = 'telnet'
+    set("v#{node_name.downcase}_port".to_sym, result.value)  
+    set("v#{node_name.downcase}_ip".to_sym, get(:gns3server_ip))
+    set("v#{node_name.downcase}_protocol".to_sym, 'telnet')
   end
 
 end
