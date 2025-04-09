@@ -1,5 +1,5 @@
 ```
-Date   : 2025-04-08 20:04:59 +0100
+Date   : 2025-04-09 23:47:35 +0100
 Teuton : 2.9.3
 ```
 
@@ -71,5 +71,7 @@ Created during execution:
 |project_dir|
 |vpc1_port|
 |vpc1_ip|
+|vpc1_protocol|
 |vpc2_port|
 |vpc2_ip|
+|vpc2_protocol|

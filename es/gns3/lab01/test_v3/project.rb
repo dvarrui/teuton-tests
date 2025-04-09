@@ -11,14 +11,14 @@ group "Revisar el contenido del proyecto GNS3" do
   # Seguir evaluando los targets
   target "Crear el proyecto GNS3 <#{get(:project_path)}>"
   run "ls #{get(:project_dir)}", on: :host
-  expect get(:project_file)
+  expect _project_file
 
   # Se crea un iterador para las acciones repetidas
   node_names = ['PC1', 'PC2', 'Switch1']
 
   for node_name in node_names do
     target "Crear el nodo <#{node_name}>"
-    run "jq '.topology.nodes[].name' #{get(:project_path)}", on: :host
+    run "jq '.topology.nodes[].name' #{_project_path}", on: :host
     expect node_name
   end
 
@@ -30,14 +30,14 @@ group "Localizar la consola de cada dispositivo y guardar su valor" do
   node_names = ['PC1', 'PC2']
 
   for node_name in node_names do
-    cmd = "jq '.topology.nodes[] | select (.name == \"#{node_name}\") | .console' #{get(:project_path)}"
+    cmd = "jq '.topology.nodes[] | select (.name == \"#{node_name}\") | .console' #{_project_path}"
     run cmd, on: :host
-    # Definimos lo siguiente:
+    # Definimos los siguientes parámetros para conectar con vpc?:
     #   vpc?_port     = <puerto de acceso al dispositivo>
     #   vpc?_ip       = <gns3server_ip>
     #   vpc?_protocol = 'telnet'
     set("v#{node_name.downcase}_port".to_sym, result.value)  
-    set("v#{node_name.downcase}_ip".to_sym, get(:gns3server_ip))
+    set("v#{node_name.downcase}_ip".to_sym, _gns3server_ip)
     set("v#{node_name.downcase}_protocol".to_sym, 'telnet')
   end
 
