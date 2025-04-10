@@ -1,7 +1,7 @@
 
 # Laboratorio 01 - GNS3 con Teuton
 
-## Enunciado
+## 0. Enunciado
 
 El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
@@ -15,7 +15,7 @@ El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 
 > Recordar que hay que grabar las configuraciones.
 
-## Situación 1: Ejecución en localhost
+## 1. Situación: Ejecución en localhost
 
 Instalación por defecto de GNS3 en una única máquina.
 
@@ -32,7 +32,7 @@ Esta situación es útil en:
 
 > Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
 
-### Test_v1: Primera versión
+### 1.1 Test: Primera versión
 
 [Consultar el test_v1](test_v1)
 
@@ -47,7 +47,7 @@ El test tiene los `targets` definidos en dos ficheros.
   * Se usan los comandos `echo` y `curl` para "inyectar" comandos en IP:Port correspondiente a la consola de cada dispositivo.
   * Es necesario que el GNS3 server esté en ejecución y los dispositivos activados.
 
-### Test_v2: Cambiando tareas repetitivas por bucles (Iteradores)
+### 1.2 Test: Cambiando tareas repetitivas por bucles (Iteradores)
 
 [Consultar el test_v2](test_v2)
 
@@ -65,7 +65,7 @@ teuton readme test_v2 > test2/README.md
 
 Podemos consultar el resultado en el fichero [test_v2/README.md](test2/README.md).
 
-### Test_v3: Conexiones vía Telnet
+### 1.3 Test: Conexiones vía Telnet
 
 [Consultar el test_v3](test_v3)
 
@@ -79,7 +79,7 @@ Por ejemplo, el código siguiente:
   cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://#{get(:gns3server_ip)}:#{console}"
   run cmd2, on: :host
 ```
-da como resultado la ejecución del comando `echo "show ip" | curl -m 1 telnet://localhost:5002`
+Esto da como resultado la ejecución del comando `echo "show ip" | curl -m 1 telnet://localhost:5002`
 
 Esta forma de "conectar" con el servicio Telnet para acceder dentro de los disposivos simulados e GNS3 funciona perfectamente, pero también podemos aprovechar que Teuton puede realizar conexiones SSH y Telnet a equipos remotos para reescribir las instrucciones del test de la siguiente forma:
 
@@ -107,7 +107,7 @@ Otra forma de construir el `expect` para encontrar lo que buscamos sería usando
 
 > Más información sobre [expect](https://github.com/teuton-software/teuton/blob/master/docs/dsl/expect.md)
 
-## Situación 2: Ejecución en una red de máquinas
+## 2. Situación: Ejecución en una red de máquinas
 
 Instalación por defecto de GNS3 en varias máquinas con acceso SSH desde el exterior.
 
@@ -125,9 +125,9 @@ Esta situación es útil para:
 
 > Se han creado varias versiones del mismo test de Teuton, donde cada versión incluye una pequeña mejora con respecto de la versión anterior.
 
-### Test_v1: Primera versión
+### 2.1 Test: Primera versión
 
-En este caso se modifica el fichero `test_v1/config.yaml` de la siguiente forma:
+Se usa el mismo código de [test_v1](test_v1), pero en este caso se modifica el fichero `test_v1/config.yaml` de la siguiente forma:
 * Se añaden las configuraciones de los diferentes alumnos (`cases`).
 * Los parámetros que se repiten de cada `case` se ponen en la sección `global`.
 * Cada alumno tiene una IP diferente en su Host.
@@ -148,14 +148,14 @@ cases:
   host_ip: 192.168.1.2
 ```
 
-### Test_v2: Cambiando tareas repetitivas por bucles (Iteradores)
+### 2.2 Test: Cambiando tareas repetitivas por bucles (Iteradores)
 
-En este caso usa un fichero `test_v2/config.yaml`, donde se reflejan las configuraciones de cada uno de los alumnos (`cases`).
+Se usa el mismo código de [test_v2](test_v2), pero en este caso se añaden en el fichero `test_v2/config.yaml`, las configuraciones de cada uno de los alumnos (`cases`).
 
-### Test_v3: Conexiones vía Telnet
+### 2.3 Test: Conexiones vía Telnet
 
-En este caso usa un fichero `test_v3/config.yaml`, donde se reflejan las configuraciones de cada uno de los alumnos (`cases`).
+Se usa el mismo código de [test_v3](test_v3), pero en este caso se añaden en el fichero `test_v3/config.yaml`, las configuraciones de cada uno de los alumnos (`cases`).
 
-## Situación 3
+## 3. Situación: incorporamos un nodo Cloud
 
 EN DESAROLLO!
