@@ -3,11 +3,11 @@ group "Configurar las interfaces de red" do
   readme "- GNS3 debe estar iniciado con el proyecto abierto"
   readme "- Los dispositivos deben estar iniciados"
 
-  target "Configurar pc1 ip <#{get(:pc1_ip)}>"
+  target "Configurar pc1 ip <#{_pc1_ip}>"
   run "show ip", on: :vpc1
   expect_one ["IP/MASK", _pc1_ip]
  
-  target "Configurar pc2 ip <#{get(:pc2_ip)}>"
+  target "Configurar pc2 ip <#{_pc2_ip}>"
   run "show ip", on: :vpc2
   expect_one ["IP/MASK", _pc2_ip]
 

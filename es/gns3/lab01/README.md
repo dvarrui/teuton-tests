@@ -110,6 +110,46 @@ cases:
 
 En este caso usa un fichero `test_v2/config.yaml`, donde se reflejan las configuraciones de cada uno de los alumnos (`cases`).
 
+### Test_v3: Conexiones vía Telnet
+
+**Crear conexiones Telnet**
+
+En los ejemplos anteriores, dentro del fichero `interfaces`, se lanzaban algunos comandos desde la máquina local para "inyectar" comandos a un servidor Telnet. 
+
+Por ejemplo, el código siguiente:
+```ruby
+  cmd1 = "show ip"
+  cmd2 = "echo \"#{cmd1}\" | curl -m 1 telnet://#{get(:gns3server_ip)}:#{console}"
+  run cmd2, on: :host
+```
+da como resultado la ejecución del comando `echo "show ip" | curl -m 1 telnet://localhost:5002`
+
+Esta forma de "conectar" con el servicio Telnet para acceder dentro de los disposivos simulados e GNS3 funciona perfectamente, pero también podemos aprovechar que Teuton puede realizar conexiones SSH y Telnet a equipos remotos para reescribir las instrucciones del test de la siguiente forma:
+
+```ruby
+  run "show ip", on: :vpc1
+```
+
+Esta otra forma es más corta y puede ser más sencilla de entender. Esto es, ejecutar el comando `show ip` en la máquina remota `vpc1`. Ahora bien, es necesario definir para `vcp1` su IP, puerto y protocolo. Estos valores lo podemos definir dentro de `config.yaml` o con instrucciones dentro del test. Esto lo podemos ver en las líneas 30-42 del fichero `project.rb`.
+
+**Mejorar la legibilidad**
+
+En el fichero `interfaxces.rb` tenemos varios target como el siguiente:
+
+```ruby
+  target "Configurar pc1 ip <#{_pc1_ip}>"
+  run "show ip", on: :vpc1
+  expect_one ["IP/MASK", _pc1_ip]
+```
+
+Aquí tenemos dos cosas nuevas. Por un lado, la instrucción `get(:pc1_ip)` se puede reescribir como `_pc1_ip`. Ambas instrucciones son idénticas. Pero en algunos casos puede resultar más claro usar una u otra. Por tanto cualquier instrucción como `_name` es un alias a `get(:name)`.
+
+Y otra cosa nueva es la instrucción `expect_one [A, B, C]`. Esta instrucción espera encontrar en la salida del comando anterior una única línea con los textos A, B y C en la misma línea.
+
+Otra forma de construir el `expect` para encontrar lo que buscamos sería usando expresiones regulares. 
+
+> Más información sobre [expect](https://github.com/teuton-software/teuton/blob/master/docs/dsl/expect.md)
+
 ## Situación 3
 
 EN DESAROLLO!
