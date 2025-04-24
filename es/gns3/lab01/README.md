@@ -12,8 +12,8 @@ El alumno debe crear un proyecto GNS3 según el siguiente esquema:
 ![](images/esquema.png)
 
 * El fichero del proyecto debe estar en la ruta `project/lab.gns3`.
-* Crear un VPCS con el nombre `PC1` y la IP `192.168.1.201`.
-* Crear un VPCS con el nombre `PC2` y la IP `192.168.1.202`.
+* Crear un VPCS con el nombre `PC1` y la IP `192.168.99.1`.
+* Crear un VPCS con el nombre `PC2` y la IP `192.168.99.2`.
 * Crear un switch con el nombre `Switch1`.
 * Conectar los dispositivos según el esquema anterior.
 
