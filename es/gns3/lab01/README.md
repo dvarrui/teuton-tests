@@ -67,7 +67,7 @@ Para construir un enunciado a partir del test hacemos:
 teuton readme test_v2 > test2/README.md
 ```
 
-Podemos consultar el resultado en el fichero [test_v2/README.md](test2/README.md).
+Podemos consultar el resultado en el fichero [test_v2/README.md](test_v2/README.md).
 
 ### 1.3 Test: Conexiones vía Telnet
 
