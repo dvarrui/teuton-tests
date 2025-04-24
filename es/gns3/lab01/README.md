@@ -1,6 +1,10 @@
 
 # Laboratorio 01 - GNS3 con Teuton
 
+Enlaces de interés:
+* [Introducción a Teuton](https://elpuig.xeill.net/Members/vcarceler/articulos/introduccion-a-teuton): iniciarse en el uso de Teutón gracias al fantástico artículo de Víctor Carceler.
+* [Verificar prácticas de GNS3 con Teuton](https://elpuig.xeill.net/Members/juanmorote/articulos/verificar-practicas-de-gns3-con-teuton): GNS3 es un excelente simulador de red Open Source que además se entiende con Teuton a las mil maravillas.
+
 ## 0. Enunciado
 
 El alumno debe crear un proyecto GNS3 según el siguiente esquema:
@@ -158,4 +162,4 @@ Se usa el mismo código de [test_v3](test_v3), pero en este caso se añaden en e
 
 ## 3. Situación: incorporamos un nodo Cloud
 
-EN DESAROLLO!
+EN DESARROLLO!
